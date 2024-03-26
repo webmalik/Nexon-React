@@ -1,0 +1,26 @@
+ <svg
+	width="25.250977"
+	height="25.251221"
+	viewBox="0 0 25.251 25.2512"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+	<desc>Created with Pixso.</desc>
+	<defs />
+	<path
+	id="Vector"
+	d="M1.20117 0L25.251 24.0491L24.0488 25.2512L0 1.20215L1.20117 0Z"
+	fill="#FFFFFF"
+	fill-opacity="1.000000"
+	fill-rule="evenodd"
+	/>
+	<path
+	id="Subtract"
+	d="M18.251 8.20239L25.251 1.20215L24.0488 0L17.043 7.00635L18.251 8.20239ZM13.4277 13.0254L12.2197 11.8291L0 24.0491L1.20215 25.2512L13.4277 13.0254Z"
+	clip-rule="evenodd"
+	fill="#FFFFFF"
+	fill-opacity="1.000000"
+	fill-rule="evenodd"
+	/>
+</svg>

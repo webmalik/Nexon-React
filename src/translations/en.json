@@ -1,0 +1,40 @@
+{
+    "menu": "Menu",
+
+    "menu-item-1": "About us",
+    "menu-item-2": "Advantages",
+    "menu-item-3": "Team",
+    "menu-item-4": "Partners",
+    "menu-item-5": "Jobs",
+    "menu-item-6": "Contacts",
+
+    "button": "Button",
+
+    "hero-subtitle-1": "Development of your web product taking into account the design",
+    "hero-title-1": "We make sites",
+    "hero-title-2": "WHERE",
+    "hero-title-3": "Sitting.",
+    "hero-subtitle-2": "  We also work with mobile and desktop applications",
+
+    "info-header": "One of the best web studies in the Ukrainian market",
+    "info-info__title-1": "20",
+    "info-info__title-1-1": "min",
+    "info-info__text-1": "Average time to understand your project",
+    "info-info__title-2": "90+ speed",
+    "info-info__text-2": "The average grade of our sites according to PageSpeed, taking into account search optimization, performance, etc.",
+    "info-info__title-3": "15%",
+    "info-info__text-3": "Conversion of our sites",
+    "info-info__title-4": "30+",
+    "info-info__text-4": "Projects of various complexity",
+    "info-info__title-5": "3+",
+    "info-info__text-5": "Rock in the Ukrainian market",
+
+    "portfolio": "Portfolio",
+
+    "services": "Our services",
+
+    "mail-title-1": "Just enter the email,",
+    "mail-title-2": "that we can contact",
+
+    "reviews-title": "Real Reviews of Clients on Cooperation"
+}

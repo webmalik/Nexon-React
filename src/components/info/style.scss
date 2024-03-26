@@ -1,0 +1,97 @@
+@import "../../root/scss/_sass";
+
+.info {
+	background: rgb(255, 255, 255);
+	padding: 150px 0;
+	&__grid {
+		display: grid;
+		grid-template-columns: 2.5fr 1.2fr 1.2fr;
+	}
+
+	&__item {
+		border: 0.06rem solid rgb(204, 204, 204);
+		padding: 55px;
+		display: flex;
+		flex-direction: column;
+		gap: 75px;
+
+		&:first-child {
+			grid-area: 1/3/1/1;
+			border: none;
+		}
+
+		&:nth-child(2) {
+			border-radius: 1.15rem 1.15rem 0rem 0rem;
+		}
+		&:nth-child(3) {
+			border-radius: 1.15rem 0rem 0rem 0rem;
+		}
+		&:nth-child(5) {
+			border-radius: 0rem 0rem 1.15rem 0rem;
+		}
+		&:nth-child(6) {
+			border: 0.06rem solid rgb(204, 204, 204);
+			border-radius: 0rem 0rem 0rem 1.15rem;
+			background: rgb(224, 231, 248);
+			padding: 0;
+		}
+		&:nth-child(7) {
+			border: 0.06rem solid rgb(204, 204, 204);
+			border-radius: 0rem 0rem 1.15rem 0rem;
+		}
+	}
+
+	&__header {
+		color: rgb(21, 21, 21);
+		font-family: $font-family;
+		font-size: 5rem;
+		font-weight: 600;
+		line-height: 110%;
+		letter-spacing: -2%;
+		text-align: left;
+		text-indent: 200px;
+		margin-top: -5rem;
+		//text-wrap: balance;
+	}
+
+	&__title {
+		color: rgb(21, 21, 21);
+		font-family: $font-family;
+		font-size: 7.37rem;
+		font-weight: 500;
+		line-height: 100%;
+		letter-spacing: 0%;
+		text-align: left;
+		text-transform: uppercase;
+
+		span {
+			font-size: 2.76rem;
+		}
+	}
+
+	&__text {
+		color: rgba(21, 21, 21, 0.4);
+		font-family: $font-family;
+		font-size: 1.5rem;
+		font-weight: 500;
+		line-height: 1.88rem;
+		letter-spacing: -2%;
+		text-align: left;
+	}
+
+	&__button {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgb(21, 21, 21);
+		font-family: $font-family;
+		font-size: 1.84rem;
+		font-weight: 600;
+		line-height: 100%;
+		letter-spacing: -2%;
+		text-align: left;
+		text-decoration-line: underline;
+	}
+}

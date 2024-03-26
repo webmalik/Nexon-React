@@ -1,0 +1,61 @@
+@import "../../root/scss/_sass";
+
+.banner {
+	&__circle {
+		@include adaptiv-value("width", 242, 125, 1);
+		@include adaptiv-value("height", 242, 125, 1);
+		position: absolute;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__subtitle {
+		color: $white_color;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1.5), toPX(0.875), 1);
+		font-style: normal;
+		font-weight: 700;
+		line-height: 150%;
+		max-width: 20.375rem;
+
+		&-top {
+			display: block;
+			margin-left: auto;
+			margin-right: 0;
+			margin-bottom: 59px;
+		}
+
+		&-bottom {
+			min-width: 22.56rem;
+			position: relative;
+			transform: translateY(-8rem);
+		}
+	}
+
+	&__title {
+		color: $white_color;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(12.25), toPX(3), 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 100%; /* 12.25rem */
+		letter-spacing: -0.245rem;
+		text-transform: uppercase;
+	}
+
+	&__right {
+		text-align: right;
+	}
+
+	&__left {
+		text-align: left;
+	}
+
+	&__silver {
+		color: rgb(68, 68, 68);
+	}
+}

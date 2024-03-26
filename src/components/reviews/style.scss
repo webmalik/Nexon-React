@@ -1,0 +1,30 @@
+@import "../../root/scss/_sass";
+
+.reviews {
+	background: #f3f3f3;
+	padding-top: 2.87rem;
+	&__wrapper {
+		display: flex;
+		align-items: flex-start;
+		& > div {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 6rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 100%; /* 6rem */
+		letter-spacing: -0.18rem;
+		text-wrap: balance;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.61rem;
+	}
+}

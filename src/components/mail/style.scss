@@ -1,0 +1,110 @@
+@import "../../root/scss/_sass";
+
+.mail {
+	background: #151515;
+	padding: 5.62rem 0;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 6.25rem;
+	}
+
+	&__title {
+		color: #fff;
+		font-family: $font-family;
+		font-size: 6rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 100%;
+		letter-spacing: -0.12rem;
+
+		span {
+			padding-left: 9rem;
+		}
+	}
+
+	&__form {
+		display: flex;
+		align-items: center;
+		gap: 5rem;
+
+		& > img {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+	}
+
+	&__input-wrapper {
+		display: flex;
+		align-items: center;
+		border-radius: 1.875rem;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 0.62rem 0.625rem 0.62rem 3.125rem;
+		width: 100%;
+		input {
+			width: 100%;
+			color: #fff;
+			font-family: $font-family;
+			font-size: 2.5rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 110%;
+			padding-right: 5rem;
+
+			&::placeholder {
+				color: rgba(255, 255, 255, 0.4);
+			}
+		}
+		button {
+			display: flex;
+			align-items: center;
+			gap: 0;
+			border-radius: 1.25rem;
+			background: #fff;
+			padding: 2.5rem 5rem;
+			color: #151515;
+			font-family: $font-family;
+			font-size: 2.5rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 110%;
+			transition: all 0.5s ease-in-out;
+			cursor: pointer;
+			span {
+				display: flex;
+				width: 2.5rem;
+				height: 2.5rem;
+				align-items: center;
+				justify-content: center;
+				border-radius: 6.25rem;
+				padding: 0.5rem;
+				transition: all 0.5s ease-in-out;
+
+				svg {
+					width: 0.75rem;
+					height: 0.75rem;
+					transform: rotate(-180deg);
+					transition: all 0.5s ease-in-out;
+					path {
+						stroke: #151515;
+						transition: all 0.5s ease-in-out;
+					}
+				}
+			}
+
+			&:hover {
+				gap: 2.5rem;
+				span {
+					background: #151515;
+
+					svg {
+						transform: rotate(0deg);
+						path {
+							stroke: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}

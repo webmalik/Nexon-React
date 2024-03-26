@@ -1,0 +1,22 @@
+@import "../../root/scss/_sass";
+
+.portfolio {
+	background: #151515;
+	&__header {
+		color: #fff;
+		text-align: center;
+		font-family: $font-family;
+		font-size: 128px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 110%; /* 140.8px */
+		letter-spacing: -2.56px;
+		margin: 9.38rem 0 4.38rem;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.57rem;
+	}
+}

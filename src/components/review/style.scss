@@ -1,0 +1,95 @@
+@import "../../root/scss/_sass";
+
+.review {
+	position: relative;
+	border-radius: 1.21838rem;
+	background: rgba(21, 21, 21, 0.03);
+	backdrop-filter: blur(11.696551322937012px);
+	display: flex;
+	flex-direction: column;
+	padding: 2.44rem;
+	cursor: pointer;
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 1.22rem;
+	}
+
+	&__image {
+		width: 6.09194rem;
+		height: 6.09194rem;
+		border-radius: 6.09194rem;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0.61rem;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	&__title {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 1.46206rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%; /* 1.7545rem */
+	}
+
+	&__nikname {
+		color: rgba(21, 21, 21, 0.4);
+		font-family: $font-family;
+		font-size: 0.97469rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 120%; /* 1.16963rem */
+	}
+
+	&__arrow {
+		position: absolute;
+		right: 2.44rem;
+		top: 2.44rem;
+		max-width: 1.21838rem;
+		transition: all 0.5s ease-in-out;
+		opacity: 1;
+	}
+
+	&__content {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 1.21838rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%; /* 1.82756rem */
+		letter-spacing: -0.02438rem;
+		padding-left: 7.31rem;
+
+		max-height: 0;
+		overflow: hidden;
+		transform: translateY(200px);
+		transition: all 0.5s ease-in-out;
+	}
+
+	&.active {
+		border-radius: 1.21838rem;
+		background: #fff;
+		box-shadow: 0px 38.989px 87.724px -9.747px rgba(0, 0, 0, 0.1);
+
+		.review__content {
+			//max-height: 100vh;
+			transform: translateY(0);
+			margin-top: 0.61rem;
+		}
+
+		.review__arrow {
+			transform: rotate(180deg);
+			opacity: 0.2;
+		}
+	}
+}

@@ -1,0 +1,133 @@
+@import "../../root/scss/_sass";
+
+.services {
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: 1.14656rem;
+		background: #fff;
+		padding: 2.29rem;
+		min-height: 21.55rem;
+		transition: all 0.5s ease-in-out;
+		opacity: 1;
+
+		&:not(:hover) {
+			opacity: 0.8;
+		}
+
+		&:hover {
+			.services__button {
+				max-width: 13.75863rem;
+				padding: 1.14656rem 2.29313rem;
+
+				span {
+					transform: translateX(0%);
+				}
+			}
+		}
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		gap: 5.73rem;
+	}
+
+	&__title {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 3.09569rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 100%; /* 3.09569rem */
+		letter-spacing: -0.06194rem;
+		max-width: 13.75863rem;
+		width: 100%;
+	}
+
+	&__decription {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 1.14656rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%; /* 1.8345rem */
+		letter-spacing: -0.02294rem;
+		width: 100%;
+	}
+
+	&__button {
+		display: flex;
+		gap: 1.66rem;
+		align-items: center;
+		justify-content: start;
+		border-radius: 5.73275rem;
+		border: 1.834px solid #151515;
+		padding: 1.15rem;
+		max-width: 3.325rem;
+		max-height: 3.325rem;
+
+		overflow: hidden;
+		transition: all 0.5s ease-in-out;
+		cursor: pointer;
+
+		span {
+			color: #151515;
+			text-align: center;
+			font-family: $font-family;
+			font-size: 1.14656rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			letter-spacing: -0.02294rem;
+			text-transform: lowercase;
+			transform: translateX(-200%);
+			transition: all 0.5s ease-in-out;
+		}
+
+		&-wrapper {
+			max-width: 13.75863rem;
+			width: 100%;
+		}
+		svg {
+			min-width: 1.03188rem;
+			min-height: 1.03188rem;
+			path {
+				stroke: #151515;
+				transition: all 0.5s ease-in-out;
+			}
+		}
+
+		&:hover {
+			border-radius: 5.73275rem;
+			background: #151515;
+			max-width: 13.75863rem;
+			padding: 1.14656rem 2.29313rem;
+
+			span {
+				color: #fff;
+				transform: translateX(0%);
+			}
+			svg {
+				path {
+					stroke: #fff;
+				}
+			}
+		}
+	}
+
+	&__value {
+		color: #151515;
+		font-family: $font-family;
+		font-size: 1.8345rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 110%; /* 2.01794rem */
+		letter-spacing: -0.03669rem;
+		display: flex;
+		align-items: center;
+		gap: 1.72rem;
+		width: 100%;
+	}
+}
