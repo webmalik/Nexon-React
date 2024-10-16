@@ -19,7 +19,7 @@ const Service = ({ title, description, value }) => {
                             <path
                                 d="M0.868164 9.14384H17.3785M17.3785 9.14384L9.12334 0.888672M17.3785 9.14384L9.12334 17.399"
                                 stroke="#151515"
-                                stroke-width="1.83448"
+                                strokeWidth="1.83448"
                             />
                         </svg>
                         <span>Детальніше</span>

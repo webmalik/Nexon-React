@@ -3,6 +3,7 @@
 .portfolio {
 	&__item {
 		position: relative;
+		@include adaptiveValue("border-radius", 36, 10);
 		border-radius: 2.29313rem;
 		border: 2px solid #434343;
 		overflow: hidden;
@@ -16,7 +17,6 @@
 		}
 
 		&:hover {
-			border-radius: 2.29313rem;
 			border: 2px solid #fff;
 			img {
 				max-height: 36.68963rem;
@@ -28,7 +28,6 @@
 				}
 				&__label {
 					color: #151515;
-					border-radius: 0rem 0rem 1.14656rem 1.14656rem;
 					background: #fff;
 				}
 				&__meta {
@@ -43,6 +42,7 @@
 		leading-trim: both;
 		text-edge: cap;
 		font-family: $font-family;
+		@include adaptiveValue("font-size", 128, 24);
 		font-size: 5.50344rem;
 		font-style: normal;
 		font-weight: 600;
@@ -65,7 +65,8 @@
 		backdrop-filter: blur(18.34482765197754px);
 		padding: 5.1595rem 1.71981rem 1.14656rem 1.71981rem;
 		color: #fff;
-		font-family: Gilroy;
+		font-family: $font-family;
+		@include adaptiveValue("font-size", 28, 20);
 		font-size: 1.8345rem;
 		font-style: normal;
 		font-weight: 600;
@@ -85,7 +86,7 @@
 		span {
 			color: #fff;
 			font-family: $font-family;
-			font-size: 1.14656rem;
+			@include adaptiveValue("font-size", 18, 14);
 			font-style: normal;
 			font-weight: 600;
 			line-height: normal;
@@ -93,6 +94,64 @@
 			padding: 0.80256rem 1.4905rem 0.68794rem 1.4905rem;
 			border-radius: 7.5945rem;
 			background: rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	.portfolio {
+		&__item {
+			&:hover {
+				@include adaptiveValue("border-radius", 36, 10);
+				border: 2px solid #fff;
+				img {
+					max-height: 36.68963rem;
+					opacity: 0.2;
+				}
+				.portfolio {
+					&__title {
+						bottom: 1rem;
+					}
+					&__label {
+						color: #151515;
+						background: #fff;
+					}
+					&__meta {
+						top: 1rem;
+					}
+				}
+			}
+		}
+		&__label {
+			position: absolute;
+			top: -2px;
+			left: 1rem;
+			border-radius: 0rem 0rem 10px 10px;
+			padding: 2rem 1rem 0.8rem 1rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 100%; /* 1.8345rem */
+			letter-spacing: -0.001rem;
+			transition: all 0.5s ease-in-out;
+		}
+
+		&__title {
+			left: 1rem;
+		}
+
+		&__meta {
+			position: absolute;
+			top: -20rem;
+			right: 1rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.57rem;
+			transition: all 0.5s ease-in-out;
+			span {
+				padding: 5px 15px;
+				border-radius: 7.5945rem;
+				background: rgba(255, 255, 255, 0.1);
+			}
 		}
 	}
 }

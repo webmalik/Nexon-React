@@ -1,0 +1,128 @@
+@import "../../root/scss/_sass";
+
+.question {
+	position: relative;
+	@include adaptiv-value("padding-top", toPX(3.75), toPX(1.5), 1);
+	@include adaptiv-value("padding-bottom", toPX(3.75), toPX(1.5), 1);
+	display: flex;
+	align-items: center;
+	@include adaptiv-value("gap", toPX(5.88), toPX(1.5), 1);
+	border-top: 1px solid rgba(21, 21, 21, 0.2);
+	cursor: pointer;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+	&__header {
+		display: flex;
+	}
+
+	&__number {
+		color: #151515;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1.5), toPX(0.875), 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%; /* 1.8rem */
+	}
+
+	&__title {
+		color: #151515;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(2.75), toPX(1.25), 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%; /* 3.3rem */
+		letter-spacing: -0.0825rem;
+		@include adaptiveValue("padding-right", 64, 32);
+	}
+
+	&__content {
+		color: rgba(21, 21, 21, 0.6);
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1.5), toPX(0.875), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		max-height: 0;
+		@include adaptiv-value("padding-right", toPX(11), toPX(2.2), 1);
+		transition: all 0.5s ease-in-out;
+		overflow: hidden;
+
+		p {
+			transition: all 0.7s ease-in-out;
+			transform: translateY(300px);
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiv-value("width", toPX(4), toPX(2), 1);
+		@include adaptiv-value("height", toPX(4), toPX(2), 1);
+		border-radius: 50%;
+		border: 1px solid rgba($color: #151515, $alpha: 0.2);
+
+		span {
+			display: block;
+			width: 1.75rem;
+			@include adaptiv-value("width", toPX(1.75), toPX(1), 1);
+			@include adaptiv-value("height", 3, 2, 1);
+			background-color: #151515;
+
+			&::after {
+				content: "";
+				display: block;
+				@include adaptiv-value("width", toPX(1.75), toPX(1), 1);
+				@include adaptiv-value("height", 3, 2, 1);
+				background-color: #151515;
+				transform: rotate(90deg);
+				transition: all 0.5s ease-in-out;
+			}
+		}
+	}
+
+	&.active {
+		.question {
+			&__content {
+				max-height: 30dvh;
+				margin-top: 1.88rem;
+				p {
+					transform: translateY(0);
+				}
+			}
+
+			&__number {
+				animation: num 0.8s;
+			}
+
+			&__icon {
+				span {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes num {
+	0% {
+		transform: translateY(-50px);
+	}
+	50% {
+		transform: translateY(100px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}

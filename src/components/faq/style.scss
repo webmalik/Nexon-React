@@ -1,0 +1,57 @@
+@import "../../root/scss/_sass";
+.faq {
+	background: #f3f3f3;
+	@include adaptiv-value("padding-top", 82, 0, 1);
+	@include adaptiv-value("padding-bottom", 150, 50, 1);
+	&__title {
+		color: #151515;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", 106, 42, 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 90%;
+		letter-spacing: -0.1325rem;
+		@include adaptiv-value("margin-bottom", 80, 30, 1);
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__control {
+		display: flex;
+		align-items: center;
+		@include adaptiv-value("gap", toPX(4.87), toPX(2), 1);
+		@include adaptiv-value("padding-top", toPX(3.12), toPX(1.5), 1);
+		border-top: 1px solid rgba(21, 21, 21, 0.2);
+	}
+
+	&__arrow {
+		@include adaptiv-value("max-width", toPX(3.5), toPX(1.5), 1);
+		@include adaptiv-value("max-height", toPX(3.5), toPX(1.5), 1);
+	}
+
+	&__button {
+		border-radius: 6.25rem;
+		background: #151515;
+		color: #f3f3f3;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", 28, 16, 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%;
+		display: flex;
+		@include adaptiv-value("max-width", toPX(25), toPX(10), 1);
+		width: 100%;
+		@include adaptiv-value("padding-top", 46, 14, 1);
+		@include adaptiv-value("padding-bottom", 46, 14, 1);
+		@include adaptiv-value("padding-left", 40, 15, 1);
+		@include adaptiv-value("padding-right", 40, 15, 1);
+		justify-content: center;
+		align-items: center;
+		gap: 0.625rem;
+		flex-shrink: 0;
+		cursor: pointer;
+	}
+}

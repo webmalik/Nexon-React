@@ -1,0 +1,131 @@
+@import "../../root/scss/_sass";
+
+.contacts {
+	background: #f3f3f3;
+	@include adaptiv-value("padding-top", toPX(6.5), toPX(3), 1);
+	@include adaptiv-value("padding-bottom", toPX(6.5), toPX(3), 1);
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 0.34rem;
+	}
+
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		@include adaptiveValue("gap", 72, 30);
+		border-radius: 2.27094rem;
+		background: #fff;
+		@include adaptiv-value("padding", toPX(3.41), toPX(1.5), 1);
+	}
+
+	&__headers {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 0, 15);
+		height: 100%;
+	}
+
+	&__title {
+		color: #151515;
+		font-feature-settings: "salt" on;
+		font-family: $font-family;
+		@include adaptiveValue("font-size", 68, 42);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 90%; /* 3.88325rem */
+		letter-spacing: -0.17256rem;
+	}
+
+	&__subtitle {
+		color: #151515;
+		font-feature-settings: "salt" on;
+		font-family: $font-family;
+		@include adaptiveValue("font-size", 18, 16);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 1.36256rem */
+		letter-spacing: -0.02269rem;
+	}
+
+	&__form {
+		width: 100%;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include adaptiveValue("border-radius", 36, 16);
+		background: #fff;
+		@include adaptiv-value("padding", toPX(3.41), toPX(1.5), 1);
+	}
+
+	&__label {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		span {
+			color: #151515;
+			font-feature-settings: "salt" on;
+			font-family: $font-family;
+			@include adaptiveValue("font-size", 22, 18);
+			font-style: normal;
+			font-weight: 400;
+			line-height: 120%; /* 1.63506rem */
+			letter-spacing: -0.02725rem;
+		}
+
+		img {
+			max-width: 0.91rem;
+			width: auto;
+			height: auto;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 27, 20);
+	}
+
+	&__mail {
+		color: #151515;
+		font-feature-settings: "salt" on;
+		font-family: $font-family;
+		@include adaptiveValue("font-size", 22, 18);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 1.63506rem */
+		letter-spacing: -0.02725rem;
+	}
+
+	&__phone {
+		color: #151515;
+		font-feature-settings: "salt" on;
+		font-family: $font-family;
+		@include adaptiveValue("font-size", 38, 26);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 110%; /* 2.62294rem */
+		letter-spacing: -0.04769rem;
+	}
+
+	button {
+		cursor: pointer;
+	}
+}
+
+@media (max-width: $tablet) {
+	.contacts {
+		&__wrapper {
+			grid-template-columns: 1fr;
+		}
+
+		&__content {
+			flex-direction: column;
+		}
+	}
+}

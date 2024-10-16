@@ -6,11 +6,13 @@
 		color: #fff;
 		text-align: center;
 		font-family: $font-family;
-		font-size: 128px;
+		@include adaptiveValue("font-size", 128, 42);
 		font-style: normal;
 		font-weight: 600;
 		line-height: 110%; /* 140.8px */
 		letter-spacing: -2.56px;
+		@include adaptiveValue("margin-top", 150, 50);
+		@include adaptiveValue("margin-bottom", 70, 30);
 		margin: 9.38rem 0 4.38rem;
 	}
 

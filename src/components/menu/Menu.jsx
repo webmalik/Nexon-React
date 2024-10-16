@@ -1,49 +1,106 @@
 import { useStateContext } from '../../StateContext';
 import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from 'react';
 
 import './style.scss';
 
-import close from './close.svg';
 import instagram from './instagram.svg';
 import telegram from './telegram.svg';
+
+import { ReactComponent as CloseIcon } from './close.svg';
 
 const Menu = () => {
     const { isOpen, toggleMenu } = useStateContext();
     const { t } = useTranslation();
+    const [targetId, setTargetId] = useState('');
+
+    useEffect(() => {
+        if (!isOpen && targetId) {
+            document.body.style.overflow = 'visible';
+            const element = document.getElementById(targetId);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+            setTargetId('');
+        }
+    }, [isOpen, targetId]);
+
+    const handleScrollTo = (id) => {
+        setTargetId(id);
+
+        toggleMenu();
+    };
+
+    const handleInstantScrollTo = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const elementTop = element.offsetTop;
+
+            document.documentElement.scrollTop = elementTop;
+            document.body.scrollTop = elementTop;
+        }
+    };
+
     return (
         <div className={`menu__body ${isOpen ? 'active' : ''}`}>
             <div className="menu__close" onClick={toggleMenu}>
-                <img src={close} alt="" />
+                <CloseIcon width="25" height="25" fill="currentColor" />
             </div>
             <div className="menu__nav">
                 <ol>
                     <li>
-                        <a href="">{t('menu-item-1')}</a>
+                        <button
+                            // onMouseEnter={() => handleInstantScrollTo('info')}
+                            onClick={() => handleScrollTo('info')}>
+                            {t('menu-item-1')}
+                        </button>
                     </li>
                     <li>
-                        <a href="">{t('menu-item-2')}</a>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('block1')}
+                            onClick={() => handleScrollTo('block1')}>
+                            {t('menu-item-2')}
+                        </button>
                     </li>
                     <li>
-                        <a href="">{t('menu-item-3')}</a>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('block1')}
+                            onClick={() => handleScrollTo('block1')}>
+                            {t('menu-item-3')}
+                        </button>
                     </li>
                     <li>
-                        <a href="">{t('menu-item-4')}</a>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('block1')}
+                            onClick={() => handleScrollTo('block1')}>
+                            {t('menu-item-4')}
+                        </button>
                     </li>
                     <li>
-                        <a href="">{t('menu-item-5')}</a>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('block1')}
+                            onClick={() => handleScrollTo('block1')}>
+                            {t('menu-item-5')}
+                        </button>
                     </li>
                     <li>
-                        <a href="">{t('menu-item-6')}</a>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('contacts')}
+                            onClick={() => handleScrollTo('contacts')}>
+                            {t('menu-item-6')}
+                        </button>
                     </li>
                 </ol>
             </div>
             <div className="menu__footer">
-                <a href="#" className="menu__icon">
+                <button className="menu__icon">
                     <img src={instagram} alt="" />
-                </a>
-                <a href="#" className="menu__icon">
+                </button>
+                <button className="menu__icon">
                     <img src={telegram} alt="" />
-                </a>
+                </button>
             </div>
         </div>
     );

@@ -10,6 +10,9 @@ import Projects from './components/projects/Projects';
 import Services from './components/services/Services';
 import Mail from './components/mail/Mail';
 import Reviews from './components/reviews/Reviews';
+import Faq from './components/faq/Faq';
+import Contacts from './components/contacts/Contacts';
+import Footer from './components/footer/Footer';
 
 function App() {
     return (
@@ -35,6 +38,9 @@ function AppContent() {
                 <Services />
                 <Mail />
                 <Reviews />
+                <Faq />
+                <Contacts />
+                <Footer />
             </div>
         </div>
     );

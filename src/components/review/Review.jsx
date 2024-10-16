@@ -4,6 +4,7 @@ import arrow from './arrow.png';
 
 const Review = ({ isOpen, toggleAccordion, title, nikname, description, image }) => {
     const [contentHeight, setContentHeight] = useState(0);
+    const contentRef = React.createRef();
 
     useEffect(() => {
         if (isOpen) {
@@ -11,9 +12,7 @@ const Review = ({ isOpen, toggleAccordion, title, nikname, description, image })
         } else {
             setContentHeight(0);
         }
-    }, [isOpen]);
-
-    const contentRef = React.createRef();
+    }, [isOpen, contentRef]);
 
     return (
         <div className={`review ${isOpen ? 'active' : ''}`} onClick={toggleAccordion}>

@@ -27,20 +27,27 @@
 		cursor: pointer;
 		width: 25.251px;
 		height: 25.251px;
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	&__nav {
 		ol {
 			display: flex;
 			flex-direction: column;
-			gap: 50px;
+			@include adaptiveValue("gap", 50, 0);
 			list-style-type: none;
 			counter-reset: item;
+			cursor: pointer;
 			li {
 				display: flex;
 				align-items: center;
+				@include adaptiveValue("gap", 70, 10);
 				gap: 70px;
-				a {
+				button {
 					color: rgba(255, 255, 255, 0.2);
 					font-family: $font-family;
 					@include adaptiv-value("font-size", toPX(3.13), toPX(1.5), 1);
@@ -70,7 +77,8 @@
 					transition: all 0.3s ease-in-out;
 				}
 				&:hover {
-					a {
+					a,
+					button {
 						color: rgb(255, 255, 255);
 						transition: all 0.3s ease-in-out;
 					}

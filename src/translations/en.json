@@ -35,6 +35,28 @@
 
     "mail-title-1": "Just enter the email,",
     "mail-title-2": "that we can contact",
+    "mail-message-success": "Your contact data is successfully sent.We will contact you soon!",
+    "mail-message-error": "An error occurred while sending a message",
+    "mail-message-error-valid": "Please enter a valid email address.",
+    "mail-message-error-valid-void": "Please enter your email address.",
 
-    "reviews-title": "Real Reviews of Clients on Cooperation"
+    "reviews-title": "Real Reviews of Clients on Cooperation",
+
+    "faq-title": "Frequent questions",
+    "faq-button": "I am with you",
+
+    "contacts-title": "Complete the form",
+    "contacts-subtitle": "and get some gift or other bush",
+    "contacts-label": "Contacts",
+    "contacts-phone": "+380 66 456 18 10",
+    "contacts-mail": "nexon.studio@gmail.com",
+
+    "form-placeholder-name": "First and last name",
+    "form-placeholder-tel": "Phone number",
+    "form-placeholder-mail": "Email",
+    "form-button": "Enroll in an appointment",
+
+    "footer-oferta": "Offer contract",
+    "footer-polit": "Privacy policy",
+    "footer-slug": "We do sites on which they sit"
 }

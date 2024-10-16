@@ -5,7 +5,7 @@ import './style.scss';
 const Info = () => {
     const { t } = useTranslation();
     return (
-        <section className="info">
+        <section className="info" id="info">
             <div className="container">
                 <div className="info__grid">
                     <div className="info__item">
@@ -31,9 +31,7 @@ const Info = () => {
                         <div className="info__text">{t('info-info__text-4')}</div>
                     </div>
                     <div className="info__item">
-                        <a href="#" className="info__button">
-                            {t('button')}
-                        </a>
+                        <button className="info__button">{t('button')}</button>
                     </div>
                     <div className="info__item">
                         <div className="info__title">{t('info-info__title-5')}</div>

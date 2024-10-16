@@ -1,10 +1,12 @@
 @import "../../root/scss/_sass";
 
 .banner {
+	position: sticky;
 	&__circle {
-		@include adaptiv-value("width", 242, 125, 1);
-		@include adaptiv-value("height", 242, 125, 1);
+		@include adaptiv-value("width", 242, 90, 1);
+		@include adaptiv-value("height", 242, 90, 1);
 		position: absolute;
+		@include adaptiveValue("top", 0, 20);
 
 		img {
 			width: 100%;
@@ -27,24 +29,52 @@
 			margin-left: auto;
 			margin-right: 0;
 			margin-bottom: 59px;
+
+			@media (max-width: $mobile) {
+				text-align: right;
+				margin-top: -50px;
+				margin-bottom: 80px;
+			}
 		}
 
 		&-bottom {
 			min-width: 22.56rem;
 			position: relative;
 			transform: translateY(-8rem);
+
+			@media (max-width: $tablet) {
+				transform: translateY(-4rem);
+			}
+
+			@media (max-width: 680px) {
+				transform: translateY(0rem);
+				min-width: auto;
+				max-width: none;
+				padding-top: 20px;
+				padding-bottom: 30px;
+
+				br {
+					display: none;
+				}
+				// @include adaptiveValue("max-width", 350, 150);
+			}
 		}
 	}
 
 	&__title {
 		color: $white_color;
 		font-family: $font-family;
-		@include adaptiv-value("font-size", toPX(12.25), toPX(3), 1);
+		@include adaptiv-value("font-size", toPX(11), toPX(2.5), 1);
 		font-style: normal;
 		font-weight: 600;
 		line-height: 100%; /* 12.25rem */
 		letter-spacing: -0.245rem;
 		text-transform: uppercase;
+		text-wrap: nowrap;
+
+		@media (max-width: $tablet) {
+			letter-spacing: -0.105rem;
+		}
 	}
 
 	&__right {

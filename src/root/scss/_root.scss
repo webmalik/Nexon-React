@@ -17,6 +17,13 @@ img {
 	object-position: center;
 }
 
+a,
+button {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
 .wrapper {
 	min-height: 100%;
 	position: relative;
@@ -38,6 +45,14 @@ img {
 		cursor: pointer;
 		max-height: 100dvh;
 		overflow: hidden;
+
+		@media (max-width: $tablet) {
+			transform: perspective(1000px) rotateY(-25deg) scale(0.45) translateY(-50px) translateX(300px);
+		}
+		@media (max-width: 600px) {
+			transform: perspective(2000px) rotateY(90deg) scale(0.55) rotateZ(180deg) translateY(300px)
+				translateX(-500px);
+		}
 	}
 }
 
@@ -199,7 +214,7 @@ img {
 @include media-width($sm) {
 	.container {
 		max-width: none;
-		padding: 0 2rem;
+		padding: 0 15px;
 	}
 }
 

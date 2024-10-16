@@ -2,17 +2,19 @@
 
 .mail {
 	background: #151515;
-	padding: 5.62rem 0;
+	@include adaptiveValue("padding-top", 90, 30);
+	@include adaptiveValue("padding-bottom", 90, 50);
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
+		@include adaptiveValue("gap", 100, 20);
 		gap: 6.25rem;
 	}
 
 	&__title {
 		color: #fff;
 		font-family: $font-family;
-		font-size: 6rem;
+		@include adaptiveValue("font-size", 96, 28);
 		font-style: normal;
 		font-weight: 500;
 		line-height: 100%;
@@ -21,59 +23,110 @@
 		span {
 			padding-left: 9rem;
 		}
+
+		@media (max-width: $mobile) {
+			br {
+				display: none;
+			}
+		}
 	}
 
 	&__form {
 		display: flex;
 		align-items: center;
-		gap: 5rem;
+		@include adaptiveValue("gap", 80, 0);
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
 		& > img {
-			width: 3.5rem;
-			height: 3.5rem;
+			@include adaptiveValue("width", 56, 24);
+			@include adaptiveValue("height", 56, 24);
+
+			@media (max-width: $mobile) {
+				transform: rotate(90deg);
+			}
 		}
 	}
 
 	&__input-wrapper {
 		display: flex;
 		align-items: center;
+		@include adaptiveValue("border-radius", 30, 10);
 		border-radius: 1.875rem;
 		background: rgba(255, 255, 255, 0.1);
-		padding: 0.62rem 0.625rem 0.62rem 3.125rem;
+		@include adaptiveValue("padding-left", 50, 20);
+		@include adaptiveValue("padding-right", 10, 10);
+		@include adaptiveValue("padding-bottom", 10, 10);
+		@include adaptiveValue("padding-top", 10, 10);
 		width: 100%;
+		box-shadow: none;
+
+		&.invalid {
+			box-shadow: 0px 0px 5px 2px rgba($color: #ff0000, $alpha: 0.2);
+		}
+		&.valid {
+			box-shadow: 0px 0px 5px 2px rgba($color: #09ff00, $alpha: 0.2);
+		}
+
+		form {
+			display: flex;
+			align-items: center;
+			width: 100%;
+		}
 		input {
 			width: 100%;
 			color: #fff;
 			font-family: $font-family;
-			font-size: 2.5rem;
+			@include adaptiveValue("font-size", 40, 16);
 			font-style: normal;
 			font-weight: 500;
 			line-height: 110%;
-			padding-right: 5rem;
+			@include adaptiveValue("padding-right", 80, 10);
 
 			&::placeholder {
 				color: rgba(255, 255, 255, 0.4);
 			}
 		}
+		p {
+			color: #fff;
+			font-family: $font-family;
+			@include adaptiveValue("font-size", 40, 16);
+			font-style: normal;
+			font-weight: 500;
+			line-height: 110%;
+		}
 		button {
 			display: flex;
 			align-items: center;
 			gap: 0;
-			border-radius: 1.25rem;
+			@include adaptiveValue("border-radius", 30, 10);
 			background: #fff;
-			padding: 2.5rem 5rem;
+			@include adaptiveValue("padding-top", 40, 5);
+			@include adaptiveValue("padding-bottom", 40, 5);
+			@include adaptiveValue("padding-left", 80, 10);
+			@include adaptiveValue("padding-right", 80, 5);
 			color: #151515;
 			font-family: $font-family;
-			font-size: 2.5rem;
+			@include adaptiveValue("font-size", 40, 16);
 			font-style: normal;
 			font-weight: 500;
 			line-height: 110%;
 			transition: all 0.5s ease-in-out;
 			cursor: pointer;
+
+			&.mail__button-disabled,
+			&:disabled {
+				opacity: 0.8;
+				pointer-events: none;
+			}
+
 			span {
 				display: flex;
-				width: 2.5rem;
-				height: 2.5rem;
+				@include adaptiveValue("width", 40, 25);
+				@include adaptiveValue("height", 40, 25);
 				align-items: center;
 				justify-content: center;
 				border-radius: 6.25rem;
@@ -104,6 +157,20 @@
 						}
 					}
 				}
+
+				@media (max-width: $mobile) {
+					gap: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	.mail {
+		&__title {
+			span {
+				padding-left: 0;
 			}
 		}
 	}

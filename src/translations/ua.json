@@ -33,7 +33,31 @@
     "services": "Наші послуги",
 
     "mail-title-1": "Просто введіть email,",
-    "mail-title-2": "щоб ми зв'язалися",
+    "mail-title-2": " щоб ми зв'язалися",
+    "mail-message-success": "Ваші контактні дані успішно відправлені. <br> Ми зв'яжемось із вами найближчим часом!",
+    "mail-message-error": "Сталася помилка під час відправлення повідомлення",
+    "mail-message-error-valid": "Будь ласка, введіть дійсну адресу електронної пошти.",
+    "mail-message-error-valid-void": "Будь ласка, введіть адресу електронної пошти.",
 
-    "reviews-title": "Реальні відгуки клiентiв про співпрацю"
+    "reviews-title": "Реальні відгуки клiентiв про співпрацю",
+
+    "faq-title": "Часті запитання",
+    "faq-button": "Я з вами",
+
+    "contacts-title": "Заповніть форму",
+    "contacts-subtitle": "та отримайте якийсь подарунок, або іншу плюшку",
+    "contacts-label": "Контакти",
+    "contacts-phone": "+380 66 456 18 10",
+    "contacts-mail": "nexon.studio@gmail.com",
+
+    "form-placeholder-name": "Ім'я та прізвище",
+    "form-placeholder-tel": "Номер телефону",
+    "form-placeholder-mail": "Email",
+    "form-button": "Записатись на прийом",
+    "form-message-error-user": "Занадто коротке ім'я",
+    "form-message-error-phone": "Невірний телефон",
+
+    "footer-oferta": "Договір оферти",
+    "footer-polit": "Політика конфіденційності",
+    "footer-slug": "Робимо сайти на яких сидять"
 }

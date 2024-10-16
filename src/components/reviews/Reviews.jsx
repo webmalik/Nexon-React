@@ -26,6 +26,7 @@ const Reviews = () => {
                             return (
                                 <Review
                                     id={review.id}
+                                    key={review.id}
                                     toggleAccordion={() => toggleAccordion(review.id)}
                                     isOpen={openIndex === review.id}
                                     title={review.title[currentLanguageKey]}

@@ -2,11 +2,12 @@
 
 .services {
 	background: #151515;
-	padding-top: 9.42rem;
-	padding-bottom: 9.41rem;
+	@include adaptiveValue("padding-top", 150, 50);
+	@include adaptiveValue("padding-bottom", 150, 50);
 	&__header {
 		color: #fff;
 		font-family: $font-family;
+		@include adaptiveValue("font-size", 128, 42);
 		font-size: 8.125rem;
 		font-style: normal;
 		font-weight: 500;
@@ -15,7 +16,7 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
-		margin-bottom: 5rem;
+		@include adaptiveValue("margin-bottom", 80, 30);
 
 		img {
 			width: 1.25rem;
@@ -27,6 +28,7 @@
 	&__wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		@include adaptiveValue("gap", 4, 20);
 		gap: 0.23rem;
 
 		&:not(:hover) {
@@ -34,6 +36,14 @@
 			.services__item {
 				opacity: 1;
 			}
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	.services {
+		&__wrapper {
+			grid-template-columns: 1fr;
 		}
 	}
 }
