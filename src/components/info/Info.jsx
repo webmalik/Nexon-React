@@ -5,7 +5,7 @@ import './style.scss';
 const Info = () => {
     const { t } = useTranslation();
     return (
-        <section className="info" id="info">
+        <section className="info not-sticky" id="info">
             <div className="container">
                 <div className="info__grid">
                     <div className="info__item">

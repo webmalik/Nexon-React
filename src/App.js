@@ -31,16 +31,20 @@ function AppContent() {
                 <Menu />
             </div>
             <div id="wrapper" className={`wrapper grid__bg ${isOpen ? 'active' : ''}`}>
-                <Header />
-                <Hero />
+                <div className="p-sticky">
+                    <Header />
+                    <Hero />
+                </div>
                 <Info />
                 <Projects />
                 <Services />
-                <Mail />
-                <Reviews />
-                <Faq />
-                <Contacts />
-                <Footer />
+                <div>
+                    <Mail />
+                    <Reviews />
+                    <Faq />
+                    <Contacts />
+                    <Footer />
+                </div>
             </div>
         </div>
     );

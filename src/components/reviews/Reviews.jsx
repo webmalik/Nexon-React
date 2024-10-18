@@ -17,7 +17,7 @@ const Reviews = () => {
     };
 
     return (
-        <div className="reviews">
+        <div className="reviews not-sticky">
             <div className="container">
                 <div className="reviews__wrapper">
                     <div className="reviews__title">{t('reviews-title')}</div>

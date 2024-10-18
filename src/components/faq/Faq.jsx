@@ -18,7 +18,7 @@ const Faq = () => {
     };
 
     return (
-        <div className="faq">
+        <div className="faq not-sticky">
             <div className="container">
                 <div className="faq__title">{t('faq-title')}</div>
                 <div className="faq__wrapper">

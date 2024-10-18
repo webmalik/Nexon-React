@@ -16,7 +16,7 @@ const Contacts = () => {
         window.open(`mailto:${email}`, '_blank');
     };
     return (
-        <div className="contacts" id="contacts">
+        <div className="contacts not-sticky" id="contacts">
             <div className="container">
                 <div className="contacts__wrapper">
                     <div className="contacts__content">

@@ -18,7 +18,7 @@ const Header = () => {
     };
 
     return (
-        <header className="header">
+        <header className="header not-sticky">
             <div className="container">
                 <div className="header__menu">
                     <span className="header__menu-button" onClick={toggleMenu}>

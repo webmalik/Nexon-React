@@ -3,7 +3,6 @@
 * {}
 
 .banner {
-	position: sticky;
 	&__circle {
 		@include adaptiv-value("width", 242, 90, 1);
 		@include adaptiv-value("height", 242, 90, 1);

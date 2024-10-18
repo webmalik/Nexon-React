@@ -61,7 +61,7 @@ const Mail = () => {
     };
 
     return (
-        <section className="mail">
+        <section className="mail p-sticky">
             <div className="container">
                 <div className="mail__wrapper">
                     <div className="mail__title">

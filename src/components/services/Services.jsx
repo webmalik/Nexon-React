@@ -11,7 +11,7 @@ const Services = () => {
     const currentLanguageKey = i18n.language;
 
     return (
-        <section className="services">
+        <section className="services not-sticky">
             <div className="container">
                 <div className="services__header">
                     {t('services')}
