@@ -34,7 +34,7 @@
 
 	&__button {
 		border-radius: 6.25rem;
-		background: #151515;
+		background-color: #151515;
 		color: #f3f3f3;
 		font-family: $font-family;
 		@include adaptiv-value("font-size", 28, 16, 1);
@@ -53,5 +53,13 @@
 		gap: 0.625rem;
 		flex-shrink: 0;
 		cursor: pointer;
+		transition: all .2s ease-in-out;
+
+		&:hover {
+			background-color: #E9EEFC;
+			transition: all 0.2s ease-in-out;
+			color: #151515;
+			font-size: calc(min(30px, 100% + .8vw));
+		}
 	}
 }
