@@ -25,7 +25,6 @@ const Services = () => {
             scrollTrigger: {
                 trigger: services.current,
                 start: 'top+=50 center', // Запуск анимации, когда блок services на 100px ниже
-                markers: true
             },
         });
     }, []);
@@ -34,7 +33,7 @@ const Services = () => {
         <section ref={services} className="services not-sticky">
             <div className="container">
                 <div className="services__header">
-                    {t('services')}
+                    <span className='ttt'>{t('services')}</span>
                     <img ref={ImgRotate} src={headerVector} alt="" />
                 </div>
                 <div className="services__wrapper">

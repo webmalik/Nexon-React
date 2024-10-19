@@ -20,7 +20,7 @@ const Reviews = () => {
         <div className="reviews not-sticky">
             <div className="container">
                 <div className="reviews__wrapper">
-                    <div className="reviews__title">{t('reviews-title')}</div>
+                    <div className="reviews__title ttt">{t('reviews-title')}</div>
                     <div className="reviews__content">
                         {reviewsList.map((review) => {
                             return (

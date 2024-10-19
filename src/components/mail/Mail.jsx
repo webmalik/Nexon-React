@@ -64,7 +64,7 @@ const Mail = () => {
         <section className="mail p-sticky">
             <div className="container">
                 <div className="mail__wrapper">
-                    <div className="mail__title">
+                    <div className="mail__title ttt">
                         {t('mail-title-1')}
                         <br />
                         <span>{t('mail-title-2')}</span>
