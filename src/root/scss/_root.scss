@@ -35,6 +35,7 @@ button {
 		overflow 0.5s ease-in-out 0.5s;
 
 	overflow: visible;
+	
 
 	.p-sticky {
 		position: sticky !important;
@@ -53,7 +54,7 @@ button {
 		padding-bottom: .1em;
 		padding-left: .05em;
 		padding-right: .05em;
-		overflow: hidden;
+		overflow-y: clip;
 	}
 
 	&.active {
@@ -197,6 +198,7 @@ button {
 		-2px -2px,
 		-1px -1px,
 		-1px -1px;
+	background-attachment: fixed;
 }
 
 .container {

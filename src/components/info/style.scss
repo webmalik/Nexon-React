@@ -11,7 +11,7 @@
 	}
 
 	&__item {
-		border: 0.06rem solid rgb(204, 204, 204);
+		// border: 0.06rem solid rgb(204, 204, 204);
 		padding: 55px;
 		display: flex;
 		flex-direction: column;
@@ -30,28 +30,43 @@
 		}
 
 		&:nth-child(2) {
+			border-width: 0.06rem 0.06rem 0 0.06rem;
+			border-style: solid;
+			border-color: rgb(204, 204, 204);
 			border-radius: 1.15rem 1.15rem 0rem 0rem;
 		}
 		&:nth-child(3) {
+			border-width: 0.06rem 0 0 0.06rem;
+			border-style: solid;
+			border-color: rgb(204, 204, 204);
 			border-radius: 1.15rem 0rem 0rem 0rem;
+		}
+		&:nth-child(4) {
+			border: 0.06rem solid rgb(204, 204, 204);
 		}
 		&:nth-child(5) {
 			border-radius: 0rem 0rem 1.15rem 0rem;
+			border-width: 0.06rem 0.06rem 0.06rem 0;
+			border-style: solid;
+			border-color: rgb(204, 204, 204);
 		}
 		&:nth-child(6) {
 			border: 0.06rem solid rgb(204, 204, 204);
 			border-radius: 0rem 0rem 0rem 1.15rem;
 			background-color: rgb(224, 231, 248);
-			transition: background-color .2s ease-in-out;
+			transition: background-color .2s ease-in-out, transform .4s ease-in-out;
 			padding: 0;
 
 			&:hover {
 				background-color: rgb(233, 238, 252);
-				transition: background-color .2s ease-in-out;
+				transition: background-color .2s ease-in-out, transform .4s ease-in-out;
+				transform: scale(1.02);
 			}
 		}
 		&:nth-child(7) {
-			border: 0.06rem solid rgb(204, 204, 204);
+			border-width: 0 0.06rem 0.06rem 0;
+			border-style: solid;
+			border-color: rgb(204, 204, 204);
 			border-radius: 0rem 0rem 1.15rem 0rem;
 		}
 	}
@@ -64,9 +79,17 @@
 		line-height: 110%;
 		letter-spacing: -2%;
 		text-align: left;
-		text-indent: 200px;
+		
 		margin-top: -5rem;
 		//text-wrap: balance;
+
+		.line-wrapper {
+
+			&:first-child .single-line {
+				text-align: right !important;
+			}
+			
+		}
 	}
 
 	&__title {
@@ -79,6 +102,10 @@
 		letter-spacing: 0%;
 		text-align: left;
 		text-transform: uppercase;
+
+		&.ttt {
+			display: flex;
+		}
 
 		span {
 			font-size: 2.76rem;
@@ -159,6 +186,14 @@
 			text-indent: 0;
 			text-align: center;
 			text-wrap: balance;
+
+			.line-wrapper {
+
+				&:first-child .single-line {
+					text-align: center !important;
+				}
+				
+			}
 		}
 	}
 }

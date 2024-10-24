@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStateContext } from '../../StateContext';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
+import useScrollTo from '../useScrollTo/useScrollTo';
 
 import './style.scss';
 
@@ -12,10 +12,7 @@ import { ReactComponent as MenuIcon } from './menu.svg';
 const Header = () => {
     const { t } = useTranslation();
     const { toggleMenu } = useStateContext();
-
-    const changeLanguage = (lng) => {
-        i18next.changeLanguage(lng);
-    };
+    const { handleScrollToMain } = useScrollTo();
 
     return (
         <header className="header not-sticky">
@@ -28,10 +25,10 @@ const Header = () => {
                     </span>
                     <div className="header__menu-wrapper">
                         <div className="header__lang">
-                            <span onClick={() => changeLanguage('ua')}>Ua</span>
-                            <span onClick={() => changeLanguage('en')}>En</span>
+                            <span onClick={() => window.location.href = '/ua/'}>Ua</span>
+                            <span onClick={() => window.location.href = '/'}>En</span>
                         </div>
-                        <div className="header__button">{t('button')}</div>
+                        <div className="header__button" onClick={() => handleScrollToMain('contacts')}>{t('button')}</div>
                     </div>
                 </div>
             </div>

@@ -28,14 +28,15 @@ const textReveals = () => {
 
         // Анимация появления с задержкой
         gsap.from(lines, {
-            yPercent: 110,
+            yPercent: 130,
             rotate: 0.001,
             ease: 'power2.out',
-            stagger: 0.1,
-            delay: 0.3, // Добавляем задержку перед анимацией
+            stagger: 0.2,
+            delay: 0.1, // Добавляем задержку перед анимацией
+            duration: 1.3,
             scrollTrigger: {
                 trigger: element,
-                start: 'top 90%',
+                start: 'top 85%',
                 onComplete: () => {
                     lines.forEach((line) => {
                         const parent = line.parentNode;
@@ -65,7 +66,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section ref={container} className="main__banner banner not-sticky">
+        <section ref={container} className="main__banner banner p-sticky">
             <div className="container">
                 <div className="banner__circle">
                     <img src={circle} alt="Circle" />

@@ -7,14 +7,18 @@ import ua from './translations/ua.json';
 
 import App from './App';
 
-const userLanguage = navigator.language || navigator.userLanguage;
+// Получаем текущий URL
+const currentUrl = window.location.href;
 
+// Устанавливаем язык по умолчанию
 let selectedLanguage = 'en';
 
-if (userLanguage.startsWith('uk') || userLanguage.startsWith('ua')) {
+// Проверяем, содержит ли URL "/ua/"
+if (currentUrl.includes('/ua/')) {
     selectedLanguage = 'ua';
 }
 
+// Инициализация i18next
 i18n.init({
     fallbackLng: selectedLanguage,
     resources: {
@@ -22,9 +26,6 @@ i18n.init({
             translation: en,
         },
         ua: {
-            translation: ua,
-        },
-        uk: {
             translation: ua,
         },
     },

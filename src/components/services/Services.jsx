@@ -30,7 +30,7 @@ const Services = () => {
     }, []);
 
     return (
-        <section ref={services} className="services not-sticky">
+        <section ref={services} className="services not-sticky" id="services">
             <div className="container">
                 <div className="services__header">
                     <span className='ttt'>{t('services')}</span>

@@ -6,7 +6,7 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-top: 53px;
-		margin-bottom: 105px;
+		margin-bottom: 75px;
 	}
 
 	&__menu-button {
@@ -86,5 +86,6 @@
 		@include adaptiveValue("padding-bottom", 16, 10);
 		@include adaptiveValue("padding-left", 30, 15);
 		@include adaptiveValue("padding-right", 30, 15);
+		cursor: pointer;
 	}
 }

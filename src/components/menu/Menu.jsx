@@ -59,37 +59,44 @@ const Menu = () => {
                     </li>
                     <li>
                         <button
-                            onMouseEnter={() => handleInstantScrollTo('block1')}
-                            onClick={() => handleScrollTo('block1')}>
+                            onMouseEnter={() => handleInstantScrollTo('portfolio')}
+                            onClick={() => handleScrollTo('portfolio')}>
                             {t('menu-item-2')}
                         </button>
                     </li>
                     <li>
                         <button
-                            onMouseEnter={() => handleInstantScrollTo('block1')}
-                            onClick={() => handleScrollTo('block1')}>
+                            onMouseEnter={() => handleInstantScrollTo('services')}
+                            onClick={() => handleScrollTo('services')}>
                             {t('menu-item-3')}
                         </button>
                     </li>
                     <li>
                         <button
-                            onMouseEnter={() => handleInstantScrollTo('block1')}
-                            onClick={() => handleScrollTo('block1')}>
+                            onMouseEnter={() => handleInstantScrollTo('mail')}
+                            onClick={() => handleScrollTo('mail')}>
                             {t('menu-item-4')}
                         </button>
                     </li>
                     <li>
                         <button
-                            onMouseEnter={() => handleInstantScrollTo('block1')}
-                            onClick={() => handleScrollTo('block1')}>
+                            onMouseEnter={() => handleInstantScrollTo('reviews')}
+                            onClick={() => handleScrollTo('reviews')}>
                             {t('menu-item-5')}
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            onMouseEnter={() => handleInstantScrollTo('faq')}
+                            onClick={() => handleScrollTo('faq')}>
+                            {t('menu-item-6')}
                         </button>
                     </li>
                     <li>
                         <button
                             onMouseEnter={() => handleInstantScrollTo('contacts')}
                             onClick={() => handleScrollTo('contacts')}>
-                            {t('menu-item-6')}
+                            {t('menu-item-7')}
                         </button>
                     </li>
                 </ol>

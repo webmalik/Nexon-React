@@ -1,8 +1,8 @@
 import './style.scss';
 
-const Project = ({ title, label, image, tags }) => {
+const Project = ({ title, label, image, tags, link }) => {
     return (
-        <div className="portfolio__item">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="portfolio__item">
             <img src={image} alt="" />
             <div className="portfolio__label">{label}</div>
             <div className="portfolio__title">{title}</div>
@@ -11,7 +11,7 @@ const Project = ({ title, label, image, tags }) => {
                     <span key={index}>{tag}</span>
                 ))}
             </div>
-        </div>
+        </a>
     );
 };
 

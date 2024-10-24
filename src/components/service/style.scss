@@ -26,6 +26,10 @@
 				}
 			}
 		}
+
+		&:nth-child(4) {
+			background: #FDCE40;
+		}
 	}
 
 	&__inner {
@@ -37,7 +41,7 @@
 	&__title {
 		color: #151515;
 		font-family: $font-family;
-		@include adaptiveValue("font-size", 50, 28);
+		@include adaptiveValue("font-size", 46, 28);
 		font-style: normal;
 		font-weight: 600;
 		line-height: 100%; /* 3.09569rem */
@@ -83,7 +87,7 @@
 			line-height: normal;
 			letter-spacing: -0.02294rem;
 			text-transform: lowercase;
-			transform: translateX(-200%);
+			transform: translateX(-300%);
 			transition: all 0.5s ease-in-out;
 		}
 

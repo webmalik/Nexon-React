@@ -13,6 +13,7 @@ import Reviews from './components/reviews/Reviews';
 import Faq from './components/faq/Faq';
 import Contacts from './components/contacts/Contacts';
 import Footer from './components/footer/Footer';
+import { ReactLenis } from 'lenis/react';
 
 function App() {
     return (
@@ -23,18 +24,18 @@ function App() {
 }
 
 function AppContent() {
+
     const { isOpen, toggleMenu } = useStateContext();
 
     return (
+        <ReactLenis root>
         <div className="site" onClick={isOpen ? toggleMenu : undefined}>
             <div className="menu">
                 <Menu />
             </div>
             <div id="wrapper" className={`wrapper grid__bg ${isOpen ? 'active' : ''}`}>
-                <div className="p-sticky">
-                    <Header />
-                    <Hero />
-                </div>
+                <Header />
+                <Hero />
                 <Info />
                 <Projects />
                 <Services />
@@ -47,6 +48,7 @@ function AppContent() {
                 </div>
             </div>
         </div>
+        </ReactLenis>
     );
 }
 
