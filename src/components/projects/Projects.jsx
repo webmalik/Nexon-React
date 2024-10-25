@@ -10,9 +10,9 @@ const Projects = () => {
     const currentLanguageKey = i18n.language;
 
     return (
-        <section className="portfolio">
+        <section className="portfolio not-sticky" id="portfolio">
             <div className="container">
-                <div className="portfolio__header">{t('portfolio')}</div>
+                <div className="portfolio__header ttt">{t('portfolio')}</div>
                 <div className="portfolio__wrapper">
                     {projectsList.map((project) => {
                         return (
@@ -22,6 +22,7 @@ const Projects = () => {
                                 label={project.description[currentLanguageKey]}
                                 image={project.image}
                                 tags={project.tags[currentLanguageKey]}
+                                link={project.link}
                             />
                         );
                     })}

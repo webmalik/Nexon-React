@@ -1,19 +1,20 @@
 {
     "menu": "Menu",
 
-    "menu-item-1": "About us",
-    "menu-item-2": "Advantages",
-    "menu-item-3": "Team",
-    "menu-item-4": "Partners",
-    "menu-item-5": "Jobs",
-    "menu-item-6": "Contacts",
+    "menu-item-1": "About Us",
+    "menu-item-2": "Portfolio",
+    "menu-item-3": "Services",
+    "menu-item-4": "Contact Form",
+    "menu-item-5": "Reviews",
+    "menu-item-6": "FAQ",
+    "menu-item-7": "Email us :)",
 
-    "button": "Button",
+    "button": "Contact us",
 
     "hero-subtitle-1": "Development of your web product taking into account the design",
-    "hero-title-1": "We make sites",
-    "hero-title-2": "WHERE",
-    "hero-title-3": "Sitting.",
+    "hero-title-1": "We create sites",  
+    "hero-title-2": "that people can't",
+    "hero-title-3": "get off of",
     "hero-subtitle-2": "  We also work with mobile and desktop applications",
 
     "info-header": "One of the best web studies in the Ukrainian market",
@@ -32,9 +33,11 @@
     "portfolio": "Portfolio",
 
     "services": "Our services",
+    "service-button": "Detail",
 
-    "mail-title-1": "Just enter the email,",
-    "mail-title-2": "that we can contact",
+    "mail-title-1": "Just enter your email address,",
+    "mail-title-2": "and we will get in touch with you.",
+    "mail-button": "Submit",
     "mail-message-success": "Your contact data is successfully sent.We will contact you soon!",
     "mail-message-error": "An error occurred while sending a message",
     "mail-message-error-valid": "Please enter a valid email address.",
@@ -49,7 +52,7 @@
     "contacts-subtitle": "and get some gift or other bush",
     "contacts-label": "Contacts",
     "contacts-phone": "+380 66 456 18 10",
-    "contacts-mail": "nexon.studio@gmail.com",
+    "contacts-mail": "sale@nexon-studio.com",
 
     "form-placeholder-name": "First and last name",
     "form-placeholder-tel": "Phone number",

@@ -46,7 +46,7 @@ const Footer = () => {
         );
     };
     return (
-        <div className="footer">
+        <div className="footer not-sticky">
             <div className="container">
                 {isDesktop ? (
                     <div className="footer__wrapper">

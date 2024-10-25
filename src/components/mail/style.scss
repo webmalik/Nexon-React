@@ -14,7 +14,7 @@
 	&__title {
 		color: #fff;
 		font-family: $font-family;
-		@include adaptiveValue("font-size", 96, 28);
+		@include adaptiveValue("font-size", 80, 28);
 		font-style: normal;
 		font-weight: 500;
 		line-height: 100%;
@@ -88,6 +88,12 @@
 
 			&::placeholder {
 				color: rgba(255, 255, 255, 0.4);
+			}
+
+			&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active {
+				-webkit-box-shadow: 0 0 0 1px #2d2d2d inset !important;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: #ffffff;
 			}
 		}
 		p {

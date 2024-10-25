@@ -1,15 +1,20 @@
 import './style.scss';
+import { useTranslation } from 'react-i18next';
+import useScrollTo from '../useScrollTo/useScrollTo';
 
 const Service = ({ title, description, value }) => {
+    const { t } = useTranslation();
+    const { handleScrollToMain } = useScrollTo();
+
     return (
         <div className="services__item">
             <div className="services__inner">
-                <div className="services__title">{title}</div>
-                <div className="services__decription">{description}</div>
+                <div className="services__title ttt">{title}</div>
+                <div className="services__decription ttt">{description}</div>
             </div>
             <div className="services__inner">
                 <div className="services__button-wrapper">
-                    <button className="services__button">
+                    <button className="services__button" onClick={() => handleScrollToMain('contacts')}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="19"
@@ -22,7 +27,7 @@ const Service = ({ title, description, value }) => {
                                 strokeWidth="1.83448"
                             />
                         </svg>
-                        <span>Детальніше</span>
+                        <span>{t('service-button')}</span>
                     </button>
                 </div>
                 <div className="services__value">

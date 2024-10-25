@@ -3,104 +3,92 @@ import porfolio02 from './images/portf-2.png';
 import porfolio03 from './images/portf-3.png';
 import porfolio04 from './images/portf-4.png';
 import porfolio05 from './images/portf-5.png';
-import porfolio06 from './images/portf-6.png';
 
 const projectsList = [
     {
         id: 1,
         title: {
-            en: 'Studio of Dying in the United States',
-            ua: 'Студія детейлінгу в США',
+            en: 'SETH MILOT',
+            ua: 'SETH MILOT',
         },
         description: {
-            en: 'Burtex',
-            ua: 'Добірка',
+            en: 'Luxury Leather Goods Website',
+            ua: 'Iнтернет-магазин розкішних шкіряних виробів у Нью-Йорку',
         },
         image: porfolio01,
         tags: {
-            en: ['Research', 'uX/UI', 'Webflow'],
-            ua: ['Research', 'uX/UI', 'Webflow'],
+            en: ['Development', 'Shopify', 'USA'],
+            ua: ['Development', 'Shopify', 'USA'],
         },
+        link: 'https://sethmilot.com/',
     },
     {
         id: 2,
         title: {
-            en: 'Project 2',
-            ua: 'Проект 2',
+            en: 'SKYGEN',
+            ua: 'SKYGEN',
         },
         description: {
-            en: 'Description of project 2',
-            ua: 'Опис проекту 2',
+            en: 'Wholesaler of Premium windows and doors',
+            ua: 'Оптовий продавець вікон та дверей Преміум Класса у Канадi',
         },
         image: porfolio02,
         tags: {
-            en: ['Tag3', 'Tag4'],
-            ua: ['Мітка3', 'Мітка4'],
+            en: ['UX/UI', 'Development', 'Word Press', 'Canada'],
+            ua: ['UX/UI', 'Development', 'Word Press', 'Canada'],
         },
+        link: 'https://skygenwindows.com/commercial-page',
     },
     {
         id: 3,
         title: {
-            en: 'Project 3',
-            ua: 'Проект 3',
+            en: 'PlayFusionLabs',
+            ua: 'PlayFusionLabs',
         },
         description: {
-            en: 'Description of project 3',
-            ua: 'Опис проекту 3',
+            en: 'PlayFusionLabs',
+            ua: 'PlayFusionLabs',
         },
         image: porfolio03,
         tags: {
-            en: ['Tag3', 'Tag4'],
-            ua: ['Мітка3', 'Мітка4'],
+            en: ['UX/UI', 'Development', 'Word Press', 'Ukraine'],
+            ua: ['UX/UI', 'Development', 'Word Press', 'Ukraine'],
         },
+        link: 'https://playfusionlabs.com/',
     },
     {
         id: 4,
         title: {
-            en: 'Project 4',
-            ua: 'Проект 4',
+            en: 'Be An Art',
+            ua: 'Be An Art',
         },
         description: {
-            en: 'Description of project 4',
-            ua: 'Опис проекту 4',
+            en: 'Premium photo shoot in Canada',
+            ua: 'Преміальна фотосесія в Канаді',
         },
         image: porfolio04,
         tags: {
-            en: ['Tag4', 'Tag4'],
-            ua: ['Мітка4', 'Мітка4'],
+            en: ['UX/UI', 'Development', 'Next.js', 'Canada'],
+            ua: ['UX/UI', 'Development', 'Next.js', 'Canada'],
         },
+        link: 'https://be-an.art/',
     },
     {
         id: 5,
         title: {
-            en: 'Project 5',
-            ua: 'Проект 5',
+            en: 'anywell',
+            ua: 'anywell',
         },
         description: {
-            en: 'Description of project 5',
-            ua: 'Опис проекту 5',
+            en: 'Online store of face masks',
+            ua: 'Інтернет-магазин масок для обличчя',
         },
         image: porfolio05,
         tags: {
-            en: ['Tag5', 'Tag5'],
-            ua: ['Мітка5', 'Мітка5'],
+            en: ['UX/UI', 'Development', 'Shopify', 'Ukraine'],
+            ua: ['UX/UI', 'Development', 'Shopify', 'Ukraine'],
         },
-    },
-    {
-        id: 6,
-        title: {
-            en: 'Project 6',
-            ua: 'Проект 6',
-        },
-        description: {
-            en: 'Description of project 6',
-            ua: 'Опис проекту 6',
-        },
-        image: porfolio06,
-        tags: {
-            en: ['Tag6', 'Tag6'],
-            ua: ['Мітка6', 'Мітка6'],
-        },
+        link: 'https://anywellhub.com/pages/new-franchise',
     },
 ];
 

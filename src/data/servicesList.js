@@ -6,57 +6,57 @@ const servicesList = [
             ua: 'UX/UI Дизайн',
         },
         description: {
-            en: 'The main goal is to create convenient, effective and attractive interfaces that provide positive users experience when using websites, mobile applications and other digital products.',
-            ua: 'Главная цель заключается в создании удобных, эффективных и привлекательных интерфейсов, которые обеспечивают позитивный опыт пользователей при использовании веб-сайтов, мобильных приложений и других цифровых продуктов.',
+            en: 'We create intuitive and visually appealing interfaces that provide a comfortable user experience, improving interaction with the product and engaging users with websites and mobile applications.',
+            ua: 'Ми створюємо інтуїтивно зрозумілі та візуально привабливі інтерфейси, які забезпечують комфортний користувацький досвід, покращують взаємодію з продуктом та залучають користувачів до використання веб-сайтів і мобільних додатків.',
         },
         value: {
-            en: ['$200+', '7+ days'],
-            ua: ['$200+', '7+ днів'],
+            en: ['$ Individual calculation', '10-15 days'],
+            ua: ['$ Індивідуальний розрахунок', '10-15 днів'],
         },
     },
     {
         id: 2,
         title: {
-            en: 'Graphic design',
-            ua: 'Графiчний Дизайн',
+            en: 'WP, Shopify',
+            ua: 'WP, Shopify',
         },
         description: {
-            en: 'We create effective and attracting visual concepts that transmit certain messages, attract the attention of the target audience and achieve the goal.',
-            ua: 'Создаем эффективные и привлекающие визуальные концепции, которые передают определенные сообщения, привлекают внимание целевой аудитории и достигают поставленной цели.',
+            en: 'We create flexible websites on WordPress and effective eCommerce solutions on Shopify. Our services offer customization for any task, ensuring ease of management, high performance, and stability for your business growth and success.',
+            ua: 'Ми створюємо гнучкі сайти на WordPress та ефективні eCommerce-рішення на Shopify. Надаємо можливість кастомізації під будь-які завдання, забезпечуючи зручність управління, високу продуктивність і стабільність для розвитку вашого бізнесу.',
         },
         value: {
-            en: ['$100+', '3+ days'],
-            ua: ['$100+', '3+ днів'],
+            en: ['$ Individual calculation', '15-30 days'],
+            ua: ['$ Індивідуальний розрахунок', '15-30 днів'],
         },
     },
     {
         id: 3,
         title: {
-            en: 'Web development',
-            ua: 'Веб-розробка',
+            en: 'Dev. on Next.js',
+            ua: 'Розробка на Next.js',
         },
         description: {
-            en: 'We create web resources that ensure the positive experience of users, easy navigation and ease of use, support functional and effective sites.',
-            ua: 'Создаем веб-ресурсы, которые обеспечивают позитивный опыт пользователей, легкую навигацию и удобство в использовании, поддерживаем функциональные и эффективные сайты.',
+            en: 'We build web applications using the Next.js framework with a focus on high performance optimization, scalability, and clean code architecture.',
+            ua: 'Ми створюємо веб-додатки на фреймворку Next.js з акцентом на високій оптимізації продуктивності, масштабованості та чистій архітектурі коду.',
         },
         value: {
-            en: ['$200+', '14+ days'],
-            ua: ['$200+', '14+ днів'],
+            en: ['$ Individual calculation', '15-30 days'],
+            ua: ['$ Індивідуальний розрахунок', '15-30 днів'],
         },
     },
     {
         id: 4,
         title: {
-            en: 'Shopify, WP',
-            ua: 'Shopify, WP',
+            en: 'Turnkey Dev.',
+            ua: 'Розробка пiд КЛЮЧ',
         },
         description: {
-            en: 'We create and set up effective, functional and attractive online stores or sites using appropriate platforms.',
-            ua: 'Создаем и настроиваем эффективные, функциональные и привлекательных интернет-магазины или сайты используя соответствующие платформы.',
+            en: 'We conduct competitor analysis and market research, create a prototype, and then develop a turnkey solution tailored to your goals. We ensure full functionality, unique design, and technical support at every stage.',
+            ua: 'Проводимо аналіз конкурентів і дослідження ринку, створюємо прототип, а потім розробляємо рішення "під ключ" з урахуванням ваших цілей. Забезпечуємо повну функціональність, унікальний дизайн і технічну підтримку на всіх етапах.',
         },
         value: {
-            en: ['$200+', '15+ days'],
-            ua: ['$200+', '15+ днів'],
+            en: ['$ Individual calculation', '30-60 days'],
+            ua: ['$ Індивідуальний розрахунок', '30-60 днів'],
         },
     },
 ];

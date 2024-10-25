@@ -61,10 +61,10 @@ const Mail = () => {
     };
 
     return (
-        <section className="mail">
+        <section className="mail p-sticky" id="mail">
             <div className="container">
                 <div className="mail__wrapper">
-                    <div className="mail__title">
+                    <div className="mail__title ttt">
                         {t('mail-title-1')}
                         <br />
                         <span>{t('mail-title-2')}</span>
@@ -90,7 +90,7 @@ const Mail = () => {
                                         type="submit"
                                         disabled={!isInputValid || isSent}
                                         className={isInputVoid ? 'mail__button-disabled' : ''}>
-                                        Відправити
+                                        {t('mail-button')}
                                         <span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"

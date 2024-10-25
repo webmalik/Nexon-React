@@ -14,6 +14,7 @@ import Reviews from './components/reviews/Reviews';
 import Faq from './components/faq/Faq';
 import Contacts from './components/contacts/Contacts';
 import Footer from './components/footer/Footer';
+import { ReactLenis } from 'lenis/react';
 
 function App() {
     return (
@@ -24,9 +25,11 @@ function App() {
 }
 
 function AppContent() {
+
     const { isOpen, toggleMenu } = useStateContext();
 
     return (
+        <ReactLenis root>
         <div className="site" onClick={isOpen ? toggleMenu : undefined}>
             <div className="menu">
                 <Menu />
@@ -38,13 +41,16 @@ function AppContent() {
                 <Info />
                 <Projects />
                 <Services />
-                <Mail />
-                <Reviews />
-                <Faq />
-                <Contacts />
-                <Footer />
+                <div>
+                    <Mail />
+                    <Reviews />
+                    <Faq />
+                    <Contacts />
+                    <Footer />
+                </div>
             </div>
         </div>
+        </ReactLenis>
     );
 }
 

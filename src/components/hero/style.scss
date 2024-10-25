@@ -3,7 +3,8 @@
 * {}
 
 .banner {
-	position: sticky;
+	padding-top: 30px;
+
 	&__circle {
 		@include adaptiv-value("width", 242, 90, 1);
 		@include adaptiv-value("height", 242, 90, 1);
@@ -66,7 +67,7 @@
 	&__title {
 		color: $white_color;
 		font-family: $font-family;
-		@include adaptiv-value("font-size", toPX(11), toPX(2.5), 1);
+		@include adaptiv-value("font-size", toPX(11), toPX(2.2), 1);
 		font-style: normal;
 		font-weight: 600;
 		line-height: 100%; /* 12.25rem */

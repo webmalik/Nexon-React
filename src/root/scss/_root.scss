@@ -35,6 +35,27 @@ button {
 		overflow 0.5s ease-in-out 0.5s;
 
 	overflow: visible;
+	
+
+	.p-sticky {
+		position: sticky !important;
+		top: 0;
+		z-index: 0;
+	}
+	.not-sticky {
+		position: relative;
+		z-index: 1;
+	}
+
+	.line-wrapper {
+		margin-bottom: -.1em;
+		margin-left: -.05em;
+		margin-right: -.05em;
+		padding-bottom: .1em;
+		padding-left: .05em;
+		padding-right: .05em;
+		overflow-y: clip;
+	}
 
 	&.active {
 		transition:
@@ -177,6 +198,7 @@ button {
 		-2px -2px,
 		-1px -1px,
 		-1px -1px;
+	background-attachment: fixed;
 }
 
 .container {
