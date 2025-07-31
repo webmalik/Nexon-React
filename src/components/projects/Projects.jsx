@@ -12,7 +12,7 @@ const Projects = () => {
     return (
         <section className="portfolio not-sticky" id="portfolio">
             <div className="container">
-                <div className="portfolio__header ttt">{t('portfolio')}</div>
+                <h2 className="portfolio__header ttt">{t('portfolio')}</h2>
                 <div className="portfolio__wrapper">
                     {projectsList.map((project) => {
                         return (

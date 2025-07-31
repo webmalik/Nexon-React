@@ -64,11 +64,11 @@ const Mail = () => {
         <section className="mail p-sticky" id="mail">
             <div className="container">
                 <div className="mail__wrapper">
-                    <div className="mail__title ttt">
+                    <h2 className="mail__title ttt">
                         {t('mail-title-1')}
                         <br />
                         <span>{t('mail-title-2')}</span>
-                    </div>
+                    </h2>
                     <div className="mail__form">
                         <img src={mailArrowIMG} alt="" />
                         <div

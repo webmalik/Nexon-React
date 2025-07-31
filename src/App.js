@@ -1,10 +1,9 @@
 import React from 'react';
 import { StateProvider, useStateContext } from './StateContext';
-
+import SEO from './components/seo/SEO';
 import './root/scss/style.scss';
 import Header from './components/header/Header';
 import Menu from './components/menu/Menu';
-import ScrollToAnchor from './components/sctollToAnchor/scrollToAnchor';
 import Hero from './components/hero/Hero';
 import Info from './components/info/Info';
 import Projects from './components/projects/Projects';
@@ -31,6 +30,10 @@ function AppContent() {
 
     return (
         <ReactLenis root>
+            <SEO
+                title="Разработка продающих сайтов под ключ | NEXON STUDIO"
+                description="▶ Разработка продающих сайтов под ключ за 14 дней — Word Press, Shopify, Web Flow. ✓ Конверсия +30 %. ☎Telegram: @dmitriy_uier — NEXON STUDIO"
+            />
             <div className="site" onClick={isOpen ? toggleMenu : undefined}>
                 <div className="menu">
                     <Menu />

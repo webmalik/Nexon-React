@@ -11,33 +11,37 @@ const Info = () => {
             <div className="container">
                 <div className="info__grid">
                     <div className="info__item">
-                        <div className="info__header ttt">{t('info-header')}</div>
+                        <h2 className="info__header ttt">{t('info-header')}</h2>
                     </div>
                     <div className="info__item">
-                        <div className="info__title ttt">
+                        <h3 className="info__title ttt">
                             {t('info-info__title-1')}
                             <span>{t('info-info__title-1-1')}</span>
-                        </div>
-                        <div className="info__text ttt"> {t('info-info__text-1')}</div>
+                        </h3>
+                        <p className="info__text ttt"> {t('info-info__text-1')}</p>
                     </div>
                     <div className="info__item">
-                        <div className="info__title ttt"> {t('info-info__title-2')}</div>
-                        <div className="info__text ttt">{t('info-info__text-2')}</div>
+                        <h3 className="info__title ttt"> {t('info-info__title-2')}</h3>
+                        <p className="info__text ttt">{t('info-info__text-2')}</p>
                     </div>
                     <div className="info__item">
-                        <div className="info__title ttt">{t('info-info__title-3')}</div>
-                        <div className="info__text ttt">{t('info-info__text-3')}</div>
+                        <h3 className="info__title ttt">{t('info-info__title-3')}</h3>
+                        <p className="info__text ttt">{t('info-info__text-3')}</p>
                     </div>
                     <div className="info__item">
-                        <div className="info__title ttt">{t('info-info__title-4')}</div>
-                        <div className="info__text ttt">{t('info-info__text-4')}</div>
+                        <h3 className="info__title ttt">{t('info-info__title-4')}</h3>
+                        <p className="info__text ttt">{t('info-info__text-4')}</p>
                     </div>
                     <div className="info__item">
-                        <button className="info__button" onClick={() => handleScrollToMain('contacts')}>{t('button')}</button>
+                        <button
+                            className="info__button"
+                            onClick={() => handleScrollToMain('contacts')}>
+                            {t('button')}
+                        </button>
                     </div>
                     <div className="info__item">
-                        <div className="info__title ttt">{t('info-info__title-5')}</div>
-                        <div className="info__text ttt">{t('info-info__text-5')}</div>
+                        <h3 className="info__title ttt">{t('info-info__title-5')}</h3>
+                        <p className="info__text ttt">{t('info-info__text-5')}</p>
                     </div>
                 </div>
             </div>

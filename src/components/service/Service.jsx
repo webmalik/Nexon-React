@@ -9,12 +9,14 @@ const Service = ({ title, description, value }) => {
     return (
         <div className="services__item">
             <div className="services__inner">
-                <div className="services__title ttt">{title}</div>
-                <div className="services__decription ttt">{description}</div>
+                <h3 className="services__title ttt">{title}</h3>
+                <p className="services__decription ttt">{description}</p>
             </div>
             <div className="services__inner">
                 <div className="services__button-wrapper">
-                    <button className="services__button" onClick={() => handleScrollToMain('contacts')}>
+                    <button
+                        className="services__button"
+                        onClick={() => handleScrollToMain('contacts')}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="19"

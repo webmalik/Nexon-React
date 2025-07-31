@@ -62,8 +62,8 @@ const Contacts = () => {
                 <div className="contacts__wrapper">
                     <div className="contacts__content">
                         <div className="contacts__headers">
-                            <div className="contacts__title">{t('contacts-title')}</div>
-                            <div className="contacts__subtitle">{t('contacts-subtitle')}</div>
+                            <h2 className="contacts__title">{t('contacts-title')}</h2>
+                            <h3 className="contacts__subtitle">{t('contacts-subtitle')}</h3>
                         </div>
                         <div className="contacts__form">
                             <Form />
@@ -72,16 +72,10 @@ const Contacts = () => {
                     <div
                         className="contacts__main"
                         onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                        onMouseLeave={handleMouseLeave}>
                         <div className="contacts__label">
                             <span>{t('contacts-label')}</span>
-                            <img
-                                ref={ImgRotate}
-                                src={arrow}
-                                alt=""
-                                className="rotating-arrow"
-                            />
+                            <img ref={ImgRotate} src={arrow} alt="" className="rotating-arrow" />
                         </div>
                         <div className="contacts__inner">
                             <button

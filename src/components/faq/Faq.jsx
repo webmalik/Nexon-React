@@ -23,7 +23,7 @@ const Faq = () => {
     return (
         <div className="faq not-sticky" id="faq">
             <div className="container">
-                <div className="faq__title ttt">{t('faq-title')}</div>
+                <h2 className="faq__title ttt">{t('faq-title')}</h2>
                 <div className="faq__wrapper">
                     {faqList.map((faq) => {
                         return (
@@ -42,7 +42,9 @@ const Faq = () => {
                     <div className="faq__arrow">
                         <img src={arrow} alt="" />
                     </div>
-                    <button className="faq__button" onClick={() => handleScrollToMain('contacts')}>{t('faq-button')}</button>
+                    <button className="faq__button" onClick={() => handleScrollToMain('contacts')}>
+                        {t('faq-button')}
+                    </button>
                 </div>
             </div>
         </div>

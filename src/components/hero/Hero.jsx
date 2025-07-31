@@ -13,9 +13,9 @@ const textReveals = () => {
 
     elements.forEach((element) => {
         // Разбиваем текст на строки и создаем обертки для строк
-        const splitText = new SplitType(element, {
+        new SplitType(element, {
             types: 'lines',
-            lineClass: 'single-line'
+            lineClass: 'single-line',
         });
         const lines = element.querySelectorAll('.single-line');
 
@@ -71,15 +71,17 @@ const Hero = () => {
                 <div className="banner__circle">
                     <img src={circle} alt="Circle" />
                 </div>
-                <div className="banner__subtitle banner__subtitle-top ttt">{t('hero-subtitle-1')}</div>
-                <div className="banner__title">
-                    <div className="banner__right ttt">{t('hero-title-1')}</div>
-                    <div className="banner__left ttt">{t('hero-title-2')}</div>
-                    <div className="banner__right banner__silver ttt">{t('hero-title-3')}</div>
-                </div>
-                <div className="banner__subtitle banner__subtitle-bottom ttt">
+                <h3 className="banner__subtitle banner__subtitle-top ttt">
+                    {t('hero-subtitle-1')}
+                </h3>
+                <h1 className="banner__title">
+                    <span className="banner__right ttt">{t('hero-title-1')}</span>
+                    <span className="banner__left ttt">{t('hero-title-2')}</span>
+                    <span className="banner__right banner__silver ttt">{t('hero-title-3')}</span>
+                </h1>
+                <h3 className="banner__subtitle banner__subtitle-bottom ttt">
                     {t('hero-subtitle-2')}
-                </div>
+                </h3>
             </div>
         </section>
     );

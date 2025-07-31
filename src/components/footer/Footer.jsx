@@ -51,7 +51,7 @@ const Footer = () => {
                 {isDesktop ? (
                     <div className="footer__wrapper">
                         <div className="footer__item">
-                            <div className="footer__logo">Nexon Studio</div>
+                            <h2 className="footer__logo">Nexon Studio</h2>
                             <div className="footer__inner footer__links">
                                 <button onClick={handleDownloadOferta}>{t('footer-oferta')}</button>
                                 <button onClick={handleDownloadPolit}>{t('footer-polit')}</button>
@@ -132,7 +132,7 @@ const Footer = () => {
                 ) : (
                     <div className="footer__wrapper">
                         <div className="footer__item">
-                            <div className="footer__logo">Nexon Studio</div>
+                            <h2 className="footer__logo">Nexon Studio</h2>
                             <div className="footer__slug">{t('footer-slug')}</div>
                         </div>
                         <div className="footer__item">

@@ -18,7 +18,7 @@ const Services = () => {
     const services = useRef();
 
     useEffect(() => {
-         gsap.to(ImgRotate.current, {
+        gsap.to(ImgRotate.current, {
             rotate: 360,
             ease: 'power2.out',
             duration: 1.5, // Продолжительность анимации в секундах
@@ -33,7 +33,7 @@ const Services = () => {
         <section ref={services} className="services not-sticky" id="services">
             <div className="container">
                 <div className="services__header">
-                    <span className='ttt'>{t('services')}</span>
+                    <h2 className="ttt">{t('services')}</h2>
                     <img ref={ImgRotate} src={headerVector} alt="" />
                 </div>
                 <div className="services__wrapper">
