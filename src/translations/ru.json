@@ -1,0 +1,66 @@
+{
+    "menu": "Меню",
+
+    "menu-item-1": "О нас",
+    "menu-item-2": "Портфолио",
+    "menu-item-3": "Услуги",
+    "menu-item-4": "Контактная форма",
+    "menu-item-5": "Отзывы",
+    "menu-item-6": "FAQ",
+    "menu-item-7": "Напишите нам :)",
+
+    "button": "Связаться с нами",
+    "hero-subtitle-1": "Разработка вашего веб-продукта с учетом дизайна",
+    "hero-title-1": "Делаем сайты",
+    "hero-title-2": "На которых",
+    "hero-title-3": "Сидят.",
+    "hero-subtitle-2": "Также работаем с мобильными и десктопными приложениями",
+
+    "info-header": "Одна из лучших веб-студий на мировом рынке",
+    "info-info__title-1": "20",
+    "info-info__title-1-1": "мин",
+    "info-info__text-1": "Среднее время, чтобы понять ваш проект",
+    "info-info__title-2": "90+ speed",
+    "info-info__text-2": "Средняя оценка наших сайтов по версии pagespeed, учитывая поисковую оптимизацию, производительность и т.д.",
+    "info-info__title-3": "15%",
+    "info-info__text-3": "Конверсия наших сайтов",
+    "info-info__title-4": "30+",
+    "info-info__text-4": "Проектов различной сложности",
+    "info-info__title-5": "3+",
+    "info-info__text-5": "Лет на мировом рынке",
+
+    "portfolio": "Портфолио",
+
+    "services": "Наши услуги",
+    "service-button": "Подробнее",
+
+    "mail-title-1": "Просто введите адрес Email,",
+    "mail-title-2": "чтобы мы связались с вами",
+    "mail-button": "Отправить",
+    "mail-message-success": "Ваши контактные данные успешно отправлены. <br> Мы свяжемся с вами в ближайшее время!",
+    "mail-message-error": "Произошла ошибка при отправке сообщения",
+    "mail-message-error-valid": "Пожалуйста, введите действительный адрес электронной почты.",
+    "mail-message-error-valid-void": "Пожалуйста, введите адрес электронной почты.",
+
+    "reviews-title": "Реальные отзывы клиентов о сотрудничестве",
+
+    "faq-title": "Часто задаваемые вопросы",
+    "faq-button": "Я с вами",
+
+    "contacts-title": "Заполните форму",
+    "contacts-subtitle": "и получите какой-нибудь подарок или другую плюшку",
+    "contacts-label": "Контакты",
+    "contacts-phone": "+380 66 456 18 10",
+    "contacts-mail": "sale@nexon-studio.com",
+
+    "form-placeholder-name": "Имя и фамилия",
+    "form-placeholder-tel": "Номер телефона",
+    "form-placeholder-mail": "Email",
+    "form-button": "Записаться на прием",
+    "form-message-error-user": "Слишком короткое имя",
+    "form-message-error-phone": "Неверный телефон",
+
+    "footer-oferta": "Договор оферты",
+    "footer-polit": "Политика конфиденциальности",
+    "footer-slug": "Делаем сайты, на которых сидят"
+}

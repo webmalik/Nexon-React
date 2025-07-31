@@ -12,7 +12,7 @@ const Footer = () => {
 
     const downloadFile = (fileName) => {
         const link = document.createElement('a');
-        link.href = `/${fileName}.pdf`;
+        link.href = `${fileName}.pdf`;
         link.download = `${fileName}.pdf`;
         document.body.appendChild(link);
         link.click();
