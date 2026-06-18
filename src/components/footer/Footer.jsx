@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 import visa from './visa.png';
@@ -10,22 +11,22 @@ const Footer = () => {
 
     const isDesktop = useMediaQuery({ minWidth: 992 });
 
-    const downloadFile = (fileName) => {
-        const link = document.createElement('a');
-        link.href = `${fileName}.pdf`;
-        link.download = `${fileName}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    // const downloadFile = (fileName) => {
+    //     const link = document.createElement('a');
+    //     link.href = `${fileName}.pdf`;
+    //     link.download = `${fileName}.pdf`;
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // };
 
-    const handleDownloadOferta = () => {
-        downloadFile('offer-contract');
-    };
+    // const handleDownloadOferta = () => {
+    //     downloadFile('offer-contract');
+    // };
 
-    const handleDownloadPolit = () => {
-        downloadFile('privacy-policy');
-    };
+    // const handleDownloadPolit = () => {
+    //     downloadFile('privacy-policy');
+    // };
 
     const handlePhoneClick = (phoneNumber) => {
         window.open(`tel:${phoneNumber}`, '_blank');
@@ -53,8 +54,8 @@ const Footer = () => {
                         <div className="footer__item">
                             <h2 className="footer__logo">Nexon Studio</h2>
                             <div className="footer__inner footer__links">
-                                <button onClick={handleDownloadOferta}>{t('footer-oferta')}</button>
-                                <button onClick={handleDownloadPolit}>{t('footer-polit')}</button>
+                                <Link to="/impressum/">Impressum</Link>
+                                <Link to="/datenschutz/">Datenschutz</Link>
                             </div>
                         </div>
                         <div className="footer__item">
@@ -197,8 +198,8 @@ const Footer = () => {
                         </div>
                         <div className="footer__item">
                             <div className="footer__inner footer__links">
-                                <button onClick={handleDownloadOferta}>{t('footer-oferta')}</button>
-                                <button onClick={handleDownloadPolit}>{t('footer-polit')}</button>
+                                <Link to="/impressum/">Impressum</Link>
+                                <Link to="/datenschutz/">Datenschutz</Link>
                             </div>
                             <div className="footer__inner footer__payments">
                                 <button className="visa">

@@ -1,61 +1,39 @@
 import React from 'react';
-import { StateProvider, useStateContext } from './StateContext';
-import SEO from './components/seo/SEO';
-import './root/scss/style.scss';
-import Header from './components/header/Header';
-import Menu from './components/menu/Menu';
-import Hero from './components/hero/Hero';
-import Info from './components/info/Info';
-import Projects from './components/projects/Projects';
-import ScrollToAnchor from './components/scrollToAnchor/ScrollToAnchor';
-import Services from './components/services/Services';
-import Mail from './components/mail/Mail';
-import Reviews from './components/reviews/Reviews';
-import Faq from './components/faq/Faq';
-import Contacts from './components/contacts/Contacts';
-import Footer from './components/footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+import { StateProvider } from './StateContext';
 import { ReactLenis } from 'lenis/react';
-import Sketch from './components/sketch/Sketch';
+
+import './root/scss/style.scss';
+
+import SiteLayout from './components/layout/SiteLayout';
+
+import HomePage from './pages/HomePage';
+import ImpressumPage from './pages/ImpressumPage';
+import DatenschutzPage from './pages/DatenschutzPage';
 
 function App() {
     return (
         <StateProvider>
-            <AppContent />
+            <ReactLenis root>
+                <Routes>
+                    <Route element={<SiteLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/ua/" element={<HomePage />} />
+                        <Route path="/ru/" element={<HomePage />} />
+
+                        <Route path="/impressum/" element={<ImpressumPage />} />
+                        <Route path="/ua/impressum/" element={<ImpressumPage />} />
+                        <Route path="/ru/impressum/" element={<ImpressumPage />} />
+
+                        <Route path="/datenschutz/" element={<DatenschutzPage />} />
+                        <Route path="/ua/datenschutz/" element={<DatenschutzPage />} />
+                        <Route path="/ru/datenschutz/" element={<DatenschutzPage />} />
+
+                        <Route path="*" element={<HomePage />} />
+                    </Route>
+                </Routes>
+            </ReactLenis>
         </StateProvider>
-    );
-}
-
-function AppContent() {
-    const { isOpen, toggleMenu } = useStateContext();
-
-    return (
-        <ReactLenis root>
-            <SEO
-                title="Разработка продающих сайтов под ключ | NEXON STUDIO"
-                description="▶ Разработка продающих сайтов под ключ за 14 дней — Word Press, Shopify, Web Flow. ✓ Конверсия +30 %. ☎Telegram: @dmitriy_uier — NEXON STUDIO"
-            />
-            <div className="site" onClick={isOpen ? toggleMenu : undefined}>
-                <div className="menu">
-                    <Menu />
-                </div>
-                <div id="wrapper" className={`wrapper grid__bg ${isOpen ? 'active' : ''}`}>
-                    <Sketch />
-                    <ScrollToAnchor />
-                    <Header />
-                    <Hero />
-                    <Info />
-                    <Projects />
-                    <Services />
-                    <div>
-                        <Mail />
-                        <Reviews />
-                        <Faq />
-                        <Contacts />
-                        <Footer />
-                    </div>
-                </div>
-            </div>
-        </ReactLenis>
     );
 }
 
