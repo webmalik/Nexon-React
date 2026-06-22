@@ -9,6 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import en from './translations/en.json';
 import ua from './translations/ua.json';
 import ru from './translations/ru.json';
+import de from './translations/de.json';
 
 import App from './App';
 
@@ -16,12 +17,14 @@ console.log('[prerender] init');
 
 const currentUrl = window.location.href;
 
-let selectedLanguage = 'en';
+let selectedLanguage = 'de';
 
 if (currentUrl.includes('/ua/')) {
     selectedLanguage = 'ua';
 } else if (currentUrl.includes('/ru/')) {
     selectedLanguage = 'ru';
+} else if (currentUrl.includes('/de/')) {
+    selectedLanguage = 'de';
 }
 
 i18n.use(LanguageDetector)
@@ -31,6 +34,7 @@ i18n.use(LanguageDetector)
             en: { translation: en },
             ua: { translation: ua },
             ru: { translation: ru },
+            de: { translation: de },
         },
         lng: selectedLanguage,
         fallbackLng: 'en',

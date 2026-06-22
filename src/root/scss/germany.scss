@@ -1,0 +1,3 @@
+.germany .banner__left .single-line {
+    @include adaptiveValue('padding-left', 400, 100);
+}

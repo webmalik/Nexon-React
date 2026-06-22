@@ -13,7 +13,7 @@ const SiteLayout = () => {
     const { isOpen, toggleMenu } = useStateContext();
 
     return (
-        <div className="site" onClick={isOpen ? toggleMenu : undefined}>
+        <div className="site germany" onClick={isOpen ? toggleMenu : undefined}>
             <div className="menu">
                 <Menu />
             </div>

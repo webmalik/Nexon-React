@@ -1,37 +1,55 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ScrollToAnchor = () => {
-    const handleHashChange = () => {
-        // Отримуємо хеш із URL
-        const hash = window.location.hash;
-        if (hash) {
-            // Знаходимо елемент по якорю і прокручуємо до нього
-            const element = document.getElementById(hash.replace('#', ''));
-            if (element) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 1500);
-                setTimeout(() => {
-                    window.history.replaceState(null, null, ' ');
-                }, 10000);
-            }
-        }
-    };
+    const location = useLocation();
 
     useEffect(() => {
-        // Виклик функції при завантаженні сторінки, якщо вже є хеш
-        handleHashChange();
+        if (!location.hash) return;
 
-        // Додаємо обробник події для відстеження змін у хеші
-        window.addEventListener('hashchange', handleHashChange);
+        const targetId = decodeURIComponent(location.hash.replace('#', ''));
 
-        // Очищуємо обробник подій при відмонтовуванні компонента
-        return () => {
-            window.removeEventListener('hashchange', handleHashChange);
+        let attempts = 0;
+        const timers = [];
+
+        const addTimer = (callback, delay) => {
+            const timer = setTimeout(callback, delay);
+            timers.push(timer);
         };
-    }, []);
 
-    return null; // Цей компонент не відображає нічого
+        const scrollToTarget = () => {
+            const element = document.getElementById(targetId);
+
+            if (!element) {
+                attempts += 1;
+
+                if (attempts <= 40) {
+                    addTimer(scrollToTarget, 100);
+                }
+
+                return;
+            }
+
+            addTimer(() => {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }, 500);
+
+            addTimer(() => {
+                window.history.replaceState(null, '', `${location.pathname}${location.search}`);
+            }, 5000);
+        };
+
+        addTimer(scrollToTarget, 300);
+
+        return () => {
+            timers.forEach((timer) => clearTimeout(timer));
+        };
+    }, [location.key, location.pathname, location.hash, location.search]);
+
+    return null;
 };
 
 export default ScrollToAnchor;

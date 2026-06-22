@@ -79,7 +79,7 @@ const Mail = () => {
                                 <form onSubmit={handleSubmit}>
                                     <input
                                         type="mail"
-                                        placeholder={isInputVoid ? 'username@gmail.com' : error}
+                                        placeholder={isInputVoid ? 'Ihre E-Mail-Adresse' : error}
                                         autoComplete="email"
                                         value={email}
                                         onChange={handleInputChange}

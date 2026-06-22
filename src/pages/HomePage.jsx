@@ -8,6 +8,7 @@ import Projects from '../components/projects/Projects';
 import Services from '../components/services/Services';
 import Mail from '../components/mail/Mail';
 import Reviews from '../components/reviews/Reviews';
+import Process from '../components/process/Process';
 import Faq from '../components/faq/Faq';
 import Contacts from '../components/contacts/Contacts';
 
@@ -24,7 +25,8 @@ const HomePage = () => {
             <Projects />
             <Services />
             <Mail />
-            <Reviews />
+            <Process />
+            {/* <Reviews /> */}
             <Faq />
             <Contacts />
         </>

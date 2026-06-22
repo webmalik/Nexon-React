@@ -1,199 +1,199 @@
-@import "../../root/scss/_sass";
+@import '../../root/scss/_sass';
 
 .info {
-	background: rgb(255, 255, 255);
-	@include adaptiveValue("padding-top", 150, 100);
-	@include adaptiveValue("padding-bottom", 150, 100);
-	padding: 150px 0;
-	&__grid {
-		display: grid;
-		grid-template-columns: 2.5fr 1.2fr 1.2fr;
-	}
+    background: rgb(255, 255, 255);
+    @include adaptiveValue('padding-top', 150, 100);
+    @include adaptiveValue('padding-bottom', 150, 100);
+    padding: 150px 0;
+    &__grid {
+        display: grid;
+        grid-template-columns: 2.5fr 1.2fr 1.2fr;
+    }
 
-	&__item {
-		// border: 0.06rem solid rgb(204, 204, 204);
-		padding: 55px;
-		display: flex;
-		flex-direction: column;
-		@include adaptiveValue("gap", 75, 30);
-		gap: 75px;
-		transition: background-color .2s ease-in-out;
+    &__item {
+        // border: 0.06rem solid rgb(204, 204, 204);
+        padding: 55px;
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue('gap', 75, 30);
+        gap: 75px;
+        transition: background-color 0.2s ease-in-out;
 
-		&:hover:not(:nth-child(6)):not(:first-child) {
-			background-color: #F6F6F6;
-			transition: background-color 0.2s ease-in-out;
-		}
+        &:hover:not(:nth-child(6)):not(:first-child) {
+            background-color: #f6f6f6;
+            transition: background-color 0.2s ease-in-out;
+        }
 
-		&:first-child {
-			grid-area: 1/3/1/1;
-			border: none;
-		}
+        &:first-child {
+            grid-area: 1/3/1/1;
+            border: none;
+        }
 
-		&:nth-child(2) {
-			border-width: 0.06rem 0.06rem 0 0.06rem;
-			border-style: solid;
-			border-color: rgb(204, 204, 204);
-			border-radius: 1.15rem 1.15rem 0rem 0rem;
-		}
-		&:nth-child(3) {
-			border-width: 0.06rem 0 0 0.06rem;
-			border-style: solid;
-			border-color: rgb(204, 204, 204);
-			border-radius: 1.15rem 0rem 0rem 0rem;
-		}
-		&:nth-child(4) {
-			border: 0.06rem solid rgb(204, 204, 204);
-		}
-		&:nth-child(5) {
-			border-radius: 0rem 0rem 1.15rem 0rem;
-			border-width: 0.06rem 0.06rem 0.06rem 0;
-			border-style: solid;
-			border-color: rgb(204, 204, 204);
-		}
-		&:nth-child(6) {
-			border: 0.06rem solid rgb(204, 204, 204);
-			border-radius: 0rem 0rem 0rem 1.15rem;
-			background-color: rgb(224, 231, 248);
-			transition: background-color .2s ease-in-out, transform .4s ease-in-out;
-			padding: 0;
+        &:nth-child(2) {
+            border-width: 0.06rem 0.06rem 0 0.06rem;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-radius: 1.15rem 1.15rem 0rem 0rem;
+        }
+        &:nth-child(3) {
+            border-width: 0.06rem 0 0 0.06rem;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-radius: 1.15rem 0rem 0rem 0rem;
+        }
+        &:nth-child(4) {
+            border: 0.06rem solid rgb(204, 204, 204);
+        }
+        &:nth-child(5) {
+            border-radius: 0rem 0rem 1.15rem 0rem;
+            border-width: 0.06rem 0.06rem 0.06rem 0;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+        }
+        &:nth-child(6) {
+            border: 0.06rem solid rgb(204, 204, 204);
+            border-radius: 0rem 0rem 0rem 1.15rem;
+            background-color: rgb(224, 231, 248);
+            transition:
+                background-color 0.2s ease-in-out,
+                transform 0.4s ease-in-out;
+            padding: 0;
 
-			&:hover {
-				background-color: rgb(233, 238, 252);
-				transition: background-color .2s ease-in-out, transform .4s ease-in-out;
-				transform: scale(1.02);
-			}
-		}
-		&:nth-child(7) {
-			border-width: 0 0.06rem 0.06rem 0;
-			border-style: solid;
-			border-color: rgb(204, 204, 204);
-			border-radius: 0rem 0rem 1.15rem 0rem;
-		}
-	}
+            &:hover {
+                background-color: rgb(233, 238, 252);
+                transition:
+                    background-color 0.2s ease-in-out,
+                    transform 0.4s ease-in-out;
+                transform: scale(1.02);
+            }
+        }
+        &:nth-child(7) {
+            border-width: 0 0.06rem 0.06rem 0;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-radius: 0rem 0rem 1.15rem 0rem;
+        }
+    }
 
-	&__header {
-		color: rgb(21, 21, 21);
-		font-family: $font-family;
-		@include adaptiveValue("font-size", 80, 28);
-		font-weight: 600;
-		line-height: 110%;
-		letter-spacing: -2%;
-		text-align: left;
-		
-		margin-top: -5rem;
-		//text-wrap: balance;
+    &__header {
+        color: rgb(21, 21, 21);
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 80, 28);
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -2%;
+        text-align: left;
 
-		.line-wrapper {
+        margin-top: -5rem;
+        //text-wrap: balance;
 
-			&:first-child .single-line {
-				text-align: right !important;
-			}
-			
-		}
-	}
+        .line-wrapper {
+            &:first-child .single-line {
+                text-align: right !important;
+            }
+        }
+    }
 
-	&__title {
-		color: rgb(21, 21, 21);
-		font-family: $font-family;
-		@include adaptiveValue("font-size", 118, 40);
-		font-size: 7.37rem;
-		font-weight: 500;
-		line-height: 100%;
-		letter-spacing: 0%;
-		text-align: left;
-		text-transform: uppercase;
+    &__title {
+        color: rgb(21, 21, 21);
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 118, 40);
+        font-size: 7.37rem;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: left;
+        text-transform: uppercase;
 
-		&.ttt {
-			display: flex;
-		}
+        &.ttt {
+            display: flex;
+        }
 
-		span {
-			font-size: 2.76rem;
-		}
-	}
+        span {
+            font-size: 2.76rem;
+        }
+    }
 
-	&__text {
-		color: rgba(21, 21, 21, 0.4);
-		font-family: $font-family;
-		@include adaptiveValue("font-size", 24, 20);
-		font-weight: 500;
-		line-height: 1.88rem;
-		letter-spacing: -2%;
-		text-align: left;
-	}
+    &__text {
+        color: rgba(21, 21, 21, 0.4);
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 18, 16);
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -2%;
+        text-align: left;
+    }
 
-	&__button {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: rgb(21, 21, 21);
-		font-family: $font-family;
-		@include adaptiveValue("font-size", 30, 20);
-		font-weight: 600;
-		line-height: 100%;
-		letter-spacing: -2%;
-		text-align: left;
-		text-decoration-line: underline;
-	}
+    &__button {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(21, 21, 21);
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 30, 20);
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: -2%;
+        text-align: left;
+        text-decoration-line: underline;
+    }
 }
 
 @media (max-width: $tablet) {
-	.info {
-		&__grid {
-			display: grid;
-			grid-template-columns: 1fr;
-			gap: 20px;
-		}
+    .info {
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
 
-		&__item {
-			padding: 20px;
-			text-align: center;
-			@include adaptiveValue("border-radius", 20, 15);
+        &__item {
+            padding: 20px;
+            text-align: center;
+            @include adaptiveValue('border-radius', 20, 15);
 
-			&:first-child {
-				grid-area: auto;
-				border: none;
-			}
+            &:first-child {
+                grid-area: auto;
+                border: none;
+            }
 
-			&:nth-child(2) {
-				border: 0.06rem solid rgb(204, 204, 204);
-				@include adaptiveValue("border-radius", 20, 15);
-			}
-			&:nth-child(3) {
-				border: 0.06rem solid rgb(204, 204, 204);
-				@include adaptiveValue("border-radius", 20, 15);
-			}
-			&:nth-child(5) {
-				border: 0.06rem solid rgb(204, 204, 204);
-				@include adaptiveValue("border-radius", 20, 15);
-			}
-			&:nth-child(6) {
-				border: 0.06rem solid rgb(204, 204, 204);
-				@include adaptiveValue("border-radius", 20, 15);
-				background: rgb(224, 231, 248);
-				min-height: 100px;
-				padding: 0;
-			}
-			&:nth-child(7) {
-				border: 0.06rem solid rgb(204, 204, 204);
-				@include adaptiveValue("border-radius", 20, 15);
-			}
-		}
+            &:nth-child(2) {
+                border: 0.06rem solid rgb(204, 204, 204);
+                @include adaptiveValue('border-radius', 20, 15);
+            }
+            &:nth-child(3) {
+                border: 0.06rem solid rgb(204, 204, 204);
+                @include adaptiveValue('border-radius', 20, 15);
+            }
+            &:nth-child(5) {
+                border: 0.06rem solid rgb(204, 204, 204);
+                @include adaptiveValue('border-radius', 20, 15);
+            }
+            &:nth-child(6) {
+                border: 0.06rem solid rgb(204, 204, 204);
+                @include adaptiveValue('border-radius', 20, 15);
+                background: rgb(224, 231, 248);
+                min-height: 100px;
+                padding: 0;
+            }
+            &:nth-child(7) {
+                border: 0.06rem solid rgb(204, 204, 204);
+                @include adaptiveValue('border-radius', 20, 15);
+            }
+        }
 
-		&__header {
-			text-indent: 0;
-			text-align: center;
-			text-wrap: balance;
+        &__header {
+            text-indent: 0;
+            text-align: center;
+            text-wrap: balance;
 
-			.line-wrapper {
-
-				&:first-child .single-line {
-					text-align: center !important;
-				}
-				
-			}
-		}
-	}
+            .line-wrapper {
+                &:first-child .single-line {
+                    text-align: center !important;
+                }
+            }
+        }
+    }
 }
