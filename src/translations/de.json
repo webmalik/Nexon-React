@@ -4,6 +4,7 @@
         "description": "▶ Full-cycle website development — WordPress, Shopify, Web Flow. ✓ Up to +30% conversion boost. ☎ Telegram: @dmitriy_uier — NEXON STUDIO"
     },
     "menu": "Menü",
+    "back": "Zurück",
 
     "menu-item-1": "About Us",
     "menu-item-2": "Portfolio",
@@ -49,7 +50,11 @@
 
     "reviews-title": "Real Reviews of Clients on Cooperation",
 
+    "process-label": "UNSER PROZESS",
     "process-title": "So läuft Ihr Shopify-Projekt ab",
+    "process-text": "Ein klarer Prozess, transparente Kommunikation und ein Fokus auf Ergebnisse — das macht die Zusammenarbeit effizient und erfolgreich.",
+    "process-button-title": "Projekt starten",
+    "process-button-text": "Kostenlose Ersteinschätzung",
 
     "faq-title": "Häufige Fragen",
     "faq-button": "Anfrage senden",
