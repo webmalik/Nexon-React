@@ -16,8 +16,8 @@ const HomePage = () => {
     return (
         <>
             <SEO
-                title="Разработка продающих сайтов под ключ | NEXON STUDIO"
-                description="▶ Разработка продающих сайтов под ключ за 14 дней — Word Press, Shopify, Web Flow. ✓ Конверсия +30 %. ☎Telegram: @dmitriy_uier — NEXON STUDIO"
+                title="Shopify Shop erstellen lassen | Nexon Digital Studio"
+                description="Shopify Shop erstellen lassen in Deutschland: individuelles Design, saubere Theme-Entwicklung, Performance, SEO-Grundlagen und technische Betreuung."
             />
 
             <Hero />
