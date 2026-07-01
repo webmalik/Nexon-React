@@ -82,7 +82,7 @@
     &__title {
         color: $white_color;
         font-family: $font-family;
-        @include adaptiv-value('font-size', toPX(11), toPX(2.2), 1);
+        @include adaptiv-value('font-size', toPX(10), toPX(2.2), 1);
         font-style: normal;
         font-weight: 600;
         line-height: 100%; /* 12.25rem */

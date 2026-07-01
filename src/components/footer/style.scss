@@ -32,14 +32,17 @@
 
     &__links {
         gap: 2rem;
-        color: #000;
-        font-family: $font-family;
-        @include adaptiveValue('font-size', 20, 14);
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 1.75rem */
-        text-decoration-line: underline;
+        a,
+        button {
+            color: #000;
+            font-family: $font-family;
+            @include adaptiveValue('font-size', 20, 14);
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 1.75rem */
+            text-decoration-line: underline;
+        }
     }
 
     &__slug {

@@ -152,8 +152,9 @@
         @include adaptiveValue('padding-left', 45, 25);
         @include adaptiveValue('padding-right', 45, 25);
         @include adaptiveValue('border-radius', 19, 12);
+        transition: all 0.3s ease-in-out;
 
-        &:first-child {
+        &:hover {
             .process__item-icon {
                 background: #f1f1f1;
             }
@@ -195,6 +196,7 @@
         background: #e9e6fa;
         @include adaptiveValue('max-width', 80, 50);
         @include adaptiveValue('max-height', 80, 50);
+        transition: all 0.3s ease-in-out;
 
         svg {
             @include adaptiveValue('max-width', 40, 25);

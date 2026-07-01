@@ -27,7 +27,7 @@ const Form = () => {
     const [isInputVoidMail, setIsInputVoidMail] = useState(true);
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const [countryCode, setCountryCode] = useState('UA');
+    const [countryCode, setCountryCode] = useState('DE');
 
     const chats = [
         '1605354843', // WebMaLik
@@ -129,7 +129,7 @@ const Form = () => {
                     />
                     <div className="phone-input-container">
                         <PhoneInput
-                            country={'ua'}
+                            country={'de'}
                             onChange={handleCountryChange}
                             disableSearchIcon={true}
                             enableSearch={true}
@@ -178,6 +178,11 @@ const Form = () => {
                     )}
                 </div>
             )}
+            <div className="form__info">
+                Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass Ihre
+                Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen
+                finden Sie in unserer Datenschutzerklärung.
+            </div>
         </div>
     );
 };

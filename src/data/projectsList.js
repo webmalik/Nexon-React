@@ -15,10 +15,10 @@ const projectsList = [
             de: 'Website für gepanzerte Fenster',
         },
         description: {
-            en: 'Word Press',
-            ua: 'Word Press',
-            ru: 'Word Press',
-            de: 'Word Press',
+            en: 'Shopify',
+            ua: 'Shopify',
+            ru: 'Shopify',
+            de: 'Shopify',
         },
         image: porfolio01,
         tags: {

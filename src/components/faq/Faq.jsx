@@ -12,7 +12,7 @@ const Faq = () => {
     const { t, i18n } = useTranslation();
     const currentLanguageKey = i18n.language;
 
-    const [openIndex, setOpenIndex] = useState(2);
+    const [openIndex, setOpenIndex] = useState(10);
 
     const toggleAccordion = (index) => {
         setOpenIndex((prevIndex) => (prevIndex === index ? null : index));

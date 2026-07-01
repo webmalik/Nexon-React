@@ -96,7 +96,7 @@ const Menu = () => {
             label: t('menu-item-4'),
         },
         {
-            id: 'reviews',
+            id: 'process',
             label: t('menu-item-5'),
         },
         {

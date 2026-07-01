@@ -44,6 +44,66 @@ const faqList = [
             de: 'Ja. Wir analysieren bestehende Shopify-Shops und verbessern gezielt Ladezeit, mobile Darstellung, Produktseiten, Struktur, Conversion-Elemente, Theme-Code und technische Fehler.',
         },
     },
+    {
+        id: 4,
+        title: {
+            en: 'Wird der Shop DSGVO-konform umgesetzt?',
+            ua: 'Скільки коштує сайт і скільки часу його роблять?',
+            ru: 'Сколько стоит сайт и сколько времени его делают?',
+            de: 'Wird der Shop DSGVO-konform umgesetzt?',
+        },
+        content: {
+            en: 'Der Shopify-Shop wird mit Blick auf den deutschen Markt und wichtige DSGVO-Anforderungen umgesetzt. Dazu gehören unter anderem saubere rechtliche Seiten, Cookie-/Consent-Lösungen, Datenschutz-Hinweise, Impressum, Kontaktinformationen und eine möglichst datensparsame technische Einrichtung. Wichtig: Eine rechtliche Prüfung durch einen Anwalt oder Datenschutzexperten ersetzt die technische Umsetzung nicht. Auf Wunsch kann der Shop aber so vorbereitet werden, dass rechtliche Inhalte sauber eingebunden werden können.',
+            ua: 'Вартість і терміни створення сайту залежать від багатьох факторів: складності проєкту, кількості сторінок, функціональних вимог і дизайну. Тому точну ціну і час розробки можна визначити тільки після обговорення всіх деталей. Кожен проєкт індивідуальний, і для кожного клієнта ми пропонуємо унікальне рішення.',
+            ru: 'Стоимость и сроки создания сайта зависят от множества факторов: сложности проекта, количества страниц, требований к функционалу и дизайну. Поэтому точную цену и сроки можно определить только после обсуждения всех деталей. Каждый проект уникален, и мы предлагаем индивидуальное решение для каждого клиента.',
+            de: 'Der Shopify-Shop wird mit Blick auf den deutschen Markt und wichtige DSGVO-Anforderungen umgesetzt. Dazu gehören unter anderem saubere rechtliche Seiten, Cookie-/Consent-Lösungen, Datenschutz-Hinweise, Impressum, Kontaktinformationen und eine möglichst datensparsame technische Einrichtung. Wichtig: Eine rechtliche Prüfung durch einen Anwalt oder Datenschutzexperten ersetzt die technische Umsetzung nicht. Auf Wunsch kann der Shop aber so vorbereitet werden, dass rechtliche Inhalte sauber eingebunden werden können.',
+        },
+    },
+    {
+        id: 5,
+        title: {
+            en: 'Kann ein bestehender Shopify-Shop optimiert werden?',
+            ua: 'Скільки коштує сайт і скільки часу його роблять?',
+            ru: 'Сколько стоит сайт и сколько времени его делают?',
+            de: 'Kann ein bestehender Shopify-Shop optimiert werden?',
+        },
+        content: {
+            en: 'Ja. Bestehende Shopify-Shops können technisch, visuell und verkaufsorientiert optimiert werden. Dazu gehören zum Beispiel bessere Produktseiten, übersichtlichere Navigation, mobilfreundliches Design, schnellere Ladezeiten, klarere Call-to-Actions und ein optimierter Checkout-Weg. Zuerst wird geprüft, wo der Shop aktuell Schwächen hat. Danach erhalten Sie konkrete Empfehlungen, welche Anpassungen den größten Effekt haben können.',
+            ua: 'Вартість і терміни створення сайту залежать від багатьох факторів: складності проєкту, кількості сторінок, функціональних вимог і дизайну. Тому точну ціну і час розробки можна визначити тільки після обговорення всіх деталей. Кожен проєкт індивідуальний, і для кожного клієнта ми пропонуємо унікальне рішення.',
+            ru: 'Стоимость и сроки создания сайта зависят от множества факторов: сложности проекта, количества страниц, требований к функционалу и дизайну. Поэтому точную цену и сроки можно определить только после обсуждения всех деталей. Каждый проект уникален, и мы предлагаем индивидуальное решение для каждого клиента.',
+            de: 'Ja. Bestehende Shopify-Shops können technisch, visuell und verkaufsorientiert optimiert werden. Dazu gehören zum Beispiel bessere Produktseiten, übersichtlichere Navigation, mobilfreundliches Design, schnellere Ladezeiten, klarere Call-to-Actions und ein optimierter Checkout-Weg. Zuerst wird geprüft, wo der Shop aktuell Schwächen hat. Danach erhalten Sie konkrete Empfehlungen, welche Anpassungen den größten Effekt haben können.',
+        },
+    },
+    {
+        id: 6,
+        title: {
+            en: 'Gibt es nach dem Launch Support?',
+            ua: 'Скільки коштує сайт і скільки часу його роблять?',
+            ru: 'Сколько стоит сайт и сколько времени его делают?',
+            de: 'Gibt es nach dem Launch Support?',
+        },
+        content: {
+            en: 'Ja. Nach dem Launch können kleinere Anpassungen, technische Fragen oder weitere Optimierungen übernommen werden. Auf Wunsch ist auch laufende Betreuung möglich, zum Beispiel für neue Seiten, Produktbereiche, Design-Anpassungen oder technische Erweiterungen.',
+            ua: 'Вартість і терміни створення сайту залежать від багатьох факторів: складності проєкту, кількості сторінок, функціональних вимог і дизайну. Тому точну ціну і час розробки можна визначити тільки після обговорення всіх деталей. Кожен проєкт індивідуальний, і для кожного клієнта ми пропонуємо унікальне рішення.',
+            ru: 'Стоимость и сроки создания сайта зависят от множества факторов: сложности проекта, количества страниц, требований к функционалу и дизайну. Поэтому точную цену и сроки можно определить только после обсуждения всех деталей. Каждый проект уникален, и мы предлагаем индивидуальное решение для каждого клиента.',
+            de: 'Ja. Nach dem Launch können kleinere Anpassungen, technische Fragen oder weitere Optimierungen übernommen werden. Auf Wunsch ist auch laufende Betreuung möglich, zum Beispiel für neue Seiten, Produktbereiche, Design-Anpassungen oder technische Erweiterungen.',
+        },
+    },
+    {
+        id: 7,
+        title: {
+            en: 'Kann ich meinen Shopify-Shop später selbst bearbeiten?',
+            ua: 'Скільки коштує сайт і скільки часу його роблять?',
+            ru: 'Сколько стоит сайт и сколько времени его делают?',
+            de: 'Kann ich meinen Shopify-Shop später selbst bearbeiten?',
+        },
+        content: {
+            en: 'Ja. Shopify ist dafür gemacht, dass Sie Produkte, Texte, Bilder, Preise, Kategorien und einfache Inhalte selbst verwalten können. Nach der Umsetzung bekommen Sie eine kurze Einführung, damit Sie die wichtigsten Bereiche eigenständig bearbeiten können. Für größere Änderungen am Design, neue Funktionen oder technische Anpassungen kann weiterhin Unterstützung übernommen werden.',
+            ua: 'Вартість і терміни створення сайту залежать від багатьох факторів: складності проєкту, кількості сторінок, функціональних вимог і дизайну. Тому точну ціну і час розробки можна визначити тільки після обговорення всіх деталей. Кожен проєкт індивідуальний, і для кожного клієнта ми пропонуємо унікальне рішення.',
+            ru: 'Стоимость и сроки создания сайта зависят от множества факторов: сложности проекта, количества страниц, требований к функционалу и дизайну. Поэтому точную цену и сроки можно определить только после обсуждения всех деталей. Каждый проект уникален, и мы предлагаем индивидуальное решение для каждого клиента.',
+            de: 'Ja. Shopify ist dafür gemacht, dass Sie Produkte, Texte, Bilder, Preise, Kategorien und einfache Inhalte selbst verwalten können. Nach der Umsetzung bekommen Sie eine kurze Einführung, damit Sie die wichtigsten Bereiche eigenständig bearbeiten können. Für größere Änderungen am Design, neue Funktionen oder technische Anpassungen kann weiterhin Unterstützung übernommen werden.',
+        },
+    },
 ];
 
 export { faqList };

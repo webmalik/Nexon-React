@@ -1,3 +1,25 @@
-.germany .banner__left .single-line {
-    @include adaptiveValue('padding-left', 400, 100);
+// .germany .banner__left .single-line {
+//     @include adaptiveValue('padding-left', 200, 0);
+// }
+button {
+    background: transparent;
+    text-align: left;
+    &:hover {
+        background: transparent;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+    &:hover {
+        background: transparent;
+    }
 }

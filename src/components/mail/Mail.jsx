@@ -114,6 +114,11 @@ const Mail = () => {
                             )}
                         </div>
                     </div>
+                    <div className="mail__info">
+                        Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass
+                        Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere
+                        Informationen finden Sie in unserer Datenschutzerklärung.
+                    </div>
                 </div>
             </div>
         </section>

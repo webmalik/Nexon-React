@@ -12,6 +12,11 @@ import HomePage from './pages/HomePage';
 import ImpressumPage from './pages/ImpressumPage';
 import DatenschutzPage from './pages/DatenschutzPage';
 
+import CookieBanner from './components/CookieBanner/CookieBanner';
+
+import { hasCookieCategory } from './utils/cookieConsent';
+import { loadGoogleAnalytics } from './utils/analytics';
+
 const ScrollToTop = () => {
     const { pathname } = useLocation();
     const lenis = useLenis();
@@ -38,10 +43,33 @@ const ScrollToTop = () => {
 };
 
 function App() {
+    useEffect(() => {
+        const applyCookieScripts = () => {
+            if (hasCookieCategory('statistics')) {
+                loadGoogleAnalytics();
+            }
+
+            if (hasCookieCategory('marketing')) {
+                // Тут потім можна підключити Meta Pixel / Google Ads
+                // loadMetaPixel();
+                // loadGoogleAds();
+            }
+        };
+
+        applyCookieScripts();
+
+        window.addEventListener('wm-cookie-consent-updated', applyCookieScripts);
+
+        return () => {
+            window.removeEventListener('wm-cookie-consent-updated', applyCookieScripts);
+        };
+    }, []);
+
     return (
         <StateProvider>
             <ReactLenis root>
                 <ScrollToTop />
+
                 <Routes>
                     <Route element={<SiteLayout />}>
                         <Route path="/" element={<HomePage />} />
@@ -60,6 +88,8 @@ function App() {
                         <Route path="/ru/datenschutz/" element={<DatenschutzPage />} />
                     </Route>
                 </Routes>
+
+                <CookieBanner />
             </ReactLenis>
         </StateProvider>
     );

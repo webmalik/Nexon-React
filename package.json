@@ -25,7 +25,6 @@
         "react-responsive": "^10.0.0",
         "react-router-dom": "^7.18.0",
         "react-scripts": "5.0.1",
-        "react-snap": "^1.23.0",
         "sass": "^1.78.0",
         "sass-loader": "^16.0.1",
         "split-type": "^0.3.4",
@@ -36,7 +35,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "postbuild": ""
+        "postbuild": "react-snap"
     },
     "browserslist": {
         "production": [
@@ -49,14 +48,18 @@
     },
     "reactSnap": {
         "inlineCss": true,
+        "source": "build",
+        "destination": "build",
+        "puppeteerExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
         "puppeteerArgs": [
-            "--no-sandbox"
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage"
         ],
         "include": [
             "/",
-            "/ua/",
-            "/ru/",
-            "/en/"
+            "/impressum/",
+            "/datenschutz/"
         ]
     },
     "eslintConfig": {
@@ -66,6 +69,7 @@
         ]
     },
     "devDependencies": {
-        "@babel/plugin-proposal-optional-chaining": "^7.21.0"
+        "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+        "react-snap": "^1.23.0"
     }
 }

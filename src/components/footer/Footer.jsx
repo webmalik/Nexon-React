@@ -6,6 +6,8 @@ import './style.scss';
 import visa from './visa.png';
 import mastercard from './mastercard.png';
 
+import { openCookieSettings } from '../../utils/cookieConsent';
+
 const Footer = () => {
     const { t } = useTranslation();
 
@@ -47,13 +49,10 @@ const Footer = () => {
         );
     };
     const handleLinkedinClick = () => {
-        window.open(
-            `https://www.linkedin.com/in/dmitriy-uier?utm_source=nexon-studio-site`,
-            '_blank',
-        );
+        window.open(`https://www.linkedin.com/in/dmitriy-kiryachek-bb7272239`, '_blank');
     };
     const handleWhatsappClick = () => {
-        window.open(`https://wa.me/1234567890`, '_blank');
+        window.open(`https://wa.me/4915510629166`, '_blank');
     };
     return (
         <div className="footer not-sticky">
@@ -61,9 +60,9 @@ const Footer = () => {
                 {isDesktop ? (
                     <div className="footer__wrapper">
                         <div className="footer__item">
-                            <h2 className="footer__logo">Nexon Studio</h2>
+                            <h2 className="footer__logo">Nexon Digital Studio</h2>
                             <div className="footer__inner">
-                                <button onClick={() => handleInstagramClick()}>
+                                {/* <button onClick={() => handleInstagramClick()}>
                                     <svg
                                         width="48"
                                         height="48"
@@ -87,7 +86,7 @@ const Footer = () => {
                                             fill="#151515"
                                         />
                                     </svg>
-                                </button>
+                                </button> */}
                                 <button onClick={() => handleLinkedinClick()}>
                                     <svg
                                         width="48"
@@ -125,6 +124,12 @@ const Footer = () => {
                             <div className="footer__inner footer__links">
                                 <Link to="/impressum/">Impressum</Link>
                                 <Link to="/datenschutz/">Datenschutz</Link>
+                                <button
+                                    className="footer__cookie-button"
+                                    type="button"
+                                    onClick={openCookieSettings}>
+                                    Cookie-Einstellungen
+                                </button>
                             </div>
                         </div>
                         <div className="footer__item">
@@ -237,6 +242,12 @@ const Footer = () => {
                             <div className="footer__inner footer__links">
                                 <Link to="/impressum/">Impressum</Link>
                                 <Link to="/datenschutz/">Datenschutz</Link>
+                                <button
+                                    className="footer__cookie-button"
+                                    type="button"
+                                    onClick={openCookieSettings}>
+                                    Cookie-Einstellungen
+                                </button>
                             </div>
                             <div className="footer__inner footer__payments">
                                 <button className="visa">

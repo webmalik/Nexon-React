@@ -1,11 +1,6 @@
-// import { useRef, useEffect } from 'react';
-// import { useTranslation } from 'react-i18next';
 import './style.scss';
 
 const Impressum = () => {
-    // const { t } = useTranslation();
-    // const container = useRef();
-
     return (
         <section className="legal-page">
             <div className="legal-page__container container">
@@ -17,26 +12,38 @@ const Impressum = () => {
                     <p>
                         Dmytro Kiriachek
                         <br />
+                        handelnd unter Nexon Digital Studio
                         <br />
                         Collegienstr. 59A
                         <br />
-                        <br />
-                        06686, Lutherstadt Wittenberg
-                        <br />
+                        06886 Lutherstadt Wittenberg
                         <br />
                         Deutschland
                     </p>
 
-                    <p>E-Mail: nexonstudio24@gmail.com</p>
+                    <p>
+                        Kontakt:
+                        <br />
+                        E-Mail: nexonstudio24@gmail.com
+                        <br />
+                        Telefon: +49 15510629166
+                        <br />
+                        Kontaktformular:{' '}
+                        <a href="https://nexon-studio.com/#contact">
+                            https://nexon-studio.com/#contact
+                        </a>
+                    </p>
+
+                    <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
 
                     <p>
-                        Verantwortlich für den Inhalt:
-                        <br />
-                        <br />
                         Dmytro Kiriachek
                         <br />
+                        Collegienstr. 59A
                         <br />
-                        Collegienstr. 59A, 06686, Lutherstadt Wittenberg, Deutschland
+                        06886 Lutherstadt Wittenberg
+                        <br />
+                        Deutschland
                     </p>
                 </div>
             </div>
