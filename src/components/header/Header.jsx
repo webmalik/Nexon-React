@@ -1,16 +1,15 @@
 import React from 'react';
+
 import { useStateContext } from '../../StateContext';
-import { useTranslation } from 'react-i18next';
 import useScrollTo from '../useScrollTo/useScrollTo';
 
-import './style.scss';
+import { siteData } from '../../data/siteData';
 
-// import menu from './menu.svg';
+import './style.scss';
 
 import { ReactComponent as MenuIcon } from './menu.svg';
 
 const Header = () => {
-    const { t } = useTranslation();
     const { toggleMenu } = useStateContext();
     const { handleScrollToMain } = useScrollTo();
 
@@ -18,32 +17,17 @@ const Header = () => {
         <header className="header not-sticky">
             <div className="container">
                 <div className="header__menu">
-                    <span className="header__menu-button" onClick={toggleMenu}>
-                        {/* <img src={menu} alt="" /> */}
+                    <button className="header__menu-button" type="button" onClick={toggleMenu}>
                         <MenuIcon width="36" height="18" fill="currentColor" />
-                        <span>{t('menu')}</span>
-                    </span>
+                        <span>{siteData.header.menuLabel}</span>
+                    </button>
                     <div className="header__menu-wrapper">
-                        {/* <div className="header__lang">
-                            <span
-                                onClick={() => (window.location.href = "/ua/")}
-                            >
-                                Ua
-                            </span>
-                            <span onClick={() => (window.location.href = "/")}>
-                                En
-                            </span>
-                            <span
-                                onClick={() => (window.location.href = "/ru/")}
-                            >
-                                Ru
-                            </span>
-                        </div> */}
-                        <div
+                        <button
                             className="header__button"
+                            type="button"
                             onClick={() => handleScrollToMain('contacts')}>
-                            {t('button')}
-                        </div>
+                            {siteData.header.buttonLabel}
+                        </button>
                     </div>
                 </div>
             </div>

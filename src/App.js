@@ -9,6 +9,9 @@ import SiteLayout from './components/layout/SiteLayout';
 import LegalLayout from './components/layout/LegalLayout';
 
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ConditionsPage from './pages/ConditionsPage';
+import ProjectsPage from './pages/ProjectsPage';
 import ImpressumPage from './pages/ImpressumPage';
 import DatenschutzPage from './pages/DatenschutzPage';
 
@@ -73,19 +76,14 @@ function App() {
                 <Routes>
                     <Route element={<SiteLayout />}>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/ua/" element={<HomePage />} />
-                        <Route path="/ru/" element={<HomePage />} />
-                        <Route path="*" element={<HomePage />} />
+                        <Route path="/about/" element={<AboutPage />} />
+                        <Route path="/conditions/" element={<ConditionsPage />} />
+                        <Route path="/projects/" element={<ProjectsPage />} />
                     </Route>
 
                     <Route element={<LegalLayout />}>
                         <Route path="/impressum/" element={<ImpressumPage />} />
-                        <Route path="/ua/impressum/" element={<ImpressumPage />} />
-                        <Route path="/ru/impressum/" element={<ImpressumPage />} />
-
                         <Route path="/datenschutz/" element={<DatenschutzPage />} />
-                        <Route path="/ua/datenschutz/" element={<DatenschutzPage />} />
-                        <Route path="/ru/datenschutz/" element={<DatenschutzPage />} />
                     </Route>
                 </Routes>
 

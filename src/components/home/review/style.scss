@@ -1,0 +1,99 @@
+@import '../../../root/scss/_sass';
+
+.review {
+    position: relative;
+    border-radius: 1.21838rem;
+    background: rgba(21, 21, 21, 0.03);
+    backdrop-filter: blur(11.696551322937012px);
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    @include adaptiveValue('padding', 38, 20);
+    cursor: pointer;
+    &__header {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue('gap', 20, 15);
+    }
+
+    &__image {
+        @include adaptiveValue('width', 98, 48);
+        @include adaptiveValue('height', 98, 48);
+        @include adaptiveValue('min-width', 98, 48);
+        @include adaptiveValue('min-height', 98, 48);
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.61rem;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__title {
+        color: #151515;
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 22, 18);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 1.7545rem */
+    }
+
+    &__nikname {
+        color: rgba(21, 21, 21, 0.4);
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 15, 13);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 1.16963rem */
+    }
+
+    &__arrow {
+        position: absolute;
+        @include adaptiveValue('top', 38, 20);
+        @include adaptiveValue('right', 38, 20);
+        @include adaptiveValue('max-width', 20, 14);
+        transition: all 0.5s ease-in-out;
+        opacity: 1;
+    }
+
+    &__content {
+        color: #151515;
+        font-family: $font-family;
+        @include adaptiveValue('font-size', 20, 14);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 1.82756rem */
+        letter-spacing: -0.02438rem;
+        @include adaptiveValue('padding-left', 117, 60);
+        padding-left: 7.31rem;
+
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(200px);
+        transition: all 0.5s ease-in-out;
+    }
+
+    &.active {
+        border-radius: 1.21838rem;
+        background: #fff;
+        box-shadow: 0px 38.989px 87.724px -9.747px rgba(0, 0, 0, 0.1);
+
+        .review__content {
+            //max-height: 100vh;
+            transform: translateY(0);
+            margin-top: 0.61rem;
+        }
+
+        .review__arrow {
+            transform: rotate(180deg);
+            opacity: 0.2;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import {
     ProcessChatIcon,
     ProcessLockIcon,
     ProcessClockIcon,
-} from './processIcons';
+} from '../assets/icons/processIcons';
 
 export const processList = [
     {

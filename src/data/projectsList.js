@@ -1,9 +1,9 @@
-import porfolio01 from './images/portf-1.png';
-import porfolio02 from './images/portf-2.png';
-import porfolio03 from './images/portf-3.png';
-import porfolio04 from './images/portf-4.png';
-import porfolio05 from './images/portf-5.png';
-import porfolio06 from './images/portf-6.png';
+import porfolio01 from '../assets/images/portf-1.png';
+import porfolio02 from '../assets/images/portf-2.png';
+import porfolio03 from '../assets/images/portf-3.png';
+import porfolio04 from '../assets/images/portf-4.png';
+import porfolio05 from '../assets/images/portf-5.png';
+import porfolio06 from '../assets/images/portf-6.png';
 
 const projectsList = [
     {

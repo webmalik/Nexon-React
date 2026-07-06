@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../components/seo/SEO';
-import Impressum from '../components/impressum/Impressum';
+import Impressum from '../components/home/impressum/Impressum';
 
 const ImpressumPage = () => {
     return (
