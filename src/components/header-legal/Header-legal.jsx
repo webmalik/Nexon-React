@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 import './style.scss';
 
+import { siteData } from '../../data/siteData';
+
 const Header = () => {
-    const { t } = useTranslation();
     const { pathname } = useLocation();
 
     const getHomePath = () => {
-        if (pathname.startsWith('/ua')) return '/ua/';
-        if (pathname.startsWith('/ru')) return '/ru/';
-
         return '/';
     };
 
@@ -35,12 +32,12 @@ const Header = () => {
                             />
                         </svg>
 
-                        <span>{t('back')}</span>
+                        <span>{siteData.header.backLabel}</span>
                     </Link>
 
                     <div className="header__menu-wrapper">
                         <Link className="header__button" to={`${homePath}#contacts`}>
-                            {t('button')}
+                            {siteData.header.buttonLabel}
                         </Link>
                     </div>
                 </div>

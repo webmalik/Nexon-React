@@ -14,6 +14,7 @@ export const siteData = {
 
     contact: {
         phone: '+49 15510629166',
+        phoneHref: '+4915510629166',
         email: 'nexonstudio24@gmail.com',
         whatsapp: '+49 15510629166',
         formUrl: 'https://nexon-studio.com/#contacts',
@@ -29,13 +30,23 @@ export const siteData = {
 
     links: {
         linkedin: 'https://www.linkedin.com/in/dmitriy-kiryachek-bb7272239',
-        instagram: '#',
-        telegram: '#',
+        whatsapp: 'https://wa.me/4915510629166',
+        instagram: 'https://www.instagram.com/dmitriy.uier?utm_source=nexon-studio-site',
+        telegram: 'https://t.me/dmitriy_uier',
     },
 
     footer: {
-        privacy: 'Privacy policy',
-        offer: 'Offer contract',
         slug: 'Shopify-Shops, die verkaufen',
+        legalLinks: [
+            {
+                label: 'Impressum',
+                path: '/impressum/',
+            },
+            {
+                label: 'Datenschutz',
+                path: '/datenschutz/',
+            },
+        ],
+        cookieSettings: 'Cookie-Einstellungen',
     },
 };
