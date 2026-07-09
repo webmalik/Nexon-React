@@ -65,6 +65,9 @@ export const defaultData = {
     mail: {
         title: ['Shopify-Projekt starten?', 'E-Mail eintragen – wir melden uns.'],
         button: 'Anfrage senden',
+        placeholder: 'Ihre E-Mail-Adresse',
+        privacyText:
+            'Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen finden Sie in unserer Datenschutzerklärung.',
         messages: {
             success:
                 'Ihre Kontaktdaten wurden erfolgreich gesendet. Wir werden uns bald bei Ihnen melden!',
@@ -108,10 +111,22 @@ export const defaultData = {
     },
 };
 
-export const faqSection = {
-    title: 'Häufige Fragen',
-    button: defaultData.buttons.request,
-};
+export const servicesList = [
+    {
+        id: 1,
+        title: 'Shopify UX/UI Design',
+        description:
+            'Wir gestalten moderne, klare und verkaufsorientierte Shopify-Shops – von der Startseite über Produktseiten bis zur mobilen Nutzerführung. Fokus: Vertrauen, einfache Bedienung und mehr Verkäufe.',
+        value: ['ab 4.000 €', 'ab 30 Tagen'],
+    },
+    {
+        id: 2,
+        title: 'Shopify Entwicklung',
+        description:
+            'Wir entwickeln und optimieren Shopify-Shops mit sauberem Code, schneller Ladezeit, SEO-Grundstruktur und flexiblen Sections, die Sie später einfach selbst bearbeiten können.',
+        value: ['ab 3.000 €', 'ab 18 Tagen'],
+    },
+];
 
 export const faqList = [
     {

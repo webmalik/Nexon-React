@@ -7,7 +7,7 @@ import arrow from './arrow.png';
 import Question from '../question/Question';
 import useScrollTo from '../../useScrollTo/useScrollTo';
 
-import { faqList, faqSection } from '../../../data/homeData';
+import { faqList, defaultData } from '../../../data/homeData';
 
 const Faq = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -21,7 +21,7 @@ const Faq = () => {
     return (
         <div className="faq not-sticky" id="faq">
             <div className="container">
-                <h2 className="faq__title ttt">{faqSection.title}</h2>
+                <h2 className="faq__title ttt">{defaultData.faq.title}</h2>
 
                 <div className="faq__wrapper">
                     {faqList.map((faq) => (
@@ -45,7 +45,7 @@ const Faq = () => {
                         className="faq__button"
                         type="button"
                         onClick={() => handleScrollToMain('contacts')}>
-                        {faqSection.button}
+                        {defaultData.faq.button}
                     </button>
                 </div>
             </div>

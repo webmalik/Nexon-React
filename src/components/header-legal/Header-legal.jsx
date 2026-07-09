@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 
 import { siteData } from '../../data/siteData';
 
 const Header = () => {
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
 
     const getHomePath = () => {
         return '/';

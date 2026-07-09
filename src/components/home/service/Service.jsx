@@ -1,9 +1,7 @@
 import './style.scss';
-import { useTranslation } from 'react-i18next';
 import useScrollTo from '../../useScrollTo/useScrollTo';
 
-const Service = ({ title, description, value }) => {
-    const { t } = useTranslation();
+const Service = ({ title, description, value, button }) => {
     const { handleScrollToMain } = useScrollTo();
 
     return (
@@ -29,7 +27,7 @@ const Service = ({ title, description, value }) => {
                                 strokeWidth="1.83448"
                             />
                         </svg>
-                        <span>{t('service-button')}</span>
+                        <span>{button}</span>
                     </button>
                 </div>
                 <div className="services__value">

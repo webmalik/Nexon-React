@@ -1,63 +1,73 @@
 import React, { useState } from 'react';
 
-import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
 import './style.scss';
+
 import mailArrowIMG from './mail-arrow.png';
 
+import { defaultData } from '../../../data/homeData';
+
+const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+
+const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const Mail = () => {
-    const { t } = useTranslation();
+    const { mail } = defaultData;
 
     const [email, setEmail] = useState('');
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState(null);
     const [isInputValid, setIsInputValid] = useState(true);
     const [isInputVoid, setIsInputVoid] = useState(true);
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    const chats = [
-        '1605354843', // WebMaLik
-        '5922657292', // Діма
-    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!email.trim()) {
-            setError(t('mail-message-error-valid-void'));
+
+        const trimmedEmail = email.trim();
+
+        if (!trimmedEmail) {
+            setError(mail.messages.emptyEmail);
             return;
         }
-        if (!emailPattern.test(email)) {
-            setError(t('mail-message-error-valid'));
+
+        if (!emailPattern.test(trimmedEmail)) {
+            setError(mail.messages.invalidEmail);
             return;
         }
+
+        if (!TELEGRAM_BOT_TOKEN) {
+            setError(mail.messages.error);
+            return;
+        }
+
         try {
-            const requests = chats.map(async (chat) => {
-                return axios.post(
-                    `https://api.telegram.org/bot7173317613:AAG4KDxp5DPHb6B6gFBRGrJ73BOsdrYhWDM/sendMessage`,
-                    {
-                        chat_id: chat,
-                        text: `<b>На сайті новий запит на зв'язок.\n\n<i>E-Mail:    </i></b> <a href="mailto:${email}">${email}</a> `,
-                        parse_mode: 'HTML',
-                    },
-                );
-            });
+            const requests = TELEGRAM_CHAT_IDS.map((chatId) =>
+                axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    chat_id: chatId,
+                    text: `<b>На сайті новий запит на зв'язок.\n\n<i>E-Mail: </i></b> <a href="mailto:${trimmedEmail}">${trimmedEmail}</a>`,
+                    parse_mode: 'HTML',
+                }),
+            );
 
-            const responses = await Promise.all(requests);
+            await Promise.all(requests);
 
-            responses.forEach(() => {
-                setIsSent(true);
-            });
-        } catch (error) {
-            setError(t('mail-message-error'));
+            setIsSent(true);
+            setError(null);
+        } catch {
+            setError(mail.messages.error);
         }
     };
 
     const handleInputChange = (e) => {
         const value = e.target.value;
+
         setEmail(value);
         setIsInputVoid(!value.trim());
-        setIsInputValid(emailPattern.test(value));
+        setIsInputValid(!value.trim() || emailPattern.test(value));
+        setError(null);
     };
 
     return (
@@ -65,12 +75,14 @@ const Mail = () => {
             <div className="container">
                 <div className="mail__wrapper">
                     <h2 className="mail__title ttt">
-                        {t('mail-title-1')}
+                        {mail.title[0]}
                         <br />
-                        <span>{t('mail-title-2')}</span>
+                        <span>{mail.title[1]}</span>
                     </h2>
+
                     <div className="mail__form">
                         <img src={mailArrowIMG} alt="" />
+
                         <div
                             className={`mail__input-wrapper ${
                                 isInputVoid ? 'empty' : !isInputValid ? 'invalid' : ''
@@ -78,19 +90,20 @@ const Mail = () => {
                             {!isSent ? (
                                 <form onSubmit={handleSubmit}>
                                     <input
-                                        type="mail"
-                                        placeholder={isInputVoid ? 'Ihre E-Mail-Adresse' : error}
+                                        type="email"
+                                        placeholder={error || mail.placeholder}
                                         autoComplete="email"
                                         value={email}
                                         onChange={handleInputChange}
                                         onBlur={handleInputChange}
                                         disabled={isSent}
                                     />
+
                                     <button
                                         type="submit"
                                         disabled={!isInputValid || isSent}
                                         className={isInputVoid ? 'mail__button-disabled' : ''}>
-                                        {t('mail-button')}
+                                        {mail.button}
                                         <span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -108,17 +121,12 @@ const Mail = () => {
                                     </button>
                                 </form>
                             ) : (
-                                <p
-                                    dangerouslySetInnerHTML={{ __html: t('mail-message-success') }}
-                                />
+                                <p>{mail.messages.success}</p>
                             )}
                         </div>
                     </div>
-                    <div className="mail__info">
-                        Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass
-                        Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere
-                        Informationen finden Sie in unserer Datenschutzerklärung.
-                    </div>
+
+                    <div className="mail__info">{mail.privacyText}</div>
                 </div>
             </div>
         </section>
