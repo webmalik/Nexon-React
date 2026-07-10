@@ -8,7 +8,7 @@ import mailArrowIMG from './mail-arrow.png';
 
 import { defaultData } from '../../../data/homeData';
 
-const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+const TELEGRAM_BOT_TOKEN = '7173317613:AAG4KDxp5DPHb6B6gFBRGrJ73BOsdrYhWDM';
 
 const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
 
