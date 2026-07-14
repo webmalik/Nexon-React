@@ -1,52 +1,66 @@
-import { useTranslation } from 'react-i18next';
 import React, { useRef, useEffect } from 'react';
 
 import './style.scss';
+
 import arrow from './arrow.png';
 import Form from '../form/Form';
 
+import { defaultData } from '../../../data/homeData';
+import { siteData } from '../../../data/siteData';
+
 const Contacts = () => {
-    const { t } = useTranslation();
-    const ImgRotate = useRef();
+    const imgRotate = useRef(null);
     const animationFrameId = useRef(null);
     const currentRotation = useRef(0);
     const isAnimating = useRef(false);
 
-    const handlePhoneClick = (phoneNumber) => {
-        window.open(`tel:${phoneNumber}`, '_blank');
+    const { contacts } = defaultData;
+    const { contact } = siteData;
+
+    const handlePhoneClick = () => {
+        window.open(`tel:${contact.phoneHref}`, '_blank');
     };
 
-    const handleEmailClick = (email) => {
-        window.open(`mailto:${email}`, '_blank');
+    const handleEmailClick = () => {
+        window.open(`mailto:${contact.email}`, '_blank');
     };
 
     const rotate = () => {
-        if (isAnimating.current) {
-            currentRotation.current += 2; // Увеличиваем угол поворота
-            if (currentRotation.current >= 360) {
-                currentRotation.current = 0; // Сбрасываем на 0 после полного оборота
-            }
-            ImgRotate.current.style.transform = `rotate(${currentRotation.current}deg)`;
-            animationFrameId.current = requestAnimationFrame(rotate);
+        if (!isAnimating.current || !imgRotate.current) return;
+
+        currentRotation.current += 2;
+
+        if (currentRotation.current >= 360) {
+            currentRotation.current = 0;
         }
+
+        imgRotate.current.style.transform = `rotate(${currentRotation.current}deg)`;
+        animationFrameId.current = requestAnimationFrame(rotate);
     };
 
     const handleMouseEnter = () => {
-        if (!isAnimating.current) {
-            isAnimating.current = true;
-            animationFrameId.current = requestAnimationFrame(rotate);
-        }
+        if (isAnimating.current) return;
+
+        isAnimating.current = true;
+        animationFrameId.current = requestAnimationFrame(rotate);
     };
 
     const handleMouseLeave = () => {
+        if (!imgRotate.current) return;
+
         isAnimating.current = false;
         cancelAnimationFrame(animationFrameId.current);
-        // Запускаем докручивание до следующего полного оборота
+
         const remainder = 360 - (currentRotation.current % 360);
-        ImgRotate.current.style.transition = 'transform .9s linear';
-        ImgRotate.current.style.transform = `rotate(${currentRotation.current + remainder}deg)`;
+
+        imgRotate.current.style.transition = 'transform .9s linear';
+        imgRotate.current.style.transform = `rotate(${currentRotation.current + remainder}deg)`;
+
         setTimeout(() => {
-            ImgRotate.current.style.transition = ''; // Убираем transition после завершения
+            if (!imgRotate.current) return;
+
+            imgRotate.current.style.transition = '';
+            currentRotation.current = 0;
         }, 900);
     };
 
@@ -62,31 +76,37 @@ const Contacts = () => {
                 <div className="contacts__wrapper">
                     <div className="contacts__content">
                         <div className="contacts__headers">
-                            <h2 className="contacts__title">{t('contacts-title')}</h2>
-                            <h3 className="contacts__subtitle">{t('contacts-subtitle')}</h3>
+                            <h2 className="contacts__title">{contacts.title}</h2>
+                            <h3 className="contacts__subtitle">{contacts.subtitle}</h3>
                         </div>
+
                         <div className="contacts__form">
                             <Form />
                         </div>
                     </div>
+
                     <div
                         className="contacts__main"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
                         <div className="contacts__label">
-                            <span>{t('contacts-label')}</span>
-                            <img ref={ImgRotate} src={arrow} alt="" className="rotating-arrow" />
+                            <span>{contacts.label}</span>
+                            <img ref={imgRotate} src={arrow} alt="" className="rotating-arrow" />
                         </div>
+
                         <div className="contacts__inner">
                             <button
-                                onClick={() => handlePhoneClick(t('contacts-phone'))}
+                                type="button"
+                                onClick={handlePhoneClick}
                                 className="contacts__phone">
-                                {t('contacts-phone')}
+                                {contact.phone}
                             </button>
+
                             <button
-                                onClick={() => handleEmailClick(t('contacts-mail'))}
+                                type="button"
+                                onClick={handleEmailClick}
                                 className="contacts__mail">
-                                {t('contacts-mail')}
+                                {contact.email}
                             </button>
                         </div>
                     </div>

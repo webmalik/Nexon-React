@@ -1,0 +1,109 @@
+.about-audience {
+    background-color: #f4f4f4;
+    color: #111;
+    padding: 90px 0 95px;
+
+    &__inner {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        text-align: center;
+        font-size: 46px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    &__item {
+        min-height: 150px;
+        padding: 28px 34px 30px;
+
+        &:not(:last-child) {
+            border-right: 1px solid #d8d8d8;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    &__item-text {
+        color: #333;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    &__text {
+        max-width: 760px;
+        margin: 24px auto 0;
+        text-align: center;
+        color: #222;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 991.98px) {
+        padding: 75px 0 80px;
+
+        &__title {
+            font-size: 38px;
+        }
+
+        &__items {
+            grid-template-columns: 1fr;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        &__item {
+            min-height: auto;
+            padding: 26px;
+
+            &:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid #d8d8d8;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 55px 0 65px;
+
+        &__title {
+            margin-bottom: 26px;
+            text-align: left;
+            font-size: 32px;
+        }
+
+        &__item {
+            padding: 22px;
+        }
+
+        &__item-title {
+            font-size: 15px;
+        }
+
+        &__item-text,
+        &__text {
+            font-size: 13px;
+        }
+
+        &__text {
+            text-align: left;
+        }
+    }
+}

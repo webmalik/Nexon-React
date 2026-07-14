@@ -1,29 +1,22 @@
-import { useTranslation } from 'react-i18next';
-
-import { processList, processBenefitsList } from '../../../data/processList';
-
 import './style.scss';
 
-const Projects = () => {
-    const { t, i18n } = useTranslation();
-    const currentLanguageKey = i18n.language?.split('-')[0] || 'de';
+import { defaultData, processList, processBenefitsList } from '../../../data/homeData';
 
-    const getText = (item, field) => {
-        return item[field]?.[currentLanguageKey] || item[field]?.de || item[field]?.en || '';
-    };
+const Process = () => {
+    const { process } = defaultData;
 
     return (
         <section className="process" id="process">
             <div className="container process__inner">
                 <div className="process__body">
                     <div className="process__content">
-                        <div className="process__label">{t('process-label')}</div>
+                        <div className="process__label">{process.label}</div>
 
-                        <h2 className="process__header ttt">{t('process-title')}</h2>
+                        <h2 className="process__header ttt">{process.title}</h2>
 
-                        <p className="process__text">{t('process-text')}</p>
+                        <p className="process__text">{process.text}</p>
 
-                        <a href="#contact" className="process__button">
+                        <a href="#contacts" className="process__button">
                             <span className="process__button-icon">
                                 <svg
                                     width="31"
@@ -39,8 +32,8 @@ const Projects = () => {
                             </span>
 
                             <span className="process__button-content">
-                                <span>{t('process-button-title')}</span>
-                                <small>{t('process-button-text')}</small>
+                                <span>{process.buttonTitle}</span>
+                                <small>{process.buttonText}</small>
                             </span>
                         </a>
                     </div>
@@ -51,7 +44,9 @@ const Projects = () => {
 
                             return (
                                 <article
-                                    className={`process__item ${item.active ? 'process__item--active' : ''}`}
+                                    className={`process__item ${
+                                        item.active ? 'process__item--active' : ''
+                                    }`}
                                     key={item.id}>
                                     <div className="process__item-aside">
                                         <div className="process__item-icon">
@@ -62,13 +57,9 @@ const Projects = () => {
                                     </div>
 
                                     <div className="process__item-content">
-                                        <h3 className="process__item-title">
-                                            {getText(item, 'title')}
-                                        </h3>
+                                        <h3 className="process__item-title">{item.title}</h3>
 
-                                        <p className="process__item-text">
-                                            {getText(item, 'description')}
-                                        </p>
+                                        <p className="process__item-text">{item.description}</p>
                                     </div>
 
                                     <span className="process__item-arrow">
@@ -81,7 +72,7 @@ const Projects = () => {
                                             <path
                                                 d="M1.03418 20.9562L20.5284 1.46191M1.03418 1.46191L20.5284 1.46191L20.5284 20.9562"
                                                 stroke="#D2D2D2"
-                                                stroke-width="2.92414"
+                                                strokeWidth="2.92414"
                                             />
                                         </svg>
                                     </span>
@@ -102,13 +93,9 @@ const Projects = () => {
                                 </div>
 
                                 <div className="process__benefit-content">
-                                    <h3 className="process__benefit-title">
-                                        {getText(item, 'title')}
-                                    </h3>
+                                    <h3 className="process__benefit-title">{item.title}</h3>
 
-                                    <p className="process__benefit-text">
-                                        {getText(item, 'description')}
-                                    </p>
+                                    <p className="process__benefit-text">{item.description}</p>
                                 </div>
                             </div>
                         );
@@ -119,4 +106,4 @@ const Projects = () => {
     );
 };
 
-export default Projects;
+export default Process;

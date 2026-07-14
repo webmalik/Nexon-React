@@ -1,0 +1,158 @@
+@import '../../../root/scss/_sass';
+
+.about-founder {
+    background-color: #f4f4f4;
+    color: #111;
+    padding: 90px 0 100px;
+
+    &__title {
+        margin-bottom: 55px;
+        text-align: center;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        align-items: start;
+        gap: 60px;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    &__person {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 12px;
+        background-color: #ddd;
+
+        img {
+            width: 100%;
+            height: 415px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__person-content {
+        max-width: 320px;
+    }
+
+    &__name {
+        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    &__role {
+        margin-bottom: 4px;
+        color: #555;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    &__text {
+        color: #333;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        gap: 24px;
+        min-height: 110px;
+        padding: 24px 34px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    &__number {
+        color: #9b9b9b;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__item-text {
+        color: #222;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    @media (max-width: 991.98px) {
+        padding: 70px 0 80px;
+
+        &__title {
+            margin-bottom: 40px;
+            font-size: 34px;
+        }
+
+        &__wrapper {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        &__person {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        &__image {
+            img {
+                height: 470px;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 55px 0 65px;
+
+        &__title {
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 28px;
+        }
+
+        &__image {
+            img {
+                height: 360px;
+            }
+        }
+
+        &__item {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            min-height: auto;
+            padding: 22px;
+        }
+
+        &__number {
+            font-size: 14px;
+        }
+
+        &__item-text {
+            font-size: 13px;
+        }
+
+        &__role,
+        &__text {
+            font-size: 13px;
+        }
+    }
+}

@@ -1,117 +1,135 @@
 import React, { useState } from 'react';
+
 import 'react-phone-input-2/lib/style.css';
+
 import InputMask from 'react-input-mask';
 import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
-
-import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
 import './style.scss';
+
 import getPhoneMask from './getPhoneMask';
 
+import { defaultData } from '../../../data/homeData';
+
+const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+
+const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const Form = () => {
-    const { t } = useTranslation();
+    const { form, mail } = defaultData;
 
     const [user, setUser] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState(null);
+
     const [isInputValidUser, setIsInputValidUser] = useState(false);
     const [isInputVoidUser, setIsInputVoidUser] = useState(true);
+
     const [isInputValidPhone, setIsInputValidPhone] = useState(false);
     const [isInputVoidPhone, setIsInputVoidPhone] = useState(true);
+
     const [isInputValidMail, setIsInputValidMail] = useState(false);
     const [isInputVoidMail, setIsInputVoidMail] = useState(true);
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const [countryCode, setCountryCode] = useState('DE');
 
-    const chats = [
-        '1605354843', // WebMaLik
-        '5922657292', // Діма
-    ];
+    const isValidPhoneNumber = (phoneNumber, code) => {
+        const parsedPhoneNumber = parsePhoneNumberFromString(phoneNumber, code);
 
-    const isValidPhoneNumber = (phoneNumber, countryCode) => {
-        const parsedPhoneNumber = parsePhoneNumberFromString(phoneNumber, countryCode);
         return parsedPhoneNumber && parsedPhoneNumber.isValid();
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!user.trim()) {
-            setError(t('form-message-error-user'));
+
+        const trimmedUser = user.trim();
+        const trimmedPhone = phone.trim();
+        const trimmedEmail = email.trim();
+
+        if (!trimmedUser || trimmedUser.length <= 2) {
+            setError(form.messages.userError);
             return;
         }
-        if (!user.length > 2) {
-            setError(t('form-message-error-user'));
+
+        if (!trimmedPhone || !isValidPhoneNumber(trimmedPhone, countryCode)) {
+            setError(form.messages.phoneError);
             return;
         }
-        if (!phone.trim()) {
-            setError(t('form-message-error-phone'));
+
+        if (!trimmedEmail) {
+            setError(mail.messages.emptyEmail);
             return;
         }
-        if (!phone.length > 2) {
-            setError(t('form-message-error-phone'));
+
+        if (!emailPattern.test(trimmedEmail)) {
+            setError(mail.messages.invalidEmail);
             return;
         }
-        if (!email.trim()) {
-            setError(t('mail-message-error-valid-void'));
+
+        if (!TELEGRAM_BOT_TOKEN) {
+            setError(mail.messages.error);
             return;
         }
-        if (!emailPattern.test(email)) {
-            setError(t('mail-message-error-valid'));
-            return;
-        }
+
         try {
-            const requests = chats.map(async (chat) => {
-                return axios.post(
-                    `https://api.telegram.org/bot7173317613:AAG4KDxp5DPHb6B6gFBRGrJ73BOsdrYhWDM/sendMessage`,
-                    {
-                        chat_id: chat,
-                        text: `<b>На сайті нове заповнення форми зворотнього зв'язку.\n\n<i>Ім'я:</i>    ${user}\n<i>Телефон:</i>    <a href="tel:${phone}">${phone}</a>\n<i>E-Mail:    </i></b> <a href="mailto:${email}">${email}</a> `,
-                        parse_mode: 'HTML',
-                    },
-                );
-            });
+            const requests = TELEGRAM_CHAT_IDS.map((chatId) =>
+                axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    chat_id: chatId,
+                    text: `<b>На сайті нове заповнення форми зворотнього зв'язку.\n\n<i>Ім'я:</i> ${trimmedUser}\n<i>Телефон:</i> <a href="tel:${trimmedPhone}">${trimmedPhone}</a>\n<i>E-Mail:</i></b> <a href="mailto:${trimmedEmail}">${trimmedEmail}</a>`,
+                    parse_mode: 'HTML',
+                }),
+            );
 
-            const responses = await Promise.all(requests);
+            await Promise.all(requests);
 
-            responses.forEach(() => {
-                setIsSent(true);
-            });
-        } catch (error) {
-            setError(t('mail-message-error'));
+            setIsSent(true);
+            setError(null);
+        } catch {
+            setError(mail.messages.error);
         }
     };
 
     const handleInputChangeUser = (e) => {
         const value = e.target.value;
+
         setUser(value);
         setIsInputVoidUser(!value.trim());
-        setIsInputValidUser(value.length > 2);
+        setIsInputValidUser(value.trim().length > 2);
+        setError(null);
     };
 
     const handleInputChangePhone = (e) => {
         const value = e.target.value;
+
         setPhone(value);
         setIsInputVoidPhone(!value.trim());
-        setIsInputValidPhone(value.length > 2 && isValidPhoneNumber(value, countryCode));
+        setIsInputValidPhone(value.trim().length > 2 && isValidPhoneNumber(value, countryCode));
+        setError(null);
     };
 
     const handleCountryChange = (value, country) => {
         const code = country.countryCode.toUpperCase();
+
         setCountryCode(code);
     };
 
     const handleInputChangeMail = (e) => {
         const value = e.target.value;
+
         setEmail(value);
         setIsInputVoidMail(!value.trim());
         setIsInputValidMail(emailPattern.test(value));
+        setError(null);
     };
+
+    const isFormDisabled = !isInputValidUser || !isInputValidPhone || !isInputValidMail || isSent;
 
     return (
         <div className="form">
@@ -119,7 +137,7 @@ const Form = () => {
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        placeholder={isInputVoidUser ? t('form-placeholder-name') : error}
+                        placeholder={isInputVoidUser ? form.placeholders.name : error}
                         className={isInputVoidUser ? '' : !isInputValidUser ? 'invalid' : ''}
                         autoComplete="name"
                         value={user}
@@ -127,28 +145,31 @@ const Form = () => {
                         onBlur={handleInputChangeUser}
                         disabled={isSent}
                     />
+
                     <div className="phone-input-container">
                         <PhoneInput
-                            country={'de'}
+                            country="de"
                             onChange={handleCountryChange}
-                            disableSearchIcon={true}
-                            enableSearch={true}
+                            disableSearchIcon
+                            enableSearch
                         />
+
                         <InputMask
                             mask={getPhoneMask(countryCode)}
                             maskChar="_"
                             autoComplete="tel"
                             value={phone}
                             className={isInputVoidPhone ? '' : !isInputValidPhone ? 'invalid' : ''}
-                            placeholder={isInputVoidPhone ? t('form-placeholder-tel') : error}
+                            placeholder={isInputVoidPhone ? form.placeholders.phone : error}
                             onChange={handleInputChangePhone}
                             onBlur={handleInputChangePhone}
                             disabled={isSent}
                         />
                     </div>
+
                     <input
-                        type="mail"
-                        placeholder={isInputVoidMail ? t('form-placeholder-mail') : error}
+                        type="email"
+                        placeholder={isInputVoidMail ? form.placeholders.email : error}
                         className={isInputVoidMail ? '' : !isInputValidMail ? 'invalid' : ''}
                         autoComplete="email"
                         value={email}
@@ -156,33 +177,19 @@ const Form = () => {
                         onBlur={handleInputChangeMail}
                         disabled={isSent}
                     />
+
                     <button
                         type="submit"
-                        disabled={
-                            (!isInputValidUser && !isInputValidPhone && !isInputValidMail) || isSent
-                        }
-                        className={
-                            !isInputValidUser || !isInputValidPhone || !isInputValidMail
-                                ? 'send__button-disabled'
-                                : ''
-                        }>
-                        {t('form-button')}
+                        disabled={isFormDisabled}
+                        className={isFormDisabled ? 'send__button-disabled' : ''}>
+                        {form.button}
                     </button>
                 </form>
             ) : (
-                <div className="form__send">
-                    {error ? (
-                        error
-                    ) : (
-                        <p dangerouslySetInnerHTML={{ __html: t('mail-message-success') }} />
-                    )}
-                </div>
+                <div className="form__send">{error ? error : <p>{mail.messages.success}</p>}</div>
             )}
-            <div className="form__info">
-                Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass Ihre
-                Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen
-                finden Sie in unserer Datenschutzerklärung.
-            </div>
+
+            <div className="form__info">{form.privacyText}</div>
         </div>
     );
 };

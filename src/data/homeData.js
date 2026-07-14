@@ -1,3 +1,12 @@
+import {
+    ProcessSearchIcon,
+    ProcessCodeIcon,
+    ProcessRocketIcon,
+    ProcessChatIcon,
+    ProcessLockIcon,
+    ProcessClockIcon,
+} from '../assets/icons/processIcons';
+
 export const defaultData = {
     seo: {
         title: 'Shopify Shop erstellen lassen | Nexon Digital Studio',
@@ -108,6 +117,12 @@ export const defaultData = {
             email: 'E-Mail-Adresse',
         },
         button: 'Anfrage senden',
+        privacyText:
+            'Mit dem Absenden des Formulars erklären Sie sich damit einverstanden, dass Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet werden. Weitere Informationen finden Sie in unserer Datenschutzerklärung.',
+        messages: {
+            userError: 'Bitte geben Sie Ihren Namen ein.',
+            phoneError: 'Bitte geben Sie eine gültige Telefonnummer ein.',
+        },
     },
 };
 
@@ -170,5 +185,54 @@ export const faqList = [
         title: 'Kann ich meinen Shopify-Shop später selbst bearbeiten?',
         content:
             'Ja. Shopify ist dafür gemacht, dass Sie Produkte, Texte, Bilder, Preise, Kategorien und einfache Inhalte selbst verwalten können. Nach der Umsetzung bekommen Sie eine kurze Einführung, damit Sie die wichtigsten Bereiche eigenständig bearbeiten können. Für größere Änderungen am Design, neue Funktionen oder technische Anpassungen kann weiterhin Unterstützung übernommen werden.',
+    },
+];
+
+export const processList = [
+    {
+        id: 1,
+        number: '01',
+        icon: ProcessSearchIcon,
+        title: 'Projektanalyse',
+        description:
+            'Wir analysieren Ihren bestehenden Shopify-Shop oder Ihre Idee, prüfen Ziele, Struktur, Design und technische Anforderungen. Sie erhalten eine klare Einschätzung und Empfehlung.',
+    },
+    {
+        id: 2,
+        number: '02',
+        icon: ProcessCodeIcon,
+        title: 'Design & Entwicklung',
+        description:
+            'Wir gestalten und entwickeln Ihren Shopify-Shop – schnell, modern und verkaufsorientiert. Sauberer Code, flexible Sections, mobile Optimierung und SEO-Grundstruktur sind inklusive.',
+        active: true,
+    },
+    {
+        id: 3,
+        number: '03',
+        icon: ProcessRocketIcon,
+        title: 'Launch & Optimierung',
+        description:
+            'Nach dem Launch prüfen wir Performance, Darstellung auf allen Geräten und wichtige Conversion-Elemente. Auf Wunsch begleiten wir Sie weiter und optimieren kontinuierlich für mehr Ergebnisse.',
+    },
+];
+
+export const processBenefitsList = [
+    {
+        id: 1,
+        icon: ProcessChatIcon,
+        title: 'Projekt starten',
+        description: 'Direkte Kommunikation und schnelle Antworten',
+    },
+    {
+        id: 2,
+        icon: ProcessLockIcon,
+        title: '100% Transparent',
+        description: 'Klare Prozesse, offene Kommunikation und faire Preise',
+    },
+    {
+        id: 3,
+        icon: ProcessClockIcon,
+        title: 'Zuverlässig & Pünktlich',
+        description: 'Termintreu, planbar und professionell',
     },
 ];

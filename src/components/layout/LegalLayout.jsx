@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 
 import { useStateContext } from '../../StateContext';
 
-import Header from '../header/Header';
 import HeaderLegal from '../header-legal/Header-legal';
 import Menu from '../menu/Menu';
 import ScrollToAnchor from '../scrollToAnchor/ScrollToAnchor';

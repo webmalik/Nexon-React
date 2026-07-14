@@ -1,6 +1,7 @@
 @import '../../../root/scss/_sass';
 
-* {
+.banner--about {
+    // min-height: 70vh;
 }
 
 .banner {
@@ -30,7 +31,7 @@
         max-width: 20.375rem;
 
         .germany & {
-            @include adaptiveValue('font-size', 20, 14);
+            @include adaptiveValue('font-size', 20, 12);
         }
 
         &-top {
@@ -38,6 +39,10 @@
             margin-left: auto;
             margin-right: 0;
             margin-bottom: 59px;
+
+            .banner--about & {
+                max-width: 694px;
+            }
 
             @media (max-width: $mobile) {
                 text-align: right;
@@ -54,6 +59,20 @@
             min-width: 22.56rem;
             position: relative;
             transform: translateY(-8rem);
+
+            .banner--about & {
+                transform: none;
+                margin-top: 64px;
+                padding-bottom: 100px;
+
+                @media (max-width: $tablet) {
+                    padding-bottom: 50px;
+                }
+                @media (max-width: 680px) {
+                    padding-bottom: 20px;
+                    margin-top: 10px;
+                }
+            }
 
             .germany & {
                 @include adaptiveValue('min-width', 444, 300);
@@ -93,17 +112,46 @@
         @media (max-width: $tablet) {
             letter-spacing: -0.105rem;
         }
+
+        .banner--about & {
+            @include adaptiveValue('font-size', 180, 0);
+
+            @media (max-width: $tablet) {
+                font-size: 60px !important;
+            }
+            @media (max-width: 680px) {
+                font-size: 50px !important;
+            }
+        }
     }
 
     &__right {
         text-align: right;
+
+        .banner--about & {
+            text-align: left;
+            .single-line {
+                @include adaptiveValue('padding-left', 100, 0);
+            }
+        }
     }
 
     &__left {
         text-align: left;
+
+        .banner--about & {
+            text-align: left;
+            .single-line {
+                @include adaptiveValue('padding-left', 180, 0);
+            }
+        }
     }
 
     &__silver {
         color: rgb(68, 68, 68);
+
+        .banner--about & {
+            color: #fff;
+        }
     }
 }

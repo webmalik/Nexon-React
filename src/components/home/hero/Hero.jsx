@@ -6,14 +6,16 @@ import SplitType from 'split-type';
 
 import './style.scss';
 
-import circle from './circle.png';
+import circleDefault from './circle.png';
 
 import { defaultData } from '../../../data/homeData';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const textReveals = () => {
-    const elements = document.querySelectorAll('.ttt');
+const textReveals = (rootElement) => {
+    if (!rootElement) return;
+
+    const elements = rootElement.querySelectorAll('.ttt');
 
     elements.forEach((element) => {
         new SplitType(element, {
@@ -59,33 +61,61 @@ const textReveals = () => {
     });
 };
 
-const Hero = () => {
+const Hero = ({
+    data = defaultData.hero,
+    image = circleDefault,
+    imageAlt = 'Circle',
+    variant = '',
+    className = '',
+}) => {
     const container = useRef(null);
 
-    const { hero } = defaultData;
+    const sectionClassName = [
+        'main__banner',
+        'banner',
+        variant ? `banner--${variant}` : '',
+        'p-sticky',
+        className,
+    ]
+        .filter(Boolean)
+        .join(' ');
 
     useEffect(() => {
         document.fonts.ready.then(() => {
-            textReveals();
+            textReveals(container.current);
         });
     }, []);
 
     return (
-        <section ref={container} className="main__banner banner p-sticky">
+        <section ref={container} className={sectionClassName}>
             <div className="container">
-                <div className="banner__circle">
-                    <img src={circle} alt="Circle" />
-                </div>
+                {image && (
+                    <div className="banner__circle">
+                        <img src={image} alt={imageAlt} />
+                    </div>
+                )}
 
-                <h3 className="banner__subtitle banner__subtitle-top ttt">{hero.subtitle}</h3>
+                {data.subtitle && (
+                    <h3 className="banner__subtitle banner__subtitle-top ttt">{data.subtitle}</h3>
+                )}
 
-                <h1 className="banner__title">
-                    <span className="banner__right ttt">{hero.title[0]}</span>
-                    <span className="banner__left ttt">{hero.title[1]}</span>
-                    <span className="banner__right banner__silver ttt">{hero.title[2]}</span>
-                </h1>
+                {data.title && (
+                    <h1 className="banner__title">
+                        {data.title.map((titleItem, index) => (
+                            <span
+                                className={`ttt ${
+                                    index % 2 === 0 ? 'banner__right' : 'banner__left'
+                                } ${index === data.title.length - 1 ? 'banner__silver' : ''}`}
+                                key={titleItem}>
+                                {titleItem}
+                            </span>
+                        ))}
+                    </h1>
+                )}
 
-                <h3 className="banner__subtitle banner__subtitle-bottom ttt">{hero.text}</h3>
+                {data.text && (
+                    <h3 className="banner__subtitle banner__subtitle-bottom ttt">{data.text}</h3>
+                )}
             </div>
         </section>
     );
