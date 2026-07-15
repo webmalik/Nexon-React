@@ -11,14 +11,14 @@ export const navigationData = {
             label: 'Portfolio',
         },
         {
-            type: 'section',
+            type: 'page',
             id: 'services',
             label: 'Leistungen',
         },
         {
-            type: 'section',
-            id: 'mail',
-            label: 'Kontaktformular',
+            type: 'page',
+            path: '/conditions/',
+            label: 'Konditionen',
         },
         {
             type: 'section',

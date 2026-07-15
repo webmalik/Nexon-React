@@ -1,0 +1,223 @@
+@import '../../../root/scss/_sass';
+
+.conditions-process {
+    padding: 88px 0 68px;
+    background-color: #151515;
+
+    &__container {
+        max-width: 1640px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__head {
+        margin-bottom: 78px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 100px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: #fff;
+    }
+
+    &__subtitle {
+        margin: 28px 0 0;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 55px;
+        row-gap: 35px;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        align-items: stretch;
+        gap: 20px;
+        padding: 42px 30px 42px 21px;
+        background-color: #ffffff;
+        border-radius: 17px;
+    }
+
+    &__item:last-child {
+        grid-column: 2;
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 160%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #000;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__item-title {
+        margin: 0 0 14px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 160%;
+        letter-spacing: -0.02em;
+        color: rgba(21, 21, 21, 0.9);
+    }
+
+    &__text {
+        margin: 0;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 160%;
+        letter-spacing: -0.02em;
+        color: rgba(21, 21, 21, 0.9);
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .conditions-process {
+        padding: 80px 0;
+
+        &__head {
+            margin-bottom: 60px;
+        }
+
+        &__title {
+            font-size: 72px;
+            letter-spacing: -3px;
+        }
+
+        &__subtitle {
+            margin-top: 22px;
+            font-size: 32px;
+        }
+
+        &__items {
+            column-gap: 24px;
+            row-gap: 24px;
+        }
+
+        &__item {
+            grid-template-columns: 42px minmax(0, 1fr);
+            gap: 16px;
+            padding: 34px 24px;
+        }
+
+        &__number {
+            font-size: 40px;
+        }
+
+        &__item-title {
+            font-size: 20px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .conditions-process {
+        padding: 70px 0;
+
+        &__title {
+            font-size: 60px;
+        }
+
+        &__subtitle {
+            max-width: 700px;
+            font-size: 28px;
+        }
+
+        &__items {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &__item:last-child {
+            grid-column: 1 / -1;
+            width: calc((100% - 24px) / 2);
+            justify-self: center;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .conditions-process {
+        padding: 60px 0;
+
+        &__container {
+            padding: 0 15px;
+        }
+
+        &__head {
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            font-size: 44px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        &__subtitle {
+            margin-top: 20px;
+            font-size: 21px;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+        }
+
+        &__items {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        &__item,
+        &__item:last-child {
+            grid-column: auto;
+            width: 100%;
+            grid-template-columns: 40px minmax(0, 1fr);
+            gap: 15px;
+            padding: 28px 20px;
+            border-radius: 14px;
+        }
+
+        &__number {
+            align-items: flex-start;
+            padding-top: 2px;
+            font-size: 30px;
+            letter-spacing: -1px;
+        }
+
+        &__item-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 1.55;
+        }
+    }
+}

@@ -1,0 +1,195 @@
+@import '../../../root/scss/_sass';
+
+.conditions-scope {
+    padding: 84px 0 100px;
+    background-color: #ffffff;
+    font-family: $font-family;
+
+    &__container {
+        max-width: 1640px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__head {
+        margin-bottom: 51px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-family;
+        font-weight: 500;
+        // font-size: 100px;
+        @include adaptiveValue('font-size', 96, 50);
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: #333;
+        white-space: nowrap;
+    }
+
+    &__subtitle {
+        max-width: 1300px;
+        margin: 28px 0 0;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 40px;
+        letter-spacing: -0.02em;
+        color: rgba(51, 51, 51, 0.8);
+    }
+
+    &__services {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 18px 32px;
+        max-width: 1460px;
+    }
+
+    &__service {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 88px;
+        padding: 20px 21px;
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 160%;
+        letter-spacing: -0.02em;
+        color: rgba(51, 51, 51, 0.9);
+        white-space: nowrap;
+        border-radius: 18px;
+        box-shadow: 0 0 30px 0 rgba(94, 94, 94, 0.1);
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    &__note {
+        align-self: center;
+        flex: 1 1 800px;
+        min-width: 800px;
+        margin: 0 0 0 -10px;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        color: rgba(51, 51, 51, 0.8);
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .conditions-scope {
+        padding: 80px 0;
+
+        &__title {
+            font-size: 70px;
+            letter-spacing: -3.5px;
+            white-space: normal;
+        }
+
+        &__subtitle {
+            font-size: 32px;
+        }
+
+        &__services {
+            gap: 16px 20px;
+        }
+
+        &__service {
+            min-height: 76px;
+            padding: 18px 20px;
+            font-size: 19px;
+            border-radius: 14px;
+        }
+
+        &__note {
+            flex-basis: 650px;
+            min-width: 650px;
+            margin-left: 0;
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .conditions-scope {
+        padding: 70px 0;
+
+        &__head {
+            margin-bottom: 42px;
+        }
+
+        &__title {
+            font-size: 58px;
+            letter-spacing: -3px;
+        }
+
+        &__subtitle {
+            margin-top: 22px;
+            font-size: 27px;
+        }
+
+        &__service {
+            min-height: 68px;
+            font-size: 17px;
+        }
+
+        &__note {
+            flex: 1 1 100%;
+            min-width: 100%;
+            margin-top: 8px;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .conditions-scope {
+        padding: 60px 0;
+
+        &__container {
+            padding: 0 15px;
+        }
+
+        &__head {
+            margin-bottom: 34px;
+        }
+
+        &__title {
+            font-size: 43px;
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        &__subtitle {
+            margin-top: 20px;
+            font-size: 21px;
+            line-height: 1.35;
+            letter-spacing: -0.5px;
+        }
+
+        &__services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            max-width: none;
+        }
+
+        &__service {
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 60px;
+            padding: 16px 18px;
+            font-size: 16px;
+            white-space: normal;
+            border-radius: 12px;
+        }
+
+        &__note {
+            min-width: 0;
+            margin-top: 12px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    }
+}

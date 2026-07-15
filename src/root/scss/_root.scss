@@ -41,6 +41,15 @@ button {
         top: 0;
         z-index: 0;
     }
+    .p-sticky-not-mobile {
+        position: sticky !important;
+        top: 0;
+        z-index: 0;
+        @media (max-width: 992px) {
+            position: relative;
+            top: auto;
+        }
+    }
     .not-sticky {
         position: relative;
         z-index: 1;

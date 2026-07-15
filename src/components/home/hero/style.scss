@@ -12,6 +12,7 @@
         @include adaptiv-value('height', 242, 90, 1);
         position: absolute;
         @include adaptiveValue('top', 0, 20);
+        z-index: 3;
 
         img {
             width: 100%;
@@ -39,7 +40,10 @@
             margin-left: auto;
             margin-right: 0;
             margin-bottom: 59px;
-
+            .banner--conditions & {
+                margin-bottom: 80px;
+            }
+            .banner--conditions &,
             .banner--about & {
                 max-width: 694px;
             }
@@ -59,7 +63,7 @@
             min-width: 22.56rem;
             position: relative;
             transform: translateY(-8rem);
-
+            .banner--conditions &,
             .banner--about & {
                 transform: none;
                 margin-top: 64px;
@@ -123,6 +127,16 @@
                 font-size: 50px !important;
             }
         }
+
+        .banner--conditions & {
+            @include adaptiveValue('font-size', 180, 0);
+            @media (max-width: $tablet) {
+                font-size: 50px !important;
+            }
+            @media (max-width: 680px) {
+                font-size: 40px !important;
+            }
+        }
     }
 
     &__right {
@@ -133,6 +147,10 @@
             .single-line {
                 @include adaptiveValue('padding-left', 100, 0);
             }
+        }
+
+        .banner--conditions & {
+            text-align: left;
         }
     }
 
@@ -149,7 +167,7 @@
 
     &__silver {
         color: rgb(68, 68, 68);
-
+        .banner--conditions &,
         .banner--about & {
             color: #fff;
         }

@@ -2,8 +2,10 @@
 
 .mail {
     background: #151515;
+    font-family: $font-family;
     @include adaptiveValue('padding-top', 90, 30);
     @include adaptiveValue('padding-bottom', 90, 50);
+
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -29,6 +31,17 @@
                 display: none;
             }
         }
+    }
+
+    &__text {
+        max-width: 1680px;
+        margin: 0 0 20px;
+        color: #ffffff;
+        font-family: $font-family;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -1px;
     }
 
     &__form {
@@ -65,10 +78,11 @@
         box-shadow: none;
 
         &.invalid {
-            box-shadow: 0px 0px 5px 2px rgba($color: #ff0000, $alpha: 0.2);
+            box-shadow: 0 0 5px 2px rgba($color: #ff0000, $alpha: 0.2);
         }
+
         &.valid {
-            box-shadow: 0px 0px 5px 2px rgba($color: #09ff00, $alpha: 0.2);
+            box-shadow: 0 0 5px 2px rgba($color: #09ff00, $alpha: 0.2);
         }
 
         form {
@@ -76,6 +90,7 @@
             align-items: center;
             width: 100%;
         }
+
         input {
             width: 100%;
             color: #fff;
@@ -99,6 +114,7 @@
                 -webkit-text-fill-color: #ffffff;
             }
         }
+
         p {
             color: #fff;
             font-family: $font-family;
@@ -107,6 +123,7 @@
             font-weight: 500;
             line-height: 110%;
         }
+
         button {
             display: flex;
             align-items: center;
@@ -148,6 +165,7 @@
                     height: 0.75rem;
                     transform: rotate(-180deg);
                     transition: all 0.5s ease-in-out;
+
                     path {
                         stroke: #151515;
                         transition: all 0.5s ease-in-out;
@@ -157,11 +175,13 @@
 
             &:hover {
                 gap: 2.5rem;
+
                 span {
                     background: #151515;
 
                     svg {
                         transform: rotate(0deg);
+
                         path {
                             stroke: #fff;
                         }
@@ -185,6 +205,14 @@
         @include adaptiveValue('padding-top', 20, 10);
         @include adaptiveValue('margin-left', 140, 0);
     }
+
+    &--conditions {
+        .mail__title {
+            span {
+                padding-left: 290px;
+            }
+        }
+    }
 }
 
 @media (max-width: $tablet) {
@@ -195,8 +223,32 @@
             }
         }
 
+        &__text {
+            margin-bottom: 10px;
+            font-size: 24px;
+            letter-spacing: -0.5px;
+        }
+
         &__info {
             margin-left: 0 !important;
+        }
+
+        &--conditions {
+            .mail__title {
+                span {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .mail {
+        &__text {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.35;
         }
     }
 }

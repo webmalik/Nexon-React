@@ -8,20 +8,24 @@ import mailArrowIMG from './mail-arrow.png';
 
 import { defaultData } from '../../../data/homeData';
 
-const TELEGRAM_BOT_TOKEN = '7173317613:AAG4KDxp5DPHb6B6gFBRGrJ73BOsdrYhWDM';
+const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
 
 const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const Mail = () => {
-    const { mail } = defaultData;
+const Mail = ({ data = defaultData.mail, variant = '' }) => {
+    const mail = data;
 
     const [email, setEmail] = useState('');
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState(null);
     const [isInputValid, setIsInputValid] = useState(true);
     const [isInputVoid, setIsInputVoid] = useState(true);
+
+    const sectionClassName = ['mail', 'p-sticky', variant ? `mail--${variant}` : '']
+        .filter(Boolean)
+        .join(' ');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -71,14 +75,15 @@ const Mail = () => {
     };
 
     return (
-        <section className="mail p-sticky" id="mail">
+        <section className={sectionClassName} id="mail">
             <div className="container">
                 <div className="mail__wrapper">
                     <h2 className="mail__title ttt">
                         {mail.title[0]}
-                        <br />
-                        <span>{mail.title[1]}</span>
+                        <br /> <span>{mail.title[1]}</span>
                     </h2>
+
+                    {mail.text && <p className="mail__text">{mail.text}</p>}
 
                     <div className="mail__form">
                         <img src={mailArrowIMG} alt="" />
@@ -104,6 +109,7 @@ const Mail = () => {
                                         disabled={!isInputValid || isSent}
                                         className={isInputVoid ? 'mail__button-disabled' : ''}>
                                         {mail.button}
+
                                         <span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +132,7 @@ const Mail = () => {
                         </div>
                     </div>
 
-                    <div className="mail__info">{mail.privacyText}</div>
+                    {mail.privacyText && <div className="mail__info">{mail.privacyText}</div>}
                 </div>
             </div>
         </section>
