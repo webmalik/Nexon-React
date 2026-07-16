@@ -154,22 +154,22 @@ export const aboutWorkflowData = {
         {
             id: 1,
             number: '01',
-            title: 'Analyse des bestehenden oder geplanten Shopify-Shops',
+            title: '<span>Analyse</span> des bestehenden oder geplanten Shopify-Shops',
         },
         {
             id: 2,
             number: '02',
-            title: 'Planung der Shop-Struktur',
+            title: 'Planung der <span>Shop-Struktur</span>',
         },
         {
             id: 3,
             number: '03',
-            title: 'Einrichtung oder Anpassung des Shopify-Themes',
+            title: 'Einrichtung oder Anpassung <span>des Shopify-Themes</span>',
         },
         {
             id: 4,
             number: '04',
-            title: 'Umsetzung von Startseite, Produktseiten und Collections',
+            title: '<span>Umsetzung</span> von Startseite, Produktseiten und Collections',
         },
         {
             id: 5,
@@ -179,17 +179,17 @@ export const aboutWorkflowData = {
         {
             id: 6,
             number: '06',
-            title: 'Launch, Tests und Unterstützung nach dem Start',
+            title: '<span>Launch, Tests</span> und Unterstützung nach dem Start',
         },
         {
             id: 7,
             number: '07',
-            title: 'Launch oder Übergabe',
+            title: '<span>Launch</span> oder Übergabe',
         },
         {
             id: 8,
             number: '08',
-            title: 'Unterstützung nach dem Start',
+            title: '<span>Unterstützung</span> nach dem Start',
         },
     ],
 };

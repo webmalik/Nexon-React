@@ -1,105 +1,173 @@
+@import '../../../root/scss/_sass';
+
 .shopify-reason {
-    background-color: #f4f4f4;
+    padding: 88px 0 155px;
+    background-color: #fff;
     color: #111;
-    padding: 90px 0 95px;
 
     &__title {
-        margin-bottom: 32px;
+        margin: 0 0 38px;
         text-align: center;
-        font-size: 46px;
         font-weight: 600;
-        line-height: 1.1;
+        line-height: 0.95;
+        letter-spacing: -4.5px;
+
+        @include adaptiveValue('font-size', 96, 42);
     }
 
     &__items {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1080px;
-        margin: 0 auto;
-        border: 1px solid #d8d8d8;
-        border-radius: 4px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        margin: 0;
         overflow: hidden;
+        border: 1px solid #d9d9d9;
+        border-radius: 20px;
         background-color: #fff;
     }
 
     &__item {
-        min-height: 150px;
-        padding: 28px 34px 30px;
+        min-width: 0;
+        min-height: 250px;
+        padding: 47px 55px 40px;
 
         &:not(:last-child) {
-            border-right: 1px solid #d8d8d8;
+            border-right: 1px solid #d9d9d9;
         }
     }
 
     &__item-title {
-        margin-bottom: 12px;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 1.25;
+        margin: 0 0 16px;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+        color: #000;
     }
 
     &__item-text {
-        color: #333;
-        font-size: 13px;
-        line-height: 1.45;
+        margin: 0;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        color: rgba(21, 21, 21, 0.9);
     }
 
     &__text {
-        max-width: 760px;
-        margin: 24px auto 0;
+        max-width: 1160px;
+        margin: 18px auto 0;
         text-align: center;
-        color: #222;
-        font-size: 13px;
-        line-height: 1.5;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: rgba(21, 21, 21, 0.9);
     }
 
-    @media (max-width: 991.98px) {
-        padding: 75px 0 80px;
+    @media (max-width: 1399.98px) {
+        padding: 78px 0 125px;
 
         &__title {
-            font-size: 38px;
-        }
-
-        &__items {
-            grid-template-columns: 1fr;
-            max-width: 620px;
+            margin-bottom: 34px;
+            letter-spacing: -3.5px;
         }
 
         &__item {
-            min-height: auto;
-            padding: 26px;
-
-            &:not(:last-child) {
-                border-right: none;
-                border-bottom: 1px solid #d8d8d8;
-            }
-        }
-    }
-
-    @media (max-width: 575.98px) {
-        padding: 55px 0 65px;
-
-        &__title {
-            margin-bottom: 26px;
-            text-align: left;
-            font-size: 32px;
-        }
-
-        &__item {
-            padding: 22px;
+            min-height: 230px;
+            padding: 42px 42px 36px;
         }
 
         &__item-title {
-            font-size: 15px;
+            font-size: 22px;
         }
 
         &__item-text,
         &__text {
-            font-size: 13px;
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        &__item {
+            min-height: 215px;
+            padding: 36px 30px;
+        }
+
+        &__item-title {
+            margin-bottom: 14px;
+            font-size: 20px;
+        }
+
+        &__item-text,
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        padding: 65px 0 90px;
+
+        &__title {
+            margin-bottom: 30px;
+            letter-spacing: -2.5px;
+        }
+
+        &__items {
+            grid-template-columns: 1fr;
+            border-radius: 16px;
+        }
+
+        &__item {
+            min-height: auto;
+            padding: 34px;
+
+            &:not(:last-child) {
+                border-right: 0;
+                border-bottom: 1px solid #d9d9d9;
+            }
         }
 
         &__text {
+            max-width: 720px;
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 50px 0 65px;
+
+        &__title {
+            margin-bottom: 26px;
             text-align: left;
+            line-height: 1;
+            letter-spacing: -1.8px;
+        }
+
+        &__items {
+            border-radius: 14px;
+        }
+
+        &__item {
+            padding: 26px 22px;
+        }
+
+        &__item-title {
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        &__item-text {
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        &__text {
+            margin-top: 18px;
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.4;
         }
     }
 }

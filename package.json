@@ -28,6 +28,7 @@
         "sass": "^1.78.0",
         "sass-loader": "^16.0.1",
         "split-type": "^0.3.4",
+        "swiper": "^14.0.5",
         "web-vitals": "^2.1.4"
     },
     "scripts": {

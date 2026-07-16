@@ -1,147 +1,282 @@
+@import '../../../root/scss/_sass';
+
 .about-workflow {
-    background-color: #111;
-    color: #fff;
-    padding: 90px 0 95px;
+    position: relative;
     overflow: hidden;
+    padding: 82px 0 90px;
+    background-color: #141414;
+    color: #fff;
 
     &__inner {
-        max-width: 1180px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     &__head {
-        margin-bottom: 32px;
+        margin-bottom: 48px;
     }
 
     &__title {
-        margin-bottom: 14px;
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 1.1;
+        margin: 0 0 32px;
+        font-weight: 400;
+        line-height: 0.95;
+        letter-spacing: -5px;
+
+        @include adaptiveValue('font-size', 96, 40);
     }
 
     &__subtitle {
-        color: #d8d8d8;
-        font-size: 18px;
-        line-height: 1.4;
+        margin: 0;
+        color: #c9c9c9;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+
+        @include adaptiveValue('font-size', 40, 20);
     }
 
     &__notes {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
         margin-bottom: 22px;
     }
 
     &__note {
-        min-height: 78px;
-        padding: 22px 26px;
-        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        min-height: 132px;
+        padding: 30px 36px;
+        border-radius: 18px;
         background-color: #fff;
-        color: #111;
-        font-size: 13px;
-        line-height: 1.45;
+        color: #3c3c3c;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: -0.3px;
     }
 
-    &__steps {
-        display: flex;
-        gap: 14px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding-bottom: 4px;
+    &__slider {
+        width: 100%;
+        overflow: visible !important;
 
-        &::-webkit-scrollbar {
-            display: none;
+        .swiper-wrapper {
+            align-items: stretch;
         }
     }
 
+    &__slide {
+        flex: 0 0 314px !important;
+        width: 314px !important;
+        height: auto;
+    }
+
     &__step {
-        flex: 0 0 190px;
-        min-height: 74px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
         align-items: center;
-        gap: 16px;
-        padding: 18px 20px;
-        border-radius: 7px;
+        width: 100%;
+        height: 100%;
+        min-height: 128px;
+        padding: 24px 12px;
+        border-radius: 18px;
         background-color: #fff;
         color: #111;
     }
 
     &__step-number {
         flex: 0 0 auto;
-        color: #777;
-        font-size: 13px;
-        font-weight: 500;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.8px;
     }
 
     &__step-title {
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 1.25;
+        min-width: 0;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: -0.3px;
+
+        span,
+        strong,
+        b {
+            font-weight: 700;
+        }
     }
 
     &__controls {
         display: flex;
+        align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin-top: 28px;
+        gap: 16px;
+        margin-top: 42px;
     }
 
     &__arrow {
-        width: 32px;
-        height: 32px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: none;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        border: 0;
         border-radius: 50%;
         background-color: #fff;
-        color: #111;
+        color: #333;
         cursor: pointer;
         transition:
             background-color 0.3s ease,
-            color 0.3s ease;
+            color 0.3s ease,
+            opacity 0.3s ease,
+            transform 0.3s ease;
 
-        &:hover {
-            background-color: #d2d2d2;
+        svg {
+            display: block;
+            width: 18px;
+            height: 15px;
+        }
+
+        &:not(:disabled):hover {
+            background-color: #dedede;
+            transform: scale(1.06);
+        }
+
+        &:disabled {
+            background-color: #292929;
+            color: #fff;
+            cursor: default;
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 1399.98px) {
+        padding: 74px 0 82px;
+
+        &__head {
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            margin-bottom: 26px;
+            letter-spacing: -4px;
+        }
+
+        &__subtitle {
+            letter-spacing: -1px;
+        }
+
+        &__note {
+            min-height: 120px;
+            padding: 26px 30px;
+            font-size: 17px;
+        }
+
+        &__slide {
+            flex-basis: 290px !important;
+            width: 290px !important;
+        }
+
+        &__step {
+            min-height: 118px;
+        }
+
+        &__step-title {
+            font-size: 17px;
         }
     }
 
     @media (max-width: 991.98px) {
-        padding: 75px 0 80px;
+        padding: 64px 0 72px;
 
-        &__title {
-            font-size: 38px;
+        &__head {
+            margin-bottom: 32px;
         }
 
-        &__subtitle {
-            font-size: 16px;
+        &__title {
+            margin-bottom: 22px;
+            letter-spacing: -3px;
         }
 
         &__notes {
             grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        &__note {
+            min-height: auto;
+        }
+
+        &__slide {
+            flex-basis: 270px !important;
+            width: 270px !important;
+        }
+
+        &__controls {
+            margin-top: 34px;
         }
     }
 
     @media (max-width: 575.98px) {
-        padding: 55px 0 65px;
+        padding: 50px 0 58px;
+
+        &__head {
+            margin-bottom: 28px;
+        }
 
         &__title {
-            font-size: 32px;
+            margin-bottom: 18px;
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
         &__subtitle {
-            font-size: 15px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
         }
 
         &__note {
-            padding: 20px;
-            font-size: 13px;
+            padding: 24px 20px;
+            border-radius: 14px;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        &__slider {
+            width: calc(100% + 20px);
+        }
+
+        &__slide {
+            flex-basis: 260px !important;
+            width: 260px !important;
         }
 
         &__step {
-            flex-basis: 230px;
-            padding: 18px;
+            grid-template-columns: 36px minmax(0, 1fr);
+            min-height: 112px;
+            padding: 20px 12px;
+            border-radius: 14px;
+        }
+
+        &__step-number {
+            font-size: 21px;
+        }
+
+        &__step-title {
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        &__controls {
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        &__arrow {
+            width: 44px;
+            height: 44px;
         }
     }
 }
