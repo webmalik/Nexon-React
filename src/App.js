@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ConditionsPage from './pages/ConditionsPage';
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectPage from './pages/ProjectPage';
 import ImpressumPage from './pages/ImpressumPage';
 import DatenschutzPage from './pages/DatenschutzPage';
 
@@ -79,6 +80,8 @@ function App() {
                         <Route path="/about/" element={<AboutPage />} />
                         <Route path="/conditions/" element={<ConditionsPage />} />
                         <Route path="/projects/" element={<ProjectsPage />} />
+
+                        <Route path="/projects/:slug/" element={<ProjectPage />} />
                     </Route>
 
                     <Route element={<LegalLayout />}>
