@@ -13,6 +13,7 @@ import ProjectResults from '../components/projects/ProjectResults/ProjectResults
 import Contacts from '../components/home/contacts/Contacts';
 
 import { getProjectBySlug } from '../data/projectsData';
+import { buildProjectSchemas } from '../components/seo/schemaBuilders';
 
 const ProjectPage = () => {
     const { slug } = useParams();
@@ -25,10 +26,22 @@ const ProjectPage = () => {
 
     const { page } = project;
 
+    const canonicalPath = `/projects/${project.slug}/`;
+    const schemas = buildProjectSchemas(project);
+
     return (
         <>
-            <SEO title={page.seo.title} description={page.seo.description} />
-            <Hero data={page.hero} variant="projects" />
+            <SEO
+                title={project.page.seo.title}
+                description={project.page.seo.description}
+                canonicalPath={canonicalPath}
+                image={project.page.intro?.image || project.image}
+                imageAlt={project.page.intro?.imageAlt || project.imageAlt}
+                ogType="article"
+                author="Dmytro Kiriachek"
+                schemas={schemas}
+            />
+            <Hero data={page.hero} variant="projects" titleTag="div" />
             <ProjectIntro data={page.intro} />
             <ProjectChallenge data={page.challenge} />
             <ProjectStructure data={page.structure} />

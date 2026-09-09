@@ -9,7 +9,7 @@ const ProjectsCatalog = ({ sectionData = projectsSectionData, projects = project
         <section className="projects-catalog not-sticky">
             <div className="container">
                 <div className="projects-catalog__head">
-                    <h1
+                    <h2
                         className="projects-catalog__title ttt"
                         dangerouslySetInnerHTML={{
                             __html: sectionData.title,

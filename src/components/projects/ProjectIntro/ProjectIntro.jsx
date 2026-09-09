@@ -7,7 +7,7 @@ const ProjectIntro = ({ data }) => {
         <section className="project-intro not-sticky">
             <div className="container">
                 <div className="project-intro__head">
-                    <h2 className="project-intro__title">{data.title}</h2>
+                    <h1 className="project-intro__title">{data.title}</h1>
 
                     {data.texts?.length > 0 && (
                         <div className="project-intro__texts">

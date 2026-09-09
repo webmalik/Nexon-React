@@ -1,5 +1,12 @@
+import { siteData } from './siteData';
+
 export const navigationData = {
     menuItems: [
+        {
+            type: 'page',
+            path: '/',
+            label: 'Startseite',
+        },
         {
             type: 'page',
             path: '/about/',
@@ -7,33 +14,13 @@ export const navigationData = {
         },
         {
             type: 'page',
-            path: '/projects/',
-            label: 'Portfolio',
-        },
-        {
-            type: 'page',
-            id: 'services',
-            label: 'Leistungen',
-        },
-        {
-            type: 'page',
             path: '/conditions/',
             label: 'Konditionen',
         },
         {
-            type: 'section',
-            id: 'process',
-            label: 'Ablauf',
-        },
-        {
-            type: 'section',
-            id: 'faq',
-            label: 'FAQ',
-        },
-        {
-            type: 'section',
-            id: 'contacts',
-            label: 'Schreib uns :)',
+            type: 'page',
+            path: '/projects/',
+            label: 'Portfolio',
         },
     ],
 
@@ -41,13 +28,13 @@ export const navigationData = {
         {
             id: 'instagram',
             label: 'Instagram',
-            url: '#',
+            url: siteData.links.instagram,
             icon: 'instagram',
         },
         {
             id: 'telegram',
             label: 'Telegram',
-            url: '#',
+            url: siteData.links.telegram,
             icon: 'telegram',
         },
     ],

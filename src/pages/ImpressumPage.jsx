@@ -1,10 +1,33 @@
 import React from 'react';
 import SEO from '../components/seo/SEO';
+import { buildStaticPageSchemas } from '../components/seo/schemaBuilders';
 
 const ImpressumPage = () => {
+    const schemas = buildStaticPageSchemas({
+        path: '/impressum/',
+        seo: {
+            title: 'Impressum | Nexon Digital Studio',
+            description: 'Impressum und Anbieterinformationen von Nexon Digital Studio.',
+        },
+        breadcrumbs: [
+            {
+                name: 'Startseite',
+                path: '/',
+            },
+            {
+                name: 'Impressum',
+                path: '/impressum/',
+            },
+        ],
+    });
     return (
         <>
-            <SEO title="Impressum | Nexon Studio" description="Impressum von Nexon Studio." />
+            <SEO
+                title="Impressum | Nexon Digital Studio"
+                description="Impressum und Anbieterinformationen von Nexon Digital Studio."
+                canonicalPath="/impressum/"
+                schemas={schemas}
+            />
 
             <section className="legal-page">
                 <div className="legal-page__container container">
@@ -33,8 +56,8 @@ const ImpressumPage = () => {
                             Telefon: +49 15510629166
                             <br />
                             Kontaktformular:{' '}
-                            <a href="https://nexon-studio.com/#contact">
-                                https://nexon-studio.com/#contact
+                            <a href="https://nexon-studio.de/#contacts">
+                                https://nexon-studio.de/#contacts
                             </a>
                         </p>
 

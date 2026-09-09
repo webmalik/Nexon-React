@@ -13,10 +13,36 @@ import ConditionsCommunication from '../components/conditions/communication/Cond
 
 import { defaultData, conditionsMailData } from '../data/conditionsData';
 
+import { buildStaticPageSchemas } from '../components/seo/schemaBuilders';
+
 const ConditionsPage = () => {
+    const schemas = buildStaticPageSchemas({
+        path: '/conditions/',
+        seo: defaultData.seo,
+
+        breadcrumbs: [
+            {
+                name: 'Startseite',
+                path: '/',
+            },
+            {
+                name: 'Konditionen',
+                path: '/conditions/',
+            },
+        ],
+    });
+
     return (
         <>
-            <SEO title={defaultData.seo.title} description={defaultData.seo.description} />
+            <SEO
+                title={defaultData.seo.title}
+                description={defaultData.seo.description}
+                canonicalPath="/conditions/"
+                image="/og.jpg"
+                imageAlt="Shopify Leistungen und Konditionen von Nexon Digital Studio"
+                schemas={schemas}
+            />
+
             <Hero data={defaultData.hero} variant="conditions" />
             <ConditionsProjectStart />
             <ConditionsProcess />

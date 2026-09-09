@@ -2,7 +2,7 @@
     "name": "nexon-react",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://nexon-studio.com",
+    "homepage": "https://nexon-studio.de",
     "dependencies": {
         "@gsap/react": "^2.1.1",
         "@testing-library/jest-dom": "^5.17.0",
@@ -48,7 +48,9 @@
         ]
     },
     "reactSnap": {
-        "inlineCss": true,
+        "inlineCss": false,
+        "concurrency": 1,
+        "waitFor": 1000,
         "source": "build",
         "destination": "build",
         "puppeteerExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
@@ -59,8 +61,18 @@
         ],
         "include": [
             "/",
+            "/about/",
+            "/conditions/",
+            "/projects/",
+            "/projects/rock-solid-nutrition/",
+            "/projects/paka/",
+            "/projects/doc-of-detox/",
+            "/projects/luxhairnyc/",
+            "/projects/fine-scents/",
+            "/projects/craftoria/",
             "/impressum/",
-            "/datenschutz/"
+            "/datenschutz/",
+            "/404.html"
         ]
     },
     "eslintConfig": {

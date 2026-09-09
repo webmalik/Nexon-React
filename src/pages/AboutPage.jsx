@@ -11,12 +11,43 @@ import Mail from '../components/home/mail/Mail';
 import Faq from '../components/home/faq/Faq';
 import Contacts from '../components/home/contacts/Contacts';
 
-import { defaultData } from '../data/aboutData';
+import { defaultData, aboutFounderData } from '../data/aboutData';
+
+import { buildStaticPageSchemas } from '../components/seo/schemaBuilders';
 
 const AboutPage = () => {
+    const schemas = buildStaticPageSchemas({
+        path: '/about/',
+        seo: defaultData.seo,
+        pageType: 'AboutPage',
+
+        breadcrumbs: [
+            {
+                name: 'Startseite',
+                path: '/',
+            },
+            {
+                name: 'Über uns',
+                path: '/about/',
+            },
+        ],
+
+        image: aboutFounderData.person.image,
+        imageAlt: aboutFounderData.person.imageAlt,
+        person: aboutFounderData.person,
+    });
+
     return (
         <>
-            <SEO title={defaultData.seo.title} description={defaultData.seo.description} />
+            <SEO
+                title={defaultData.seo.title}
+                description={defaultData.seo.description}
+                canonicalPath="/about/"
+                image={aboutFounderData.person.image}
+                imageAlt={aboutFounderData.person.imageAlt}
+                schemas={schemas}
+            />
+
             <Hero data={defaultData.hero} variant="about" />
             <Founder />
             <ShopifyReason />

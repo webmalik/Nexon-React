@@ -1,0 +1,179 @@
+@import './sass';
+
+.not-found {
+    position: relative;
+    display: flex;
+    min-height: 100dvh;
+    overflow: hidden;
+    align-items: center;
+    background-color: #151515;
+    color: #fff;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 760px;
+        height: 760px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        content: '';
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 520px;
+        height: 520px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+        content: '';
+        transform: translate(-50%, -50%);
+    }
+
+    &__container {
+        z-index: 2;
+        width: 100%;
+    }
+
+    &__content {
+        display: flex;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 80px 0;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &__label {
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+        color: #fff;
+        font-weight: 600;
+        line-height: 0.8;
+        letter-spacing: -10px;
+
+        @include adaptiveValue('font-size', 240, 110);
+    }
+
+    &__subtitle {
+        margin: 34px 0 18px;
+        color: #fff;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -2px;
+
+        @include adaptiveValue('font-size', 56, 32);
+    }
+
+    &__text {
+        max-width: 520px;
+        margin: 0 0 38px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    &__button {
+        display: inline-flex;
+        min-width: 230px;
+        min-height: 62px;
+        padding: 16px 30px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #fff;
+        border-radius: 100px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #fff;
+                color: #151515;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        &::before {
+            width: 620px;
+            height: 620px;
+        }
+
+        &::after {
+            width: 420px;
+            height: 420px;
+        }
+
+        &__content {
+            padding: 70px 0;
+        }
+
+        &__title {
+            letter-spacing: -7px;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        &::before {
+            width: 430px;
+            height: 430px;
+        }
+
+        &::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        &__content {
+            padding: 50px 0;
+        }
+
+        &__label {
+            margin-bottom: 16px;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        &__title {
+            letter-spacing: -5px;
+        }
+
+        &__subtitle {
+            margin: 26px 0 14px;
+            letter-spacing: -1px;
+        }
+
+        &__text {
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        &__button {
+            width: 100%;
+            min-width: 0;
+            min-height: 56px;
+            font-size: 16px;
+        }
+    }
+}

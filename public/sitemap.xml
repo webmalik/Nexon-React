@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nexon-studio.com/ua/</loc></url>
-  <url><loc>https://nexon-studio.com/ru/</loc></url>
-  <url><loc>https://nexon-studio.com/en/</loc></url>
+    <url>
+        <loc>https://nexon-studio.de/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/about/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/conditions/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/rock-solid-nutrition/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/paka/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/doc-of-detox/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/luxhairnyc/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/fine-scents/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/projects/craftoria/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/impressum/</loc>
+    </url>
+
+    <url>
+        <loc>https://nexon-studio.de/datenschutz/</loc>
+    </url>
 </urlset>

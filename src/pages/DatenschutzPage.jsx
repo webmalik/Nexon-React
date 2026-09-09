@@ -1,12 +1,33 @@
 import React from 'react';
 import SEO from '../components/seo/SEO';
+import { buildStaticPageSchemas } from '../components/seo/schemaBuilders';
 
 const DatenschutzPage = () => {
+    const schemas = buildStaticPageSchemas({
+        path: '/datenschutz/',
+        seo: {
+            title: 'Datenschutzerklärung | Nexon Studio',
+            description: 'Datenschutzerklärung von Nexon Studio.',
+        },
+        breadcrumbs: [
+            {
+                name: 'Startseite',
+                path: '/',
+            },
+            {
+                name: 'Datenschutz',
+                path: '/datenschutz/',
+            },
+        ],
+    });
+
     return (
         <>
             <SEO
                 title="Datenschutzerklärung | Nexon Studio"
                 description="Datenschutzerklärung von Nexon Studio."
+                canonicalPath="/datenschutz/"
+                schemas={schemas}
             />
 
             <section className="legal-page">

@@ -2,7 +2,7 @@ export const siteData = {
     name: 'Nexon Digital Studio',
     legalName: 'Dmytro Kiriachek handelnd unter Nexon Digital Studio',
 
-    url: 'https://nexon-studio.com',
+    url: 'https://nexon-studio.de',
     language: 'de-DE',
     locale: 'de_DE',
 
@@ -15,9 +15,9 @@ export const siteData = {
     contact: {
         phone: '+49 15510629166',
         phoneHref: '+4915510629166',
-        email: 'nexonstudio24@gmail.com',
+        email: 'dmytro@nexon-studio.de',
         whatsapp: '+49 15510629166',
-        formUrl: 'https://nexon-studio.com/#contacts',
+        formUrl: 'https://nexon-studio.de/#contacts',
     },
 
     address: {

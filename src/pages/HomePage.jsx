@@ -11,12 +11,27 @@ import Process from '../components/home/process/Process';
 import Faq from '../components/home/faq/Faq';
 import Contacts from '../components/home/contacts/Contacts';
 
-import { defaultData } from '../data/homeData';
+import { defaultData, servicesList, faqList } from '../data/homeData';
+
+import { buildHomeSchemas } from '../components/seo/schemaBuilders';
 
 const HomePage = () => {
+    const schemas = buildHomeSchemas({
+        seo: defaultData.seo,
+        services: servicesList,
+        faq: faqList,
+    });
+
     return (
         <>
-            <SEO title={defaultData.seo.title} description={defaultData.seo.description} />
+            <SEO
+                title={defaultData.seo.title}
+                description={defaultData.seo.description}
+                canonicalPath="/"
+                image="/og.jpg"
+                imageAlt="Nexon Digital Studio – Shopify Entwicklung"
+                schemas={schemas}
+            />
 
             <Hero />
             <Info />

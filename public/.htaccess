@@ -1,0 +1,13 @@
+DirectoryIndex index.html
+
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Реальні файли та пререндерені папки залишаємо без змін
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Усі неіснуючі адреси повертають справжній HTTP 404
+RewriteRule ^ - [R=404,L]

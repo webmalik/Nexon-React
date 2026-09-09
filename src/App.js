@@ -9,6 +9,7 @@ import SiteLayout from './components/layout/SiteLayout';
 import LegalLayout from './components/layout/LegalLayout';
 
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 import AboutPage from './pages/AboutPage';
 import ConditionsPage from './pages/ConditionsPage';
 import ProjectsPage from './pages/ProjectsPage';
@@ -88,6 +89,10 @@ function App() {
                         <Route path="/impressum/" element={<ImpressumPage />} />
                         <Route path="/datenschutz/" element={<DatenschutzPage />} />
                     </Route>
+
+                    <Route path="/404.html" element={<NotFoundPage />} />
+
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
 
                 <CookieBanner />

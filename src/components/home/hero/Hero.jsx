@@ -54,7 +54,10 @@ const textReveals = (rootElement) => {
                     });
 
                     element.innerHTML = element.textContent;
-                    gsap.set(element, { clearProps: 'all' });
+
+                    gsap.set(element, {
+                        clearProps: 'all',
+                    });
                 },
             },
         });
@@ -67,6 +70,7 @@ const Hero = ({
     imageAlt = 'Circle',
     variant = '',
     className = '',
+    titleTag: TitleTag = 'h1',
 }) => {
     const container = useRef(null);
 
@@ -100,17 +104,21 @@ const Hero = ({
                 )}
 
                 {data.title && (
-                    <h1 className="banner__title">
+                    <TitleTag className="banner__title">
                         {data.title.map((titleItem, index) => (
                             <span
-                                className={`ttt ${
-                                    index % 2 === 0 ? 'banner__right' : 'banner__left'
-                                } ${index === data.title.length - 1 ? 'banner__silver' : ''}`}
-                                key={titleItem}>
+                                className={[
+                                    'ttt',
+                                    index % 2 === 0 ? 'banner__right' : 'banner__left',
+                                    index === data.title.length - 1 ? 'banner__silver' : '',
+                                ]
+                                    .filter(Boolean)
+                                    .join(' ')}
+                                key={`${titleItem}-${index}`}>
                                 {titleItem}
                             </span>
                         ))}
-                    </h1>
+                    </TitleTag>
                 )}
 
                 {data.text && (
