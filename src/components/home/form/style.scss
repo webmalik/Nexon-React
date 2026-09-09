@@ -1,5 +1,12 @@
 @import '../../../root/scss/_sass';
 
+#cf-turnstile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
 .form {
     form {
         display: flex;

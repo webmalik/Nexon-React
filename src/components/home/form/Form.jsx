@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 import 'react-phone-input-2/lib/style.css';
 
@@ -13,9 +14,7 @@ import getPhoneMask from './getPhoneMask';
 
 import { defaultData } from '../../../data/homeData';
 
-const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
-
-const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
+const TURNSTILE_SITE_KEY = process.env.REACT_APP_TURNSTILE_SITE_KEY;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -25,6 +24,8 @@ const Form = () => {
     const [user, setUser] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+
+    const [captchaToken, setCaptchaToken] = useState('');
 
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState(null);
@@ -73,21 +74,18 @@ const Form = () => {
             return;
         }
 
-        if (!TELEGRAM_BOT_TOKEN) {
-            setError(mail.messages.error);
+        if (!captchaToken) {
+            setError('Підтвердіть, що ви не робот.');
             return;
         }
 
         try {
-            const requests = TELEGRAM_CHAT_IDS.map((chatId) =>
-                axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    chat_id: chatId,
-                    text: `<b>На сайті нове заповнення форми зворотнього зв'язку.\n\n<i>Ім'я:</i> ${trimmedUser}\n<i>Телефон:</i> <a href="tel:${trimmedPhone}">${trimmedPhone}</a>\n<i>E-Mail:</i></b> <a href="mailto:${trimmedEmail}">${trimmedEmail}</a>`,
-                    parse_mode: 'HTML',
-                }),
-            );
-
-            await Promise.all(requests);
+            await axios.post('/api/contact', {
+                user: trimmedUser,
+                phone: trimmedPhone,
+                email: trimmedEmail,
+                captchaToken,
+            });
 
             setIsSent(true);
             setError(null);
@@ -111,6 +109,7 @@ const Form = () => {
         setPhone(value);
         setIsInputVoidPhone(!value.trim());
         setIsInputValidPhone(value.trim().length > 2 && isValidPhoneNumber(value, countryCode));
+
         setError(null);
     };
 
@@ -125,11 +124,12 @@ const Form = () => {
 
         setEmail(value);
         setIsInputVoidMail(!value.trim());
-        setIsInputValidMail(emailPattern.test(value));
+        setIsInputValidMail(emailPattern.test(value.trim()));
         setError(null);
     };
 
-    const isFormDisabled = !isInputValidUser || !isInputValidPhone || !isInputValidMail || isSent;
+    const isFormDisabled =
+        !isInputValidUser || !isInputValidPhone || !isInputValidMail || !captchaToken || isSent;
 
     return (
         <div className="form">
@@ -177,6 +177,21 @@ const Form = () => {
                         onBlur={handleInputChangeMail}
                         disabled={isSent}
                     />
+
+                    {TURNSTILE_SITE_KEY && (
+                        <Turnstile
+                            siteKey={TURNSTILE_SITE_KEY}
+                            onSuccess={(token) => {
+                                setCaptchaToken(token);
+                                setError(null);
+                            }}
+                            onExpire={() => setCaptchaToken('')}
+                            onError={() => setCaptchaToken('')}
+                            options={{
+                                theme: 'auto',
+                            }}
+                        />
+                    )}
 
                     <button
                         type="submit"

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 import axios from 'axios';
 
@@ -8,9 +9,7 @@ import mailArrowIMG from './mail-arrow.png';
 
 import { defaultData } from '../../../data/homeData';
 
-const TELEGRAM_BOT_TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
-
-const TELEGRAM_CHAT_IDS = ['1605354843', '5922657292'];
+const TURNSTILE_SITE_KEY = process.env.REACT_APP_TURNSTILE_SITE_KEY;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -18,8 +17,11 @@ const Mail = ({ data = defaultData.mail, variant = '' }) => {
     const mail = data;
 
     const [email, setEmail] = useState('');
+    const [captchaToken, setCaptchaToken] = useState('');
+
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState(null);
+
     const [isInputValid, setIsInputValid] = useState(true);
     const [isInputVoid, setIsInputVoid] = useState(true);
 
@@ -42,21 +44,17 @@ const Mail = ({ data = defaultData.mail, variant = '' }) => {
             return;
         }
 
-        if (!TELEGRAM_BOT_TOKEN) {
-            setError(mail.messages.error);
+        if (!captchaToken) {
+            setError('Підтвердіть, що ви не робот.');
             return;
         }
 
         try {
-            const requests = TELEGRAM_CHAT_IDS.map((chatId) =>
-                axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    chat_id: chatId,
-                    text: `<b>На сайті новий запит на зв'язок.\n\n<i>E-Mail: </i></b> <a href="mailto:${trimmedEmail}">${trimmedEmail}</a>`,
-                    parse_mode: 'HTML',
-                }),
-            );
-
-            await Promise.all(requests);
+            await axios.post('/api/contact', {
+                type: 'mail',
+                email: trimmedEmail,
+                captchaToken,
+            });
 
             setIsSent(true);
             setError(null);
@@ -70,9 +68,11 @@ const Mail = ({ data = defaultData.mail, variant = '' }) => {
 
         setEmail(value);
         setIsInputVoid(!value.trim());
-        setIsInputValid(!value.trim() || emailPattern.test(value));
+        setIsInputValid(!value.trim() || emailPattern.test(value.trim()));
         setError(null);
     };
+
+    const isButtonDisabled = isInputVoid || !isInputValid || !captchaToken || isSent;
 
     return (
         <section className={sectionClassName} id="mail">
@@ -93,39 +93,59 @@ const Mail = ({ data = defaultData.mail, variant = '' }) => {
                                 isInputVoid ? 'empty' : !isInputValid ? 'invalid' : ''
                             }`}>
                             {!isSent ? (
-                                <form onSubmit={handleSubmit}>
-                                    <input
-                                        type="email"
-                                        placeholder={error || mail.placeholder}
-                                        autoComplete="email"
-                                        value={email}
-                                        onChange={handleInputChange}
-                                        onBlur={handleInputChange}
-                                        disabled={isSent}
-                                    />
+                                <>
+                                    <form onSubmit={handleSubmit}>
+                                        <input
+                                            type="email"
+                                            placeholder={error || mail.placeholder}
+                                            autoComplete="email"
+                                            value={email}
+                                            onChange={handleInputChange}
+                                            onBlur={handleInputChange}
+                                            disabled={isSent}
+                                        />
 
-                                    <button
-                                        type="submit"
-                                        disabled={!isInputValid || isSent}
-                                        className={isInputVoid ? 'mail__button-disabled' : ''}>
-                                        {mail.button}
+                                        <button
+                                            type="submit"
+                                            disabled={isButtonDisabled}
+                                            className={
+                                                isButtonDisabled ? 'mail__button-disabled' : ''
+                                            }>
+                                            {mail.button}
 
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
-                                                viewBox="0 0 16 16"
-                                                fill="none">
-                                                <path
-                                                    d="M2 14L14 2M14 2L14 14M14 2L2 2"
-                                                    stroke="white"
-                                                    strokeWidth="3"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </form>
+                                            <span>
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                    fill="none">
+                                                    <path
+                                                        d="M2 14L14 2M14 2L14 14M14 2L2 2"
+                                                        stroke="white"
+                                                        strokeWidth="3"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </form>
+
+                                    {TURNSTILE_SITE_KEY && (
+                                        <Turnstile
+                                            siteKey={TURNSTILE_SITE_KEY}
+                                            onSuccess={(token) => {
+                                                setCaptchaToken(token);
+                                                setError(null);
+                                            }}
+                                            onExpire={() => setCaptchaToken('')}
+                                            onError={() => setCaptchaToken('')}
+                                            options={{
+                                                theme: 'auto',
+                                                appearance: 'interaction-only',
+                                            }}
+                                        />
+                                    )}
+                                </>
                             ) : (
                                 <p>{mail.messages.success}</p>
                             )}
